@@ -39,39 +39,30 @@ Project
 
 CHANGELOG.md
 -------------------------------------------
-
 Each project MAY have a markdown file noting the new features, bug fixes, breaking changes, and enhancements for a release version and/or date.  The purpose of this log is for future developers to gain quick understanding of major changes to the system, possibly to aid in troubleshooting - more recent changes are more likely to contain bugs than older more mature parts.  Reference: keep a changelog.
-
 
 A changelog is RECOMMENDED for projects which have long-lasting status at the Nerdery.
 
-
-Each version should:
 * It’s made for humans, not machines, so legibility is crucial.
 * Easy to link to any section (hence Markdown over plain text).
 * One sub-section per version.
 * List releases in reverse-chronological order (newest on top).
 * Write all dates in YYYY-MM-DD format. (Example: 2012-06-02 for June 2nd, 2012.) It’s international, sensible, and language-independent.
 * Explicitly mention whether the project follows Semantic Versioning.
-* List its release date in the above format.
-* Group changes to describe their impact on the project, as follows:
-* Added for new features.
-* Changed for changes in existing functionality.
-* Deprecated for once-stable features removed in upcoming releases.
-* Removed for deprecated features removed in this release.
-* Fixed for any bug fixes.
-* Security to invite users to upgrade in case of vulnerabilities.
-
-
-
+    * List its release date in the above format.
+    * Group changes to describe their impact on the project, as follows:
+    * Added for new features.
+    * Changed for changes in existing functionality.
+    * Deprecated for once-stable features removed in upcoming releases.
+    * Removed for deprecated features removed in this release.
+    * Fixed for any bug fixes.
+    * Security to invite users to upgrade in case of vulnerabilities.
 
 Example:
-
-
+```
 # Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
-
 
 ## [3.0.0] 2015-03-14
 ### Breaking Changes
@@ -81,3 +72,4 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Gizmo schema validator
 ### Fixed
 - (JIRA-1234) Fixes an issue where the widgets escape the boundaries
+```
