@@ -7,8 +7,10 @@ It is RECOMMENDED to use a profiler (link to profiling doc) to be aware of what 
 
 ### Repository and Unit Of Work patterns
 The Entity Framework DbContext already implements the Repository and UnitOfWork patterns.
+
 * Avoid layering additional repositories/unit of work on top of the DbContext.
 * Developers MAY use a small wrapper around the DbContext to share common queries (a "repository of queries") and avoid repeating frequently used queries. For example, when filtering by access level or "ownership,"
+
 ```
 public class Queries
 {
