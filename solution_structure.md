@@ -10,10 +10,10 @@ General Guidance
 
 ### Project Naming
 Projects SHOULD follow the naming convention: Client.Application.Project
-e.g. Rockwell.MotionAnlyzer.WebAPI
+> e.g. Rockwell.MotionAnlyzer.WebAPI
 
 If a project combines several modules a more generic name MAY be used.
-e.g. Client.Application project that contains Core, Domain, and Data modules.
+> e.g. Client.Application project that contains Core, Domain, and Data modules.
 
 The same name SHOULD be used for
    1. Project Name
@@ -24,7 +24,7 @@ The same name SHOULD be used for
    
 ### Web Application projects
 * MUST use virtual folders and MUST NOT use wwwroot
-* All code should be kept within a single project structure
+* All code SHOULD be kept within a single project structure
 
 ### Module Subfolders
 * If a project contains both interfaces and implementation these SHOULD be separated by creating an “Implementation” folder
@@ -74,7 +74,6 @@ Structure
    * Generic helper classes for profiling
 * .NET Framework Extensions, Reflection Helpers
    * Items expanding core functionality of the .NET framework.
-
 
 ### Client.Application.Domain
 * Domain Objects (POCO) implementing the terms of art for the solution
@@ -135,6 +134,6 @@ WebUi and WebAPI MAY be combined into a single project for smaller applications 
 
 
 References
-http://london.sierrabravo.net/~mglanzer/dotnetboilerplatesetup/mdwiki.html#!organization.md
-http://mikehadlow.blogspot.com/2007/07/how-to-structure-visual-studio.html
-https://msdn.microsoft.com/en-us/library/ee817674(pandp.10).aspx
+* http://london.sierrabravo.net/~mglanzer/dotnetboilerplatesetup/mdwiki.html#!organization.md
+* http://mikehadlow.blogspot.com/2007/07/how-to-structure-visual-studio.html
+* https://msdn.microsoft.com/en-us/library/ee817674(pandp.10).aspx
