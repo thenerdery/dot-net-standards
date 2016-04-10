@@ -1,5 +1,6 @@
 Error Handling
 ===========================================
+
 At the highest level, exceptions in .NET MUST NOT be surfaced to a user. All exceptions that are raised SHOULD either be handled (via a catch statement) or surfaced to a higher level. All exceptions SHOULD be logged in production if they are surfaced to the highest module (eg. WebUI, WebAPI).
 
 Errors SHOULD produce meaningful results for a user. In the case of a website, a page or dialog box detailing an error has occurred should be presented. In the case of an API, a message without a stack trace should be presented, with an OPTIONAL error code.

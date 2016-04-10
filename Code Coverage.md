@@ -1,4 +1,5 @@
-# Code Coverage
+Code Coverage
+===========================================
 
 The purpose of code coverage is to ensure that unit test coverage is used throughout your application. You should rely on continuous integration to produce code coverage reports for you, and have at least 50% code coverage on your testable code. See below for additional details.
 

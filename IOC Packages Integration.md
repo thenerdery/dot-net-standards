@@ -1,4 +1,5 @@
 Inversion Of Control (IOC)
+===========================================
 
 Inversion Of Control is a design pattern where code receives components to execute its functionality.  Dependency Injection (DI) is the IOC pattern that SHOULD be used on all projects.  A  framework SHOULD be used to provide DI capabilities.
 
@@ -52,9 +53,11 @@ Use
 
 builder.Register(c => new Component()).As<IComponent>();
 
-In place of	builder.Register(c => (IComponent)new Component());
+In place of
+	builder.Register(c => (IComponent)new Component());
 
-or	builder.Register<IComponent>(c => new Component());
+or
+	builder.Register<IComponent>(c => new Component());
 
 * Register Components from Least-to-Most Specific
 
@@ -68,7 +71,8 @@ builder.Register(c => new Component());
 
 Instead of
 
-builder.RegisterType<Component>();As this can yield a 10x performance gain in resolve() calls however this only makes sense in frequently access components.
+builder.RegisterType<Component>();
+As this can yield a 10x performance gain in resolve() calls however this only makes sense in frequently access components.
 
 References:
 

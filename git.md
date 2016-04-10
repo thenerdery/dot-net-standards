@@ -1,5 +1,6 @@
 Git
 ===========================================
+
 Every project at the Nerdery MUST be tracked by a Version Control System (VCS). The RECOMMENDED VCS for the Nerdery is Git. VCS Systems MUST be listed under the Client page on Mainframe under the Systems tab, and SHOULD be connected to a specific project.
 
 Ignoring Files

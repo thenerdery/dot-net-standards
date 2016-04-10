@@ -1,4 +1,5 @@
-# REST API Communication
+REST API Communication
+===========================================
 
 ## API Consumption
 

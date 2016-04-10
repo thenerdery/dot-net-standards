@@ -1,5 +1,6 @@
 Configuration Management
 ===========================================
+
 Configuration concerns addressed here are scoped to only managing and maintaining credential sets and other secret information, and usage of that secret information within source control and .Net projects. We do NOT address delivery of configuration settings to different environments in this documentation, although below some toolsets are recommend for handling that.
 
 The following are goals of proper configuration for an application:
