@@ -18,4 +18,4 @@ Connecting to the Solution Structure
 -------------------------------------------
 All classes created below the Services layer SHOULD NOT handle exceptions, except in the most basic of cases. The Services layer MAY handle exceptions if necessary, and any additional exceptions MUST be managed by the highest layer (WebUI / WebAPI). The highest layer SHOULD log any non-trivial exceptions.
 
-Supporting Documentation: [Solution Structure](Solution Structure.md)
+Supporting Documentation: [Solution Structure](Solution_Structure.md)
