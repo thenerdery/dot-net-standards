@@ -42,9 +42,6 @@ Assuming source control has it’s own method of controlled access that is priva
 
 An exception to this is if a key management solution is available for use to your project. When this is the case, the system being used for managing these MUST be included in the project documentation and an XML comment note should be placed in appropriate .config files (e.g., Web.Release.config) to guide the developer to the location of these settings within that system if not otherwise obvious from the main config file. Hashicorp Vault, Octopus Deploy, Azure Key Vault, or Azure App Services Settings are examples of key management solutions.
 
-### Environment Variables
-[TODO - .NET Doesn’t use this Much]
-
 ### App Settings Wrapper
 Any C# project (class library, web application, etc.) that utilizes an XML application settings file (app.config, web.config, etc.) SHOULD create a C# object wrapper for the settings file.  Property getters should be used for this. Getters should read from the System.Configuration namespace to get the appropriate data out of the configuration file, and the Configuration namespace SHOULD NOT be used anywhere else within the application.
 
