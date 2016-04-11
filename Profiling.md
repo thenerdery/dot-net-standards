@@ -1,4 +1,5 @@
-# Profilers
+Profilers
+===========================================
 
 ## Why Profile?
 

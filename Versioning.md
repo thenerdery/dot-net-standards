@@ -1,4 +1,5 @@
-# Packages+Integration: Versioning
+Versioning
+===========================================
 
 Any deployed projects should typically have a way to determine what version has been deployed. This section aims to set standards on how to display versioning information of your deployed project, and when/how to update it.
 
@@ -35,8 +36,6 @@ When performing semantic versioning or API Endpoint versioning, your project sho
     2. If a change is associated with a JIRA or other issue tracker related issue, include the link to that issue.
 
 This does not apply to Web Application versioning.
-
-Marshall: Integration note: will want a see-also link to Project Documentation, will want this to be mutually exclusive and collectively exhaustive.
 
 ## When to Increment the version number
 

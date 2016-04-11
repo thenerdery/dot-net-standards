@@ -34,44 +34,40 @@ The AutoFac DI framework SHOULD be used on any .NET projects using IOC.
 * Autofac dependency configuration SHOULD be centralized as much as is possible, however if a project needs to maintain its own dependencies (such as a service level class) this should be done in a single class.  Use of Autofac [modules](http://autofac.readthedocs.org/en/latest/configuration/modules.html) SHOULD be considered for organization.
 
 * Within an autofac configuration class areas or like objects SHOULD be grouped together into functions.
-
+```
 public class AutofacServiceRegistration
-
 {
-
-public static ContainerBuilder RegisterServices(ContainerBuilder builder)
-
-{
-
+    public static ContainerBuilder RegisterServices(ContainerBuilder builder)
+    {
+        // Register Services
+    }
 }
-
-}
-
+```
 * Use As<T>() in Delegate Registrations
-
 Use 
-
+```
 builder.Register(c => new Component()).As<IComponent>();
-
+```
 In place of
-	builder.Register(c => (IComponent)new Component());
-
+```
+builder.Register(c => (IComponent)new Component());
+```
 or
-	builder.Register<IComponent>(c => new Component());
-
+```
+builder.Register<IComponent>(c => new Component());
+```
 * Register Components from Least-to-Most Specific
-
     * Autofac overrides component registrations by default.
 
 * Register Frequently-Used Components with Lambdas
-
     * Use 
-
+```
 builder.Register(c => new Component());
-
+```
 Instead of
-
+```
 builder.RegisterType<Component>();
+```
 As this can yield a 10x performance gain in resolve() calls however this only makes sense in frequently access components.
 
 References:

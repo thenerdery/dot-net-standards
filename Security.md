@@ -1,22 +1,18 @@
-# Security
+Security
+===========================================
 
 As a developer, you are expected to be considering the security of the applications you develop at all times. You need to be aware of basic security principles and work regularly to stay educated about security vulnerabilities and how to reduce exposure to your applications.
 
-## **Secure Programmer's Pledge**
+**Secure Programmer's Pledge**
 
 1. I will not store sensitive data in plain text, I will protect it in a suitable manner.
-
 2. I will always protect my users' data as if it was my own.
-
 3. I will only use vetted and published algorithms, I will not invent my own.
-
 4. I will not assume that I know better, but instead will try to constantly learn.
-
 5. I will not trust the security of systems that I have not personally examined.
-
 6. I will always try to educate others.
 
-## Required Reading
+### Required Reading
 
 OWASP Top Ten
 
@@ -30,9 +26,13 @@ Development Security Standards:
 
 Data Security Policy for Developers: [https://mainframe.nerdery.com/docs/article/data-security-policy-for-development](https://mainframe.nerdery.com/docs/article/data-security-policy-for-development)
 
-## ASP.NET / IIS Development Security Standards
 
-### MUST for all applications
+
+# ASP.NET / IIS Development Security Standards
+
+
+MUST for all applications
+-------------------------------------------
 
 #### Configuration files or any other sensitive files are not accessible by the user
 
@@ -40,7 +40,10 @@ This is enabled by default in IIS via machine.config to prevent .config files fr
 
 Data files not necessary to be accessed by users should either be stored in App_Data, or in a directory outside of the 
 
-### MUST for application which store and transmit user information such as usernames, passwords and/or email addresses.
+
+
+MUST for application which store and transmit user information such as usernames, passwords and/or email addresses.
+-------------------------------------------
 
 #### A password requires at least six characters
 
@@ -124,7 +127,10 @@ Write to a directory in App_Data, cloud storage, or other directory on the file 
 
 Use standard APIs for interacting with external services rather than inputting raw queries. Avoid string concatenation with user input.
 
-### MUST for applications which store and transmit sensitive data such as credit card numbers, social security numbers, or other types of very sensitive information
+
+
+MUST for applications which store and transmit sensitive data such as credit card numbers, social security numbers, or other types of very sensitive information
+-------------------------------------------
 
 #### Passwords require at least eight characters and contain at least one digit, uppercase letter and lowercase letter
 

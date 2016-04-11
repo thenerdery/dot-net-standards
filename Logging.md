@@ -1,4 +1,5 @@
-# Package+Integration: Logging
+Logging
+===========================================
 
 ## NuGet Package
 
@@ -16,21 +17,21 @@ For example, Umbraco CMS uses **log4net**. Prefer to use **log4net **over **Seri
 
 Logs on a per message basis SHOULD contain the following information:
 
-* REQUIRED: DateTime in UTC in 24 hour format, leading 0’s. (yyyy-MM-dd HH:mm:ss,fff)
+*REQUIRED*
+* DateTime in UTC in 24 hour format, leading 0’s. (yyyy-MM-dd HH:mm:ss,fff)
+* Severity / Level
+* Path (Class/Method)
+* Message
 
-* REQUIRED: Severity / Level
-
-* RECOMMENDED: Thread ID
-
-* REQUIRED: Path (Class/Method)
-
-* REQUIRED: Message
+*RECOMMENDED*
+* Thread ID
 
 Additionally, you MAY want to include any other data points for being able to trace specific to a session (session id) or user (user id) for troubleshooting purposes, depending on your application.
 
 For Example:
-
+```
 2016-03-02 08:56:20,133 [StudentRepository, ksykora] Warning (0): Unable to find student by ID 00000000-0000-0000-0000-000000000000
+```
 
 You MUST NOT log any data that would be considered personal health information (PHI) or if discovered by an outsider, would allow a user to gain access to yours or another system (such as passwords or password hashes, salts, credit card details, etc.)
 
@@ -66,7 +67,7 @@ Response size: {0} bytes
 
 Discovered data characteristics {0}
 
-### Informational
+### Informational (Info)
 
 Business or development oriented information marking "interesting" moments in an application.  User events, communications like email sending, and other business process info is typical at this level.  This level and higher is typically enabled in every environment, local to production.
 

@@ -4,7 +4,7 @@ Data Access Patterns
 Guidance
 -------------------------------------------
 ### Profiling
-It is RECOMMENDED to use a profiler (link to profiling doc) to be aware of what your data access layer is doing.
+It is RECOMMENDED to use a [profiler](Profiling.md) to be aware of what your data access layer is doing.
 
 ### Repository and Unit Of Work patterns
 The Entity Framework DbContext already implements the Repository and UnitOfWork patterns.

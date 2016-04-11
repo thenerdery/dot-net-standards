@@ -29,8 +29,8 @@ The same name SHOULD be used for
 ### Module Subfolders
 * If a project contains both interfaces and implementation these SHOULD be separated by creating an “Implementation” folder
 * .NET namespaces MUST mirror the folder structure in which classes in that namespace are located.  For example: Client.Project.Data.Helpers.SqlParser should reside on the path Data\Helpers\SqlParser.cs within the Client.Project root.
-* Migrations (TODO: Link to data access page)
-* Docs (TODO: Link to documentations page)
+* Migrations (see: [Data Access Patterns](Data_Access_Patterns.md))
+* Docs (see: [Project Documentation](Project_Docs.md))
 
 Solution Structure
 -------------------------------------------
@@ -87,8 +87,8 @@ Structure
 ### Client.Application.Data
 * Reference to persistence libraries
 * Entity Framework Fluent API mapping of Domain objects
-* Data Access Patterns (TODO: link to doc)
-* ORM (TODO: link to doc)
+* [Data Access Patterns](Data_Access_Patterns.md)
+* [ORM](ORM.md)
 
 ### Client.Application.Services
 The  Services module contains business logic for the application. This includes consumption of lower layers (eg. Data / Domain), as well as custom logic for other portions of the application to use. Services SHOULD be the main area where business logic appears. Services SHOULD also be the lowest level in which outside integrations occur.

@@ -4,7 +4,7 @@ Packages+Integration: ORM
 ## Nuget Packages
 
 * Recommended package: [EntityFramework](https://www.nuget.org/packages/EntityFramework/)
-* Accepted packages: [Dapper](https://www.nuget.org/packages/Dapper/)
+* Recommended package: [Dapper](https://www.nuget.org/packages/Dapper/)
 
 ### Avoid:
 
@@ -12,7 +12,7 @@ Packages+Integration: ORM
 * Stored Procedures, except with Dapper
 * nHibernate, other ORMs
 
-See also: [Data Access Patterns](https://docs.google.com/a/nerdery.com/document/d/10J_4rKOltZxhqUAYpQkJnl6w37hRdbuYMjqe-e88HaI/edit?usp=sharing), [Packages+Integration: Profiling](https://docs.google.com/a/nerdery.com/document/d/1dLTsut74Pf3CQkU8KP8PYlxHwf1J8P18Ct_9gs5Iojc/edit?usp=sharing)
+See also: [Data Access Patterns](Data_Access_Patterns.md), [Profiling](Profiling.md)
 
 Comments:
 
