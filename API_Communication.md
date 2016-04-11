@@ -35,11 +35,7 @@ To ensure proper servicing of multiple clients that may be using API endpoints w
 
 When modifying the API spec that would bring in a breaking change, the version number of the API must be updated. Previous versions of the API must remain operational. Your project’s code architecture should account for this change to take place at some point in the future, but API versions should not be updated frequently, if ever. Ideally you will only ever have 1 API endpoint that you update with only forward-non-breaking changes. However, once you do have a breaking change and have consumers of a production endpoint, you must add a new version.
 
-e.g.,
-
-https://<host>/api/v1/<resource path>
-
-https://<host>/api/v2/<resource path>
+e.g., `https://<host>/api/v1/<resource path>`, `https://<host>/api/v2/<resource path>`
 
 ## Content Type
 
