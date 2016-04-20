@@ -55,7 +55,7 @@ Exceptions will happen. Standards are standards, they aren't binding contracts. 
 
 * Create feature branch or fork the repo
 * Submit pull request to master add jdexter and mglanzer to reviewers.
-* After at least one approval is granted the updates may be merged
+* After at least one approval is granted the updates can be merged
 
 (We're working out permissions for merges, for now a few admins will do the merging)
 

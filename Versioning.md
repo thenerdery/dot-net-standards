@@ -9,7 +9,7 @@ Projects will generally fall into 2 categories:
 
 1. A project delivered to an end user that is on-demand, such as a website. These can be updated frequently or infrequently, however the update can be completely transparent to the user access it.
 
-2. Web/C# APIs and Apps. The updates for these are typically visible (although they may be updated automatically in the background without the user’s knowledge and explicit permission)
+2. Web/C# APIs and Apps. The updates for these are typically visible (although they might be updated automatically in the background without the user’s knowledge and explicit permission)
 
 ### Web Applications
 
@@ -57,7 +57,7 @@ See [http://farm-fresh-code.blogspot.com/2015/03/convention-driven-automatic-rel
 
 ### AppVeyor
 
-AppVeyor has a built in feature that can apply AssemblyInfo.cs transformations based on the build configuration file. If AppVeyor is being used for continuous integration, this is highly recommended, but MSBuild Community Tasks may still be used.
+AppVeyor has a built in feature that can apply AssemblyInfo.cs transformations based on the build configuration file. If AppVeyor is being used for continuous integration, this is highly recommended, but MSBuild Community Tasks MAY be used instead.
 
 See [https://www.appveyor.com/docs/build-configuration#assemblyinfo-patching](https://www.appveyor.com/docs/build-configuration#assemblyinfo-patching) for additional information.
 

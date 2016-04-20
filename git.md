@@ -22,7 +22,7 @@ Branching Strategy
 -------------------------------------------
 For vanilla git repositories (not utilizing Bitbucket, Github or Gitlab), the git flow strategy MUST be used. (see http://nvie.com/posts/a-successful-git-branching-model/). Tools such as SourceTree and git flow command line are RECOMMENDED for ease of use. 
 
-Git based repositories that support a pull request model (eg. Bitbucket, Github) MAY opt to not use the git flow model, and may instead use the Github flow model (see https://guides.github.com/introduction/flow/).
+Git based repositories that support a pull request model (eg. Bitbucket, Github) MAY opt to not use the git flow model, and MAY instead use the Github flow model (see https://guides.github.com/introduction/flow/).
 
 ### Releases
 All releases SHOULD be tagged in git with an appropriate release/{version} tag. An exception MAY be made If releases are so frequent this would lead to tag overload, such as when continuous delivery strategies are being implemented.
