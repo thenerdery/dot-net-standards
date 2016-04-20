@@ -14,19 +14,19 @@ The standards have been edited to include specific language: MUST/REQUIRED, SHOU
 ### Standards Categories
 
 * **MUST/REQUIRED**: If a standard declares a MUST, all projects we work on are likely to end up in a state that conforms to this. This is the only area where we would expect to possibly push back on a client if something does not conform to one of our standards (eg. no source control). For your convenience, the following areas contain MUST directives:
-  * **API communication: Versioning** — Any API communication that is planned to be updated and consumed externally must follow a versioning scheme (eg. `/v1/`) for backwards compatibility.
+  * **API communication: Versioning** — Any API communication that is planned to be updated and consumed externally MUST follow a versioning scheme (eg. `/v1/`) for backwards compatibility.
   * **Configuration: Credentials** — Credentials MUST NOT be stored in source control.
   * **Error Handling** — Exceptions MUST NOT be surfaced to a user in a production environment.
-  * **Source Control: Git** — Every project must have source control. Git is preferred, but not required.
-  * **Logging** — Personal health information (PHI) and credentials (eg. passwords) MUST NOT be logged. Exceptions in the error and fatal category must be logged. Logging needs Date Time, Severity, Location, Message.
-  * **Project Docs** — Each project must have a README.md file.
-  * **Security** — Various musts depending on the category.
+  * **Source Control: Git** — Every project MUST have source control. Git is preferred, but not required.
+  * **Logging** — Personal health information (PHI) and credentials (eg. passwords) MUST NOT be logged. Exceptions in the error and fatal category MUST be logged. Logging needs Date Time, Severity, Location, Message.
+  * **Project Docs** — Each project MUST have a README.md file.
+  * **Security** — Various MUSTs depending on the category.
   * **Solution Structure**
-    * Independent "module" must be a project or a folder (don't mix concerns).
+    * Independent "module" MUST be a project or a folder (don't mix concerns).
     * MUST NOT use wwwroot for your app.
     * Must have path mirror namespace.
     * If a `Common` module exists, it MUST NOT depend on parent modules (eg. Web API).
-    * Services must have an interface.
+    * Services MUST have an interface.
 * **SHOULD**: If a standard declares a SHOULD, if at any point we are **making a design decision**, the SHOULD directive should be followed. If we inherited code, we can expect to not change any existing implementations to conform with our shoulds. The majority of the standards fall into this category, especially our recommended libraries.
 * **MAY/OPTIONAL**: If a standard declares a MAY or OPTIONAL, the section in question has been vetted to be effective in certain scenarios, and can be implemented as a choice.
 
