@@ -39,7 +39,7 @@ The general code structure SHOULD consist of the following sections.  For larger
 This is not an exhaustive list. This is a minimal amount of items that are present in common applications. If additional project types arise that do not fit in one of these categories, folders and/or projects MAY be created.
 
 ### Common Modules
-The modules below are listed in order of dependency, modules MUST NOT depend on a module listed below it.  In the case where modules may reside in the same project care MUST be taken to maintain this rule.  For separate projects a reference MUST not be made that violates this rule.
+The modules below are listed in order of dependency, modules MUST NOT depend on a module listed below it.  In the case where modules may reside in the same project care MUST be taken to maintain this rule.  For separate projects a reference MUST NOT be made that violates this rule.
 Each module is detailed below.
 * Core
 * Domain
