@@ -49,7 +49,7 @@ Any C# project (class library, web application, etc.) that utilizes an XML appli
 Custom Configuration sections MAY be used and are RECOMMENDED when configuration is complex or contains collections.  When used configuration sections SHOULD be named according to the namespace of the configuration code.  Custom Configurations MAY transform raw configuration data into properties and methods as needed.
 
 ### Class Configuration
-Any classes that require configuration SHOULD declare this configuration need through constructor arguments and SHOULD not access the app settings wrapper directly. If a configuration parameter SHOULD require an optional, the value SHOULD be checked for null and defaulted to a configuration value. If there is not a default configuration value, an exception SHOULD be thrown.
+Any classes that require configuration SHOULD declare this configuration need through constructor arguments and SHOULD NOT access the app settings wrapper directly. If a configuration parameter SHOULD require an optional, the value SHOULD be checked for null and defaulted to a configuration value. If there is not a default configuration value, an exception SHOULD be thrown.
 
 ### Recommended Toolsets
 
