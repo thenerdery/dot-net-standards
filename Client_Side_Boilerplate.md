@@ -235,7 +235,7 @@ Note: There is no ```<script>``` tag.
 
 Modify the boilerplate’s bootstrap code to include your view’s JavaScript:
 
-Note: The page-specific JavaScript must be executed after the main module loads, so when the JavaScript is bundled, RequireJS won’t attempt go to back out to the file system to find a file that doesn’t exist.
+Note: The page-specific JavaScript MUST be executed after the main module loads, so when the JavaScript is bundled, RequireJS won’t attempt go to back out to the file system to find a file that doesn’t exist.
 ```
 <!-- JAVASCRIPT -->
 <script src="assets/vendor/requirejs/require.js"></script>

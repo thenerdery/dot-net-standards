@@ -73,7 +73,7 @@ Default time for ASP.Net is 20 minutes, which should be sufficient for most purp
 
 This is enabled by default in ASP.Net and cannot be changed
 
-#### Web apps: If HTTPS is used application-wide, session cookies must use the "secure" flag
+#### Web apps: If HTTPS is used application-wide, session cookies MUST use the "secure" flag
 
 Set this via web.config
 
