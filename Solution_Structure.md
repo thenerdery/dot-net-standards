@@ -28,7 +28,7 @@ The same name SHOULD be used for
 
 ### Module Subfolders
 * If a project contains both interfaces and implementation these SHOULD be separated by creating an “Implementation” folder
-* .NET namespaces MUST mirror the folder structure in which classes in that namespace are located.  For example: Client.Project.Data.Helpers.SqlParser should reside on the path Data\Helpers\SqlParser.cs within the Client.Project root.
+* .NET namespaces MUST mirror the folder structure in which classes in that namespace are located.  For example: Client.Project.Data.Helpers.SqlParser resides on the path Data\Helpers\SqlParser.cs within the Client.Project root.
 * Migrations (see: [Data Access Patterns](Data_Access_Patterns.md))
 * Docs (see: [Project Documentation](Project_Docs.md))
 

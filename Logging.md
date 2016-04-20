@@ -41,7 +41,7 @@ You MUST NOT log any data that would be considered personal health information (
 
 Overly chatty messaging that would not add value to logs other than being able to trace exactly what is occurring or dumping entire sets of data. 
 
-These statements SHOULD only be enabled temporarily for diagnostic reasons, and additionally should be removed before being committed to source control. Exceptions can be made if critical to gain insight into an environment you do not have direct debug access to.
+These statements SHOULD only be enabled temporarily for diagnostic reasons, and additionally SHOULD be removed before being committed to source control. Exceptions can be made if critical to gain insight into an environment you do not have direct debug access to.
 
 It is NOT RECOMMENDED to persist this information to a store during normal operation.
 
@@ -81,7 +81,7 @@ Sent push notification {0} to {1}
 
 ### Warning
 
-Events that should be brought to attention but do not disrupt a user or business flow.  Application states that are unexpected, performance thresholds exceeded, user events like exceeding login attempts are example candidates.
+Events that are be brought to attention but do not disrupt a user or business flow.  Application states that are unexpected, performance thresholds exceeded, user events like exceeding login attempts are example candidates.
 
 These messages SHOULD be persisted to a data store (file, database, log storage).
 

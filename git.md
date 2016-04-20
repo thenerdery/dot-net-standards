@@ -13,7 +13,7 @@ https://github.com/Danimoth/gitattributes/blob/master/VisualStudio.gitattributes
 
 The desired result is to keep build artifacts and developer-local settings from being kept under source control. This alleviates merge conflicts when pulling compiled code down, and keeps one developer’s personal preferences for settings. 
 
-In the general case, the nuget packages folder should not be kept in source control. However, in some unique deployment scenarios or due to client infrastructure requirements, this recommendation can be ignored on a project by project basis.
+In the general case, the nuget packages folder SHOULD NOT be kept in source control. However, in some unique deployment scenarios or due to client infrastructure requirements, this recommendation can be ignored on a project by project basis.
 
 ### Secrets (passwords, API tokens, etc)
 See the task force documentation on Configuration

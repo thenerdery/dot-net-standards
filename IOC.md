@@ -31,7 +31,7 @@ The AutoFac DI framework SHOULD be used on any .NET projects using IOC.
 
 * Using constructor injection can lead to a class having many (>5) parameters which is often an indication of violating the Single Repository Principle.  The facade pattern can help with this where a single class is used to aggregate several dependencies into a single class. This is RECOMMENDED in cases where a class begins to exhibit a large number of dependencies.
 
-* Autofac dependency configuration SHOULD be centralized as much as is possible, however if a project needs to maintain its own dependencies (such as a service level class) this should be done in a single class.  Use of Autofac [modules](http://autofac.readthedocs.org/en/latest/configuration/modules.html) SHOULD be considered for organization.
+* Autofac dependency configuration SHOULD be centralized as much as is possible, however if a project needs to maintain its own dependencies (such as a service level class) this SHOULD be done in a single class.  Use of Autofac [modules](http://autofac.readthedocs.org/en/latest/configuration/modules.html) can be considered for organization.
 
 * Within an autofac configuration class areas or like objects SHOULD be grouped together into functions.
 ```
