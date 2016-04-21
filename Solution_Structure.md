@@ -28,7 +28,7 @@ The same name SHOULD be used for
 
 ### Module Subfolders
 * If a project contains both interfaces and implementation these SHOULD be separated by creating an “Implementation” folder
-* .NET namespaces MUST mirror the folder structure in which classes in that namespace are located.  For example: Client.Project.Data.Helpers.SqlParser should reside on the path Data\Helpers\SqlParser.cs within the Client.Project root.
+* .NET namespaces MUST mirror the folder structure in which classes in that namespace are located.  For example: Client.Project.Data.Helpers.SqlParser resides on the path Data\Helpers\SqlParser.cs within the Client.Project root.
 * Migrations (see: [Data Access Patterns](Data_Access_Patterns.md))
 * Docs (see: [Project Documentation](Project_Docs.md))
 
@@ -39,7 +39,7 @@ The general code structure SHOULD consist of the following sections.  For larger
 This is not an exhaustive list. This is a minimal amount of items that are present in common applications. If additional project types arise that do not fit in one of these categories, folders and/or projects MAY be created.
 
 ### Common Modules
-The modules below are listed in order of dependency, modules MUST NOT depend on a module listed below it.  In the case where modules may reside in the same project care MUST be taken to maintain this rule.  For separate projects a reference MUST not be made that violates this rule.
+The modules below are listed in order of dependency, modules MUST NOT depend on a module listed below it.  In the case where modules may reside in the same project care MUST be taken to maintain this rule.  For separate projects a reference MUST NOT be made that violates this rule.
 Each module is detailed below.
 * Core
 * Domain

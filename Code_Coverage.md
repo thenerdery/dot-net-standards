@@ -1,7 +1,7 @@
 Code Coverage
 ===========================================
 
-The purpose of code coverage is to ensure that unit test coverage is used throughout your application. You should rely on continuous integration to produce code coverage reports for you, and have at least 50% code coverage on your testable code. See below for additional details.
+The purpose of code coverage is to ensure that unit test coverage is used throughout your application. You SHOULD rely on continuous integration to produce code coverage reports for you, and have at least 50% code coverage on your testable code. See below for additional details.
 
 Code coverage is mandatory for projects that match one or more of the following:
 
@@ -31,7 +31,7 @@ Code is considered exempt from code coverage analysis if:
 
 ## Toolsets
 
-For code coverage, OpenCover and ReportGenerator should be used. When generating reports, consider publishing them to a location such that they can be accessible 
+For code coverage, OpenCover and ReportGenerator SHOULD be used. When generating reports, consider publishing them to a location such that they can be accessible 
 
 [https://github.com/OpenCover/opencover](https://github.com/OpenCover/opencover)
 

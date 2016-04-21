@@ -12,7 +12,7 @@ The following are goals of proper configuration for an application:
 ### Mainframe
 You MUST store any/all sets of credentials, or other files that would be used for configuration for all dev/qa/production environments, in mainframe. An example of this would be a connection string, a shared secret key for an API HMAC, a simple remote desktop username/password, or the password to an encrypted zip file or exported SSL Certificate.
 
-Credentials SHOULD be properly labeled as Dev/QA/Prod categories, and SHOULD appropriately describe the system they are for. Dev/QA/Prod versions of the same credential should all be labeled the same but be properly tagged under the appropriate Dev/QA Category.  Multiple credential sets to a single system SHOULD be grouped under a single system record.
+Credentials SHOULD be properly labeled as Dev/QA/Prod categories, and SHOULD appropriately describe the system they are for. Dev/QA/Prod versions of the same credential SHOULD all be labeled the same but be properly tagged under the appropriate Dev/QA Category.  Multiple credential sets to a single system SHOULD be grouped under a single system record.
 
 Credentials for accessing secure files, such as an exported SSH Keypair, SSL Certificate or encrypted Zip file.
 
@@ -28,7 +28,7 @@ Use the following fields as guidance:
 
 *IP Address / Domain*: Connection information to the system, such as Base URL endpoint for a rest API, server name and port (if non-default) for TCP based server like SQL Server
 
-*Credentials*: List any/all credential sets associated with this. If there are multiple unique logins for the same environment, these should be listed here. Credential sets for a DIFFERENT environment (e.g., admin user on a stage/dev/prod) SHOULD NOT be listed here, and SHOULD be listed as a separate system with the same name in the proper category
+*Credentials*: List any/all credential sets associated with this. If there are multiple unique logins for the same environment, these SHOULD be listed here. Credential sets for a _different_ environment (e.g., admin user on a stage/dev/prod) SHOULD NOT be listed here, and SHOULD be listed as a separate system with the same name in the proper category
 * *Name*: Description of user account (e.g., Admin, App User)
 * *Username / Password*: Credential set for accessing account.
 
@@ -40,16 +40,16 @@ When working with multiple projects associated with the same environment, it is 
 ### Source Control
 Assuming source control has it’s own method of controlled access that is private to The Nerdery and it’s clients, in general it is considered OK to store secure values within source control. Secure values, in addition to being stored in Mainframe, MAY also be stored within source control. Nerdery git or github private git repo are an example of a controlled source control environment. Open source projects ARE NOT considered a controlled environment and this does not apply to those projects.
 
-An exception to this is if a key management solution is available for use to your project. When this is the case, the system being used for managing these MUST be included in the project documentation and an XML comment note should be placed in appropriate .config files (e.g., Web.Release.config) to guide the developer to the location of these settings within that system if not otherwise obvious from the main config file. Hashicorp Vault, Octopus Deploy, Azure Key Vault, or Azure App Services Settings are examples of key management solutions.
+An exception to this is if a key management solution is available for use to your project. When this is the case, the system being used for managing these MUST be included in the project documentation and an XML comment note SHOULD be placed in appropriate .config files (e.g., Web.Release.config) to guide the developer to the location of these settings within that system if not otherwise obvious from the main config file. Hashicorp Vault, Octopus Deploy, Azure Key Vault, or Azure App Services Settings are examples of key management solutions.
 
 ### App Settings Wrapper
-Any C# project (class library, web application, etc.) that utilizes an XML application settings file (app.config, web.config, etc.) SHOULD create a C# object wrapper for the settings file.  Property getters should be used for this. Getters should read from the System.Configuration namespace to get the appropriate data out of the configuration file, and the Configuration namespace SHOULD NOT be used anywhere else within the application.
+Any C# project (class library, web application, etc.) that utilizes an XML application settings file (app.config, web.config, etc.) SHOULD create a C# object wrapper for the settings file.  Property getters SHOULD be used for this. Getters SHOULD read from the System.Configuration namespace to get the appropriate data out of the configuration file, and the Configuration namespace SHOULD NOT be used anywhere else within the application.
 
 ### Custom Configuration Sections
 Custom Configuration sections MAY be used and are RECOMMENDED when configuration is complex or contains collections.  When used configuration sections SHOULD be named according to the namespace of the configuration code.  Custom Configurations MAY transform raw configuration data into properties and methods as needed.
 
 ### Class Configuration
-Any classes that require configuration should declare this configuration need through constructor arguments and should not access the app settings wrapper directly. If a configuration parameter should require an optional, the value should be checked for null and defaulted to a configuration value. If there is not a default configuration value, an exception should be thrown.
+Any classes that require configuration SHOULD declare this configuration need through constructor arguments and SHOULD NOT access the app settings wrapper directly. If a configuration parameter SHOULD require an optional, the value SHOULD be checked for null and defaulted to a configuration value. If there is not a default configuration value, an exception SHOULD be thrown.
 
 ### Recommended Toolsets
 
@@ -68,13 +68,13 @@ See: http://docs.octopusdeploy.com/display/OD/Configuration+files
 Note: The Nerdery does not currently have an Octopus Deploy server for general use, although we have used it very successfully on several projects in the past.
 
 #### Azure App Services Configuration
-When deploying to an Azure App Service, configuration values can be updated by Azure at deploy time when stored in the “settings” for your azure app service. This should be limited to web.config use only, so if additional configuration files need to be deployed, use an alternate solution.
+When deploying to an Azure App Service, configuration values can be updated by Azure at deploy time when stored in the “settings” for your azure app service. This SHOULD be limited to web.config use only, so if additional configuration files need to be deployed, use an alternate solution.
 
 See “App Settings” https://azure.microsoft.com/en-us/documentation/articles/web-sites-configure/
 
 Note “Slot-Specific settings” https://azure.microsoft.com/en-us/documentation/articles/web-sites-staged-publishing/
 
 #### Azure Cloud Services Configuration
-Configuration for Azure Cloud services are managed through configuration files. These files should be stored in source control and should have an associated Azure Cloud project for managing them.
+Configuration for Azure Cloud services are managed through configuration files. These files SHOULD be stored in source control and SHOULD have an associated Azure Cloud project for managing them.
 
 See https://azure.microsoft.com/en-us/documentation/services/cloud-services/

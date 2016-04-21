@@ -21,7 +21,7 @@ Instructions on how to deploy the application. This section MAY exist.
 Any systems that the project requires externally (eg. SQL databases, API credentials). This section MAY exist.
 
 #### Project-specific code standards
-Many projects, especially those touched by more than one developer team, may have different code styles in use.  To ensure the Consistency Principle is enforced as well as able the readme should clarify what standards, patterns, and techniques should be propagated with new code. This section SHOULD exist.
+Many projects, especially those touched by more than one developer team, may have different code styles in use.  To ensure the Consistency Principle is enforced, the README.md SHOULD clarify what standards, patterns, and techniques are to be propagated with new code.
 
 ### Branching Out
 A large project may outgrow a single readme file.  In this case the readme SHOULD point to a docs folder in the project or other appropriate location (e.g., github wiki repo) containing additional markdown files.  A RECOMMENDED tool to assist in the display and navigation of large amounts of markdown files is mdwiki.

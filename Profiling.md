@@ -11,11 +11,11 @@ These inject a minimal UI into a web page with diagnostic information about the 
 
 The most comprehensive MVC profiling tool is [Glimpse](http://getglimpse.com/).  It’s RECOMMENDED to install all relevant packages for your application, especially those for ADO/Entity Framework.  The database package helps identify query duplicates, count, and performance for a request.
 
-To profile specific portions of your application you may OPTIONALLY add [Miniprofiler](http://miniprofiler.com/) for the ability to wrap an execution block with profiler step diagnostics.  These are using blocks that feed timing information into the profile view.
+To profile specific portions of your application you MAY OPTIONALLY add [Miniprofiler](http://miniprofiler.com/) for the ability to wrap an execution block with profiler step diagnostics.  These are using blocks that feed timing information into the profile view.
 
 ## General ASP.NET
 
-The [Prefix](http://www.prefix.io/) profiling tool is a recent discovery, developers may use it to take advantage of it’s ‘always on’, diagnostics aggregation, and visualization.  It’s a new tool (to us) so let the community know how you liked it.
+The [Prefix](http://www.prefix.io/) profiling tool is a recent discovery, developers might use it to take advantage of it’s ‘always on’, diagnostics aggregation, and visualization.  It’s a new tool (to us) so let the community know how you liked it.
 
 ## General .NET
 

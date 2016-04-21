@@ -38,7 +38,7 @@ MUST for all applications
 
 This is enabled by default in IIS via machine.config to prevent .config files from being delivered to the user. Additionally, files under the App_Data directory, as well as any files that do not have a MIME type mapping in web.config will not be served to users.
 
-Data files not necessary to be accessed by users should either be stored in App_Data, or in a directory outside of the 
+Data files not necessary to be accessed by users SHOULD either be stored in App_Data, or in a directory outside of the 
 
 
 
@@ -73,7 +73,7 @@ Default time for ASP.Net is 20 minutes, which should be sufficient for most purp
 
 This is enabled by default in ASP.Net and cannot be changed
 
-#### Web apps: If HTTPS is used application-wide, session cookies must use the "secure" flag
+#### Web apps: If HTTPS is used application-wide, session cookies MUST use the "secure" flag
 
 Set this via web.config
 
@@ -119,7 +119,7 @@ Use the web.config to set the maximum upload size:
 
 Attempt to use the file?
 
-#### Web apps: Upload directory should should not use open permissions
+#### Web apps: Upload directory SHOULD NOT use open permissions
 
 Write to a directory in App_Data, cloud storage, or other directory on the file system outside of the web root.
 
@@ -140,7 +140,7 @@ For ASP.Net Identity create a custom IIdentityValidator
 
 For ASP.Net Identity, See [http://www.jlum.ws/post/2014/5/27/user-lockouts-in-aspnet-identity-2-with-aspnet-mvc-5](http://www.jlum.ws/post/2014/5/27/user-lockouts-in-aspnet-identity-2-with-aspnet-mvc-5)
 
-#### Any sensitive data (e.g., SSN) being stored should be encrypted
+#### Any sensitive data (e.g., SSN) being stored SHOULD be encrypted
 
 Leverage SQL Server encrypted columns for storage of this data.
 

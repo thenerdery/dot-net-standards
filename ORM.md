@@ -16,7 +16,7 @@ See also: [Data Access Patterns](Data_Access_Patterns.md), [Profiling](Profiling
 
 Comments:
 
-Our goal is not to make a determination on the qualities of various ORMs relative to one another. Some people may feel that the choices are not optimal, however, the goal is consistency and the ability to interchange developers across projects. The selected ORMs are the most widely used across the Nerdery and provide a good mix of ease of use (EF) and performance (Dapper).
+Our goal is not to make a determination on the qualities of various ORMs relative to one another. Some people might feel that the choices are not optimal, however, the goal is consistency and the ability to interchange developers across projects. The selected ORMs are the most widely used across the Nerdery and provide a good mix of ease of use (EF) and performance (Dapper).
 
 **Always, always use profiling to ensure that your queries are efficient.**
 

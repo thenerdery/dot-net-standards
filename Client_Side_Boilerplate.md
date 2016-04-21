@@ -8,10 +8,10 @@ The client-side boilerplate combines a set of tools to create a completely stati
 First Steps
 -------------------------------------------
 ### Read the Documentation
-The first thing you should do is familiarize yourself with the client-side boilerplate documentation. It provides a great overview of the functionality and usage of the framework.
+The first thing you SHOULD do is familiarize yourself with the client-side boilerplate documentation. It provides a great overview of the functionality and usage of the framework.
 
 ### Install Node.Js
-Next, all the back-end developers on the project should install node.js locally, or you can consider bundling a stand-alone version in your repository.
+Next, all the back-end developers on the project SHOULD install node.js locally, or you can consider bundling a stand-alone version in your repository.
 
 Why do you need Node.js? Node.js is a server-side JavaScript platform that ultimately runs Grunt, a command-line task runner that we are using to build front-end projects. These tasks include things like turning SASS into CSS, minifying and bundling JavaScript, etc.
 
@@ -235,7 +235,7 @@ Note: There is no ```<script>``` tag.
 
 Modify the boilerplate’s bootstrap code to include your view’s JavaScript:
 
-Note: The page-specific JavaScript must be executed after the main module loads, so when the JavaScript is bundled, RequireJS won’t attempt go to back out to the file system to find a file that doesn’t exist.
+Note: The page-specific JavaScript MUST be executed after the main module loads, so when the JavaScript is bundled, RequireJS won’t attempt go to back out to the file system to find a file that doesn’t exist.
 ```
 <!-- JAVASCRIPT -->
 <script src="assets/vendor/requirejs/require.js"></script>
@@ -327,6 +327,6 @@ bower install PACKAGE_NAME --save # downloads package, updates bower.json
 grunt install # updates the requirejs config.js file
 ```
 
-You shouldn’t be manually downloading libraries and manually configuring require.js.
+You SHOULD NOT be manually downloading libraries and manually configuring require.js.
 
 You can search packages at: http://bower.io/search/
