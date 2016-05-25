@@ -103,7 +103,15 @@ Use MVC validation mechanisms
 
 #### Web apps: Forms contain a unique token, generated on the page view that is validated upon submission
 
-Use Html.AntiForgeryToken()
+Use Html.AntiForgeryToken().
+
+When using the antiforgery token, it is important to set a machine key for
+the application to prevent token decryption failures when the application recycles and to ensure that
+the token can be decrypted across all machines in a cluster.  See https://support.microsoft.com/en-us/kb/312906
+for an application that can be used to generate a machine key.
+
+Different machine keys should be used
+for **Staging** and **Production** configurations.
 
 #### Web apps: Properly encode variables within URLs
 
