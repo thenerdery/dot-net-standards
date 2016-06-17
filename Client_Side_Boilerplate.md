@@ -8,7 +8,7 @@ The client-side boilerplate combines a set of tools to create a completely stati
 First Steps
 -------------------------------------------
 ### Read the Documentation
-The first thing you SHOULD do is familiarize yourself with the client-side boilerplate documentation. It provides a great overview of the functionality and usage of the framework.
+The first thing you SHOULD do is familiarize yourself with the client-side boilerplate [documentation](https://client-side.nerderylabs.com/boilerplate/). It provides a great overview of the functionality and usage of the framework.
 
 ### Install Node.Js
 Next, all the back-end developers on the project SHOULD install node.js locally, or you can consider bundling a stand-alone version in your repository.
