@@ -15,13 +15,13 @@ The standards have been edited to include specific language: MUST/REQUIRED, SHOU
 
 * **MUST/REQUIRED**: If a standard declares a MUST, all projects we work on are likely to end up in a state that conforms to this. This is the only area where we would expect to possibly push back on a client if something does not conform to one of our standards (eg. no source control). For your convenience, the following areas contain MUST directives:
   * [**API communication: Versioning**](API_Communication.md) — Any API communication that is planned to be updated and consumed externally MUST follow a versioning scheme (eg. `/v1/`) for backwards compatibility.
-  * **Configuration: Credentials** — Credentials MUST NOT be stored in source control.
-  * **Error Handling** — Exceptions MUST NOT be surfaced to a user in a production environment.
-  * **Source Control: Git** — Every project MUST have source control. Git is preferred, but not required.
-  * **Logging** — Personal health information (PHI) and credentials (eg. passwords) MUST NOT be logged. Exceptions in the error and fatal category MUST be logged. Logging needs Date Time, Severity, Location, Message.
-  * **Project Docs** — Each project MUST have a README.md file.
-  * **Security** — Various MUSTs depending on the category.
-  * **Solution Structure**
+  * [**Configuration: Credentials**](configuration.md) — Credentials MUST NOT be stored in source control.
+  * [**Error Handling**](Error_Handling.md) — Exceptions MUST NOT be surfaced to a user in a production environment.
+  * [**Source Control: Git**](git.md) — Every project MUST have source control. Git is preferred, but not required.
+  * [**Logging**](Logging.md) — Personal health information (PHI) and credentials (eg. passwords) MUST NOT be logged. Exceptions in the error and fatal category MUST be logged. Logging needs Date Time, Severity, Location, Message.
+  * [**Project Docs**](Project_Docs.md) — Each project MUST have a README.md file.
+  * [**Security**](Security.md) — Various MUSTs depending on the category.
+  * [**Solution Structure**](Solution_Structure.md)
     * Independent "module" MUST be a project or a folder (don't mix concerns).
     * MUST NOT use wwwroot for your app.
     * Must have path mirror namespace.
@@ -68,3 +68,25 @@ Exceptions will happen. Standards are standards, they aren't binding contracts. 
 ### Questions?
 
 If you have questions, talk to your PSE. If you'd like to get involved in the standards further, please do! [Add a ticket](https://issues.nerdery.com/projects/DOTNET). Make sure to assign the ticket to the "Standards" component (second tab), or fork the code.
+
+### Full Table of Contents
+
+| Section | Summary |
+|--------:|--------|
+|[API Communication](API_Communication.md)|Standards for creating and versioning web-based APIs|
+|[Client Side Boilerplate](Client_Side_Boilerplate.md)|Steps for getting familiar with Nerdery Client-side boilerplate and processes as a back-end developer|
+|[Code Coverage](Code_Coverage.md)|Guidance around unit test code coverage|
+|[Configuration Management](configuration.md)|Addresses managing, maintaining and using credential sets and other secret information within the context of a Nerdery-managed .Net Project|
+|[Data Access Patterns](Data_Access_Patterns.md)|Standards and guidance around patterns for data access|
+|[Error Handling](Error_Handling.md)|Standards and guidance around error handling|
+|[Source Control (Git)](git.md)|Standards for source control configuration and usage with Git|
+|[Inversion Of Control (IOC)](IOC.md)|Standards and guidance around IOC pattern implementation|
+|[Logging](Logging.md)|Standards and recommendations for application logging|
+|[Mocks and Fakes](Mocks_and_Fakes.md)|Recommendations for Mocking frameworks|
+|[Object Relational Mappers (ORMs)](ORM.md)|Standards and recommendations for database ORM frameworks|
+|[Profiling](Profiling.md)|General tool recommendations for database and application performance profiling|
+|[Project Docs](Project_Docs.md)|Standards and guidance for project documentation, including README and CHANGELOG documents|
+|[Security](Security.md)|Security standards for the .Net developer|
+|[Solution Structure](Solution_Structure.md)|Recommended solution structure for a new application|
+|[Unit Testing Frameworks](Unit_Testing_Framework.md)|Recommended unit testing framework|
+|[Versioning](Versioning.md)|Recommendations around versions and managing version information|
