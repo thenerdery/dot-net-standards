@@ -14,7 +14,7 @@ The standards have been edited to include specific language: MUST/REQUIRED, SHOU
 ### Standards Categories
 
 * **MUST/REQUIRED**: If a standard declares a MUST, all projects we work on are likely to end up in a state that conforms to this. This is the only area where we would expect to possibly push back on a client if something does not conform to one of our standards (eg. no source control). For your convenience, the following areas contain MUST directives:
-  * **API communication: Versioning** — Any API communication that is planned to be updated and consumed externally MUST follow a versioning scheme (eg. `/v1/`) for backwards compatibility.
+  * [**API communication: Versioning**](API_Communication.md) — Any API communication that is planned to be updated and consumed externally MUST follow a versioning scheme (eg. `/v1/`) for backwards compatibility.
   * **Configuration: Credentials** — Credentials MUST NOT be stored in source control.
   * **Error Handling** — Exceptions MUST NOT be surfaced to a user in a production environment.
   * **Source Control: Git** — Every project MUST have source control. Git is preferred, but not required.
