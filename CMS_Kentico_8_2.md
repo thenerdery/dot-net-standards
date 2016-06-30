@@ -17,9 +17,8 @@ Kentico
     * MUST verify client’s intended production Kentico Hotfix version and apply hotfixes and MAY use KIM (Kentico Installation Manager), alternatively download hotfixes and apply manually
 
 ### References
-[https://docs.kentico.com/display/K82/Installation](https://docs.kentico.com/display/K82/Installation)
-
-[https://docs.kentico.com/display/K82/Kentico+Installation+Manager](https://docs.kentico.com/display/K82/Kentico+Installation+Manager)
+* [https://docs.kentico.com/display/K82/Installation](https://docs.kentico.com/display/K82/Installation)
+* [https://docs.kentico.com/display/K82/Kentico+Installation+Manager](https://docs.kentico.com/display/K82/Kentico+Installation+Manager)
 
 ## Source Control
 * MUST ensure when commit project to source control that deployment mode is OFF
@@ -44,7 +43,7 @@ CMSVirtualFiles/
 # Language resources
 CMSResources/
 ```
-### References[https://docs.kentico.com/display/K82/Deployment+mode+for+virtual+objects](https://docs.kentico.com/display/K82/Deployment+mode+for+virtual+objects)
+### References* [https://docs.kentico.com/display/K82/Deployment+mode+for+virtual+objects](https://docs.kentico.com/display/K82/Deployment+mode+for+virtual+objects)
 
 ## Client-Side Boilerplate Integration
 * MUST create a Site using the Kentico Sites application using a meaningful Site Code Name
@@ -54,8 +53,8 @@ CMSResources/
 * SHOULD stub out Page Templates and Web Parts BEFORE client-side efforts begin to understand constraints around HTML generation of stock Kentico Web Parts
 
 ### References
-[https://docs.kentico.com/display/K82/Creating+new+sites+using+the+wizard](https://docs.kentico.com/display/K82/Creating+new+sites+using+the+wizard)
-[https://docs.kentico.com/display/K82/Export+folder+structure](https://docs.kentico.com/display/K82/Export+folder+structure)
+* [https://docs.kentico.com/display/K82/Creating+new+sites+using+the+wizard](https://docs.kentico.com/display/K82/Creating+new+sites+using+the+wizard)
+* [https://docs.kentico.com/display/K82/Export+folder+structure](https://docs.kentico.com/display/K82/Export+folder+structure)
 
 # Architecture Best Practices
 
@@ -69,9 +68,9 @@ CMSResources/
 * SHOULD define appropriate default template for Page Types
 
 ### References
-[https://docs.kentico.com/display/K82/Page+types](https://docs.kentico.com/display/K82/Page+types)
-[https://docs.kentico.com/display/K82/Custom+tables](https://docs.kentico.com/display/K82/Custom+tables)
-[https://docs.kentico.com/display/K82/Limiting+the+pages+users+can+create](https://docs.kentico.com/display/K82/Limiting+the+pages+users+can+create)
+* [https://docs.kentico.com/display/K82/Page+types](https://docs.kentico.com/display/K82/Page+types)
+* [https://docs.kentico.com/display/K82/Custom+tables](https://docs.kentico.com/display/K82/Custom+tables)
+* [https://docs.kentico.com/display/K82/Limiting+the+pages+users+can+create](https://docs.kentico.com/display/K82/Limiting+the+pages+users+can+create)
 
 ## Web Parts
 * SHOULD use stock Kentico Web Parts where the meet the requirements
@@ -87,21 +86,21 @@ CMSResources/
 * SHOULD avoid Ad-Hoc Templates during initial development
 
 ### References
-[https://docs.kentico.com/display/K82/Creating+master+pages+for+ASPX+templates](https://docs.kentico.com/display/K82/Creating+master+pages+for+ASPX+templates)
-[https://docs.kentico.com/display/K82/Using+both+ASPX+and+portal+templates+on+a+single+site](https://docs.kentico.com/display/K82/Using+both+ASPX+and+portal+templates+on+a+single+site)
-[https://docs.kentico.com/display/K82/Inheriting+portal+engine+page+content](https://docs.kentico.com/display/K82/Inheriting+portal+engine+page+content)
+* [https://docs.kentico.com/display/K82/Creating+master+pages+for+ASPX+templates](https://docs.kentico.com/display/K82/Creating+master+pages+for+ASPX+templates)
+* [https://docs.kentico.com/display/K82/Using+both+ASPX+and+portal+templates+on+a+single+site](https://docs.kentico.com/display/K82/Using+both+ASPX+and+portal+templates+on+a+single+site)
+* [https://docs.kentico.com/display/K82/Inheriting+portal+engine+page+content](https://docs.kentico.com/display/K82/Inheriting+portal+engine+page+content)
 
 ## Pages & Navigation
 * SHOULD use CSS List Menu Web Part for menus, but MUST stub out menu BEFORE client-side efforts begin due to significant requirements
 
 ### References
-[https://docs.kentico.com/display/K82/CMSListMenu](https://docs.kentico.com/display/K82/CMSListMenu)
+* [https://docs.kentico.com/display/K82/CMSListMenu](https://docs.kentico.com/display/K82/CMSListMenu)
 
 ## Configuration
 * MUST create a custom Module and add settings to the Kentico "Settings" Application
 
 ### References
-[https://docs.kentico.com/display/K82/Adding+custom+website+settings](https://docs.kentico.com/display/K82/Adding+custom+website+settings)
+* [https://docs.kentico.com/display/K82/Adding+custom+website+settings](https://docs.kentico.com/display/K82/Adding+custom+website+settings)
 
 ## Deployment
 * MUST install Kentico on target server (see also, Installation and Setup)
@@ -109,20 +108,20 @@ CMSResources/
 * MUST ensure all objects are stored on the file system rather than database using the Kentico "System" Application
 
 ### References
-[https://docs.kentico.com/display/K82/Exporting+sites](https://docs.kentico.com/display/K82/Exporting+sites)
-[https://docs.kentico.com/display/K8/Deployment+mode+for+virtual+objects](https://docs.kentico.com/display/K8/Deployment+mode+for+virtual+objects)
+* [https://docs.kentico.com/display/K82/Exporting+sites](https://docs.kentico.com/display/K82/Exporting+sites)
+* [https://docs.kentico.com/display/K8/Deployment+mode+for+virtual+objects](https://docs.kentico.com/display/K8/Deployment+mode+for+virtual+objects)
 
 ## Internationalization
 * MUST use Kentico Culture Support
 
 ### References
-[https://docs.kentico.com/display/K82/Setting+up+multilingual+websites](https://docs.kentico.com/display/K82/Setting+up+multilingual+websites)’
+* [https://docs.kentico.com/display/K82/Setting+up+multilingual+websites](https://docs.kentico.com/display/K82/Setting+up+multilingual+websites)’
 
 ## Security
 * MUST use Kentico Security Checklist while Designing, Developing, and Deploying a website
 
 ### References
-[https://docs.kentico.com/display/K82/Securing+websites](https://docs.kentico.com/display/K82/Securing+websites)
+* [https://docs.kentico.com/display/K82/Securing+websites](https://docs.kentico.com/display/K82/Securing+websites)
 
 # Additional Libraries and Tools
 
@@ -132,7 +131,7 @@ CMSResources/
 * SHOULD use Kentico Integration Bus for integration with external systems
 
 #### References
-[https://docs.kentico.com/display/K82/Using+the+integration+bus](https://docs.kentico.com/display/K82/Using+the+integration+bus)
+* [https://docs.kentico.com/display/K82/Using+the+integration+bus](https://docs.kentico.com/display/K82/Using+the+integration+bus)
 
 ### Configuration
 * MUST use Kentico Settings for configuration whenever possible (see also, Configuration)
@@ -141,7 +140,7 @@ CMSResources/
 * MUST log exceptions to Kentico Event Log
 
 #### References
-[https://docs.kentico.com/display/K82/Working+with+the+system+event+log#Workingwiththesystemeventlog-EventlogAPI](https://docs.kentico.com/display/K82/Working+with+the+system+event+log#Workingwiththesystemeventlog-EventlogAPI)
+* [https://docs.kentico.com/display/K82/Working+with+the+system+event+log#Workingwiththesystemeventlog-EventlogAPI](https://docs.kentico.com/display/K82/Working+with+the+system+event+log#Workingwiththesystemeventlog-EventlogAPI)
 
 ## ORM Usage
 * SHOULD use CMS.DataEngine
@@ -149,7 +148,7 @@ CMSResources/
     * MUST NOT use Entity Framework for modifying data in Custom Tables
 
 ### References
-[https://docs.kentico.com/display/K82/Working+with+database+queries+in+the+API](https://docs.kentico.com/display/K82/Working+with+database+queries+in+the+API)
+* [https://docs.kentico.com/display/K82/Working+with+database+queries+in+the+API](https://docs.kentico.com/display/K82/Working+with+database+queries+in+the+API)
 
 # Routes
 
@@ -157,7 +156,7 @@ CMSResources/
 * SHOULD only customize routes and URL rewriting using Kentico Settings application and Pages application
 
 ### References
-[https://docs.kentico.com/display/K82/Configuring+page+URLs](https://docs.kentico.com/display/K82/Configuring+page+URLs)
+* [https://docs.kentico.com/display/K82/Configuring+page+URLs](https://docs.kentico.com/display/K82/Configuring+page+URLs)
 
 # Media
 
@@ -166,7 +165,7 @@ CMSResources/
 
 ### References
 
-[https://docs.kentico.com/display/K81/Configuring+file+system+providers](https://docs.kentico.com/display/K81/Configuring+file+system+providers)
+* [https://docs.kentico.com/display/K81/Configuring+file+system+providers](https://docs.kentico.com/display/K81/Configuring+file+system+providers)
 
 # Users
 
@@ -175,8 +174,8 @@ CMSResources/
 * SHOULD use Kentico Registration or Kentico Users Application
 
 ### References
-[https://docs.kentico.com/display/K8/User+management](https://docs.kentico.com/display/K8/User+management)
-[https://docs.kentico.com/display/K8/User+registration+and+authentication](https://docs.kentico.com/display/K8/User+registration+and+authentication)
+* [https://docs.kentico.com/display/K8/User+management](https://docs.kentico.com/display/K8/User+management)
+* [https://docs.kentico.com/display/K8/User+registration+and+authentication](https://docs.kentico.com/display/K8/User+registration+and+authentication)
 
 ## Permissions
 * SHOULD define permissions using the Kentico Permissions application
@@ -184,6 +183,6 @@ CMSResources/
 * MAY consider EMS Personas for marketing personalization
 
 ### References
-[https://docs.kentico.com/display/K82/Configuring+permissions](https://docs.kentico.com/display/K82/Configuring+permissions)
-[https://docs.kentico.com/display/K82/Membership+management](https://docs.kentico.com/display/K82/Membership+management)
-[https://docs.kentico.com/display/K82/Personas](https://docs.kentico.com/display/K82/Personas)
+* [https://docs.kentico.com/display/K82/Configuring+permissions](https://docs.kentico.com/display/K82/Configuring+permissions)
+* [https://docs.kentico.com/display/K82/Membership+management](https://docs.kentico.com/display/K82/Membership+management)
+* [https://docs.kentico.com/display/K82/Personas](https://docs.kentico.com/display/K82/Personas)
