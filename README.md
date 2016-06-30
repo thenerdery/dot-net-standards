@@ -81,6 +81,7 @@ If you have questions, talk to your PSE. If you'd like to get involved in the st
 |[Error Handling](Error_Handling.md)|Standards and guidance around error handling|
 |[Source Control (Git)](git.md)|Standards for source control configuration and usage with Git|
 |[Inversion Of Control (IOC)](IOC.md)|Standards and guidance around IOC pattern implementation|
+|[Kentico 8.2](CMS_Kentico_8_2.md)|Standards and guidance for use of CMS Kentico 8.2|
 |[Logging](Logging.md)|Standards and recommendations for application logging|
 |[Mocks and Fakes](Mocks_and_Fakes.md)|Recommendations for Mocking frameworks|
 |[Object Relational Mappers (ORMs)](ORM.md)|Standards and recommendations for database ORM frameworks|
