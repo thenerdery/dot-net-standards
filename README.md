@@ -90,3 +90,9 @@ If you have questions, talk to your PSE. If you'd like to get involved in the st
 |[Solution Structure](Solution_Structure.md)|Recommended solution structure for a new application|
 |[Unit Testing Frameworks](Unit_Testing_Framework.md)|Recommended unit testing framework|
 |[Versioning](Versioning.md)|Recommendations around versions and managing version information|
+
+### Framework and Product Table of Contents
+
+| Section | Summary |
+|--------:|--------|
+|[Kentico 8.2](CMS_Kentico_8_2.md)|Standards and guidance for use of CMS Kentico 8.2|
