@@ -23,6 +23,7 @@ Kentico
 ## Source Control
 * MUST ensure when commit project to source control that deployment mode is OFF
 * MUST commit installation to source control using the following lines in the .gitignore
+* MAY store virtual objects on the file system for source control collaboration instead of in the database
 
 ```
 # Private configuration
@@ -38,7 +39,6 @@ Kentico
 
 # Internal dependencies
 CMSDependencies/
-CMSVirtualFiles/
 
 # Language resources
 CMSResources/
@@ -105,7 +105,7 @@ CMSResources/
 ## Deployment
 * MUST install Kentico on target server (see also, Installation and Setup)
 * SHOULD Export Site using Kentico "Sites" Application
-* MUST ensure all objects are stored on the file system rather than database using the Kentico "System" Application
+* SHOULD ensure all objects are stored on the file system rather than database using the Kentico "System" Application prior to deployment
 
 ### References
 * [https://docs.kentico.com/display/K82/Exporting+sites](https://docs.kentico.com/display/K82/Exporting+sites)
