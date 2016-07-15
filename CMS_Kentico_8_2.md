@@ -105,7 +105,7 @@ CMSResources/
 ## Deployment
 * MUST install Kentico on target server (see also, Installation and Setup)
 * SHOULD Export Site using Kentico "Sites" Application
-* MUST ensure all objects are stored on the file system rather than database using the Kentico "System" Application prior to deployment
+* SHOULD ensure all objects are stored on the file system rather than database using the Kentico "System" Application prior to deployment
 
 ### References
 * [https://docs.kentico.com/display/K82/Exporting+sites](https://docs.kentico.com/display/K82/Exporting+sites)
