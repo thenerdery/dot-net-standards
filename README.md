@@ -44,7 +44,7 @@ If you are on a project and you are **making a design choice**. For example, if 
 
 If you are beginning a project as a lead, any directive in a MUST category should be assessed. If one of these isn't being followed (say, a client emailed us a .zip file of source code), we should implement it.
 
-### Standard Exceptions
+### Standards Exceptions: What to do if you need to deviate
 
 Exceptions will happen. Standards are standards, they aren't binding contracts. If an exception occurs, please document the exception:
 
