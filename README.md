@@ -44,12 +44,18 @@ If you are on a project and you are **making a design choice**. For example, if 
 
 If you are beginning a project as a lead, any directive in a MUST category should be assessed. If one of these isn't being followed (say, a client emailed us a .zip file of source code), we should implement it.
 
-#### Exceptions
+### Standards Exceptions: What to do if you need to deviate
 
 Exceptions will happen. Standards are standards, they aren't binding contracts. If an exception occurs, please document the exception:
 
-* If it's a SHOULD: document it in the README.md when you make the design choice.
-* If it's a MUST: validate the exception with a PSE or another PSE. If there's multiple parties feel there's a good reason for an exception, document it in the README.md.
+* If it's a SHOULD or RECOMMENDED: document it in the README.md when you make the design choice.
+* If it's a MUST: validate the exception with a PSE. If multiple parties feel there's a good reason for an exception, document it in the README.md.
+
+When documenting an exception to the standards keep in mind that the README.md of a project is a client deliverable and that audience will not have knowlege of what our standards are.  Because of that it may be a good idea document the choices that were made without calling out what was not done.  It is a good idea to document the reasons for deviating from the standards, even if the README doesn't come right out and say "this is an exception to our standards".  An internal ramp-up/orientation document is a great place for this information.
+
+An example:
+THIS: "In this project we are using $X for $REASONS"
+NOT THIS: "Although our standards are $Y, we're going to use $X here." (don't want the client to be confused or to feel like they are getting something sub-par)
 
 ### Contribution guidelines
 
