@@ -65,6 +65,8 @@ NOT THIS: "Although our standards are $Y, we're going to use $X here." (don't wa
 
 (We're working out permissions for merges, for now a few admins will do the merging)
 
+You can also open an issue in JIRA. Use the [DOTNET](https://issues.nerdery.com/browse/DOTNET) project and categorize the issue with Component `Standards`.
+
 ### Who do I talk to?
 
 * Jonathan Dexter (.NET TM)
