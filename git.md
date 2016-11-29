@@ -9,7 +9,7 @@ tab, and SHOULD be connected to a specific project.
 ## Ignoring Files
 
 RECOMMENDED .gitignore:
-https://www.gitignore.io/api/macos%2Cvisualstudio%2Cvisualstudiocode
+https://www.gitignore.io/api/visualstudio,windows,macos,visualstudiocode,node,monodevelop
 
 RECOMMENDED .gitattributes:
 https://github.com/Danimoth/gitattributes/blob/master/VisualStudio.gitattributes
@@ -26,6 +26,9 @@ control. However, in some unique deployment scenarios or due to client
 infrastructure requirements, this recommendation can be ignored on a project by
 project basis. Be sure to mention it in the README so someone doesn't delete the
 folder.
+
+Feel free to build your own .gitignore using gitignore.io. Its a good idea to
+include the VisualStudio, Mac, Windows, and Node presets as a baseline.
 
 ### Secrets (passwords, API tokens, etc)
 
