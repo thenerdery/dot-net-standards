@@ -1,7 +1,9 @@
-Security
-===========================================
+# Security
 
-As a developer, you are expected to be considering the security of the applications you develop at all times. You need to be aware of basic security principles and work regularly to stay educated about security vulnerabilities and how to reduce exposure to your applications.
+As a developer, you are expected to be considering the security of the
+applications you develop at all times. You need to be aware of basic security
+principles and work regularly to stay educated about security vulnerabilities
+and how to reduce exposure to your applications.
 
 **Secure Programmer's Pledge**
 
@@ -31,27 +33,31 @@ Data Security Policy for Developers: [https://mainframe.nerdery.com/docs/article
 # ASP.NET / IIS Development Security Standards
 
 
-MUST for all applications
--------------------------------------------
+## MUST for all applications
 
 #### Configuration files or any other sensitive files are not accessible by the user
 
-This is enabled by default in IIS via machine.config to prevent .config files from being delivered to the user. Additionally, files under the App_Data directory, as well as any files that do not have a MIME type mapping in web.config will not be served to users.
+This is enabled by default in IIS via machine.config to prevent .config files
+from being delivered to the user. Additionally, files under the App_Data
+directory, as well as any files that do not have a MIME type mapping in
+web.config will not be served to users.
 
-Data files not necessary to be accessed by users SHOULD either be stored in App_Data, or in a directory outside of the 
+Data files not necessary to be accessed by users SHOULD either be stored in
+App_Data, or in a directory outside of the
 
 
 
-MUST for application which store and transmit user information such as usernames, passwords and/or email addresses.
--------------------------------------------
+## MUST for application which store and transmit user information such as usernames, passwords and/or email addresses.
 
 #### A password requires at least six characters
 
-In ASP.Net Identity, this is already set to 6 by default. To create a more complex set of requirements, implement a custom IIdentityValidator.
+In ASP.Net Identity, this is already set to 6 by default. To create a more
+complex set of requirements, implement a custom IIdentityValidator.
 
 #### Passwords are hashed using a modern algorithm with a random unique salt
 
-The encryption that ships with ASP.Net Identity uses KDF which meets these requirements.
+The encryption that ships with ASP.Net Identity uses KDF which meets these
+requirements.
 
 #### Web apps: Session ID's are not read from or displayed in URL's
 
@@ -67,7 +73,9 @@ Use Session.Abandon()
 
 #### User sessions should automatically expire after a set period of time
 
-Default time for ASP.Net is 20 minutes, which should be sufficient for most purposes. This can be changed via session timeout: [https://msdn.microsoft.com/en-us/library/h6bb9cz9(v=vs.85).aspx](https://msdn.microsoft.com/en-us/library/h6bb9cz9(v=vs.85).aspx)
+Default time for ASP.Net is 20 minutes, which should be sufficient for most
+purposes. This can be changed via session timeout:
+[https://msdn.microsoft.com/en-us/library/h6bb9cz9(v=vs.85).aspx](https://msdn.microsoft.com/en-us/library/h6bb9cz9(v=vs.85).aspx)
 
 #### Web apps: Set the HttpOnly cookie flag for session or sensitive cookies
 
@@ -81,7 +89,8 @@ See: [http://msdn.microsoft.com/en-us/library/ms228262(v=vs.100).aspx](http://ms
 
 #### Authentication credentials, registration data and sensitive data are transmitted over SSL (in production)
 
-Enforce SSL by using HTTPS Redirects with the URL Rewrite module and enabling HSTS via HTTP Headers. See this post for more info:
+Enforce SSL by using HTTPS Redirects with the URL Rewrite module and enabling
+HSTS via HTTP Headers. See this post for more info:
 
 [http://www.hanselman.com/blog/HowToEnableHTTPStrictTransportSecurityHSTSInIIS7.aspx](http://www.hanselman.com/blog/HowToEnableHTTPStrictTransportSecurityHSTSInIIS7.aspx)
 
@@ -95,7 +104,8 @@ Use MVC validation mechanisms
 
 #### All application output is escaped or filtered
 
-Use Razor outputs and standard serializers. Avoid using Html.Raw() unless you are very aware of what is being output.
+Use Razor outputs and standard serializers. Avoid using Html.Raw() unless you
+are very aware of what is being output.
 
 #### Input validation is executed on the server side, instead of or in addition to client-side
 
@@ -105,13 +115,14 @@ Use MVC validation mechanisms
 
 Use Html.AntiForgeryToken().
 
-When using the antiforgery token, it is important to set a machine key for
-the application to prevent token decryption failures when the application recycles and to ensure that
-the token can be decrypted across all machines in a cluster.  See https://support.microsoft.com/en-us/kb/312906
-for an application that can be used to generate a machine key.
+When using the antiforgery token, it is important to set a machine key for the
+application to prevent token decryption failures when the application recycles
+and to ensure that the token can be decrypted across all machines in a cluster.
+See https://support.microsoft.com/en-us/kb/312906 for an application that can be
+used to generate a machine key.
 
-Different machine keys should be used
-for **Staging** and **Production** configurations.
+Different machine keys should be used for **Staging** and **Production**
+configurations.
 
 #### Web apps: Properly encode variables within URLs
 
@@ -121,7 +132,13 @@ Use Uri.EscapeDataString()
 
 Use the web.config to set the maximum upload size:
 
-<configuration> <system.web> <httpRuntime maxRequestLength="xxx" /> </system.web> </configuration>
+```
+<configuration>
+  <system.web>
+    <httpRuntime maxRequestLength="xxx" />
+  </system.web>
+</configuration>
+```
 
 #### Uploaded files are always restricted to the appropriate file types
 
@@ -129,16 +146,16 @@ Attempt to use the file?
 
 #### Web apps: Upload directory SHOULD NOT use open permissions
 
-Write to a directory in App_Data, cloud storage, or other directory on the file system outside of the web root.
+Write to a directory in App_Data, cloud storage, or other directory on the file
+system outside of the web root.
 
 #### Queries to external services are properly escaped or parameterized
 
-Use standard APIs for interacting with external services rather than inputting raw queries. Avoid string concatenation with user input.
+Use standard APIs for interacting with external services rather than inputting
+raw queries. Avoid string concatenation with user input.
 
 
-
-MUST for applications which store and transmit sensitive data such as credit card numbers, social security numbers, or other types of very sensitive information
--------------------------------------------
+## MUST for applications which store and transmit sensitive data such as credit card numbers, social security numbers, or other types of very sensitive information
 
 #### Passwords require at least eight characters and contain at least one digit, uppercase letter and lowercase letter
 

@@ -1,32 +1,50 @@
-Project Documentation
-===========================================
+# Project Documentation
 
-README.md
--------------------------------------------
+## README.md
 
-Each project MUST have a README markdown file explaining the purpose of the project and a quick overview of the architecture or notable patterns used.  The readme file SHOULD also include relevant external links and references to other documentation internal to the project. 
+Each project MUST have a README markdown file explaining the purpose of the
+project and a quick overview of the architecture or notable patterns used.  The
+readme file SHOULD also include relevant external links and references to other
+documentation internal to the project.
 
 Common sections of a README file are
 
 #### Project Description
-Explanation of what the project accomplishes and how it fits into the business. This section MUST exist.
+
+Explanation of what the project accomplishes and how it fits into the business.
+This section MUST exist.
 
 #### Environment Setup
-Steps a new developer will need to take to get the project running locally for development. This section SHOULD exist.
+
+Steps a new developer will need to take to get the project running locally for
+development. This section SHOULD exist.
 
 #### Deployment
+
 Instructions on how to deploy the application. This section MAY exist.
 
 #### External Systems
-Any systems that the project requires externally (eg. SQL databases, API credentials). This section MAY exist.
+
+Any systems that the project requires externally (eg. SQL databases, API
+credentials). This section MAY exist.
 
 #### Project-specific code standards
-Many projects, especially those touched by more than one developer team, may have different code styles in use.  To ensure the Consistency Principle is enforced, the README.md SHOULD clarify what standards, patterns, and techniques are to be propagated with new code.
+
+Many projects, especially those touched by more than one developer team, may
+have different code styles in use.  To ensure the Consistency Principle is
+enforced, the README.md SHOULD clarify what standards, patterns, and techniques
+are to be propagated with new code.
 
 ### Branching Out
-A large project may outgrow a single readme file.  In this case the readme SHOULD point to a docs folder in the project or other appropriate location (e.g., github wiki repo) containing additional markdown files.  A RECOMMENDED tool to assist in the display and navigation of large amounts of markdown files is mdwiki.
+
+A large project may outgrow a single readme file.  In this case the readme
+SHOULD point to a docs folder in the project or other appropriate location
+(e.g., github wiki repo) containing additional markdown files.  A RECOMMENDED
+tool to assist in the display and navigation of large amounts of markdown files
+is mdwiki.
 
 For example:
+
 ```
 Project
         docs/
@@ -37,11 +55,17 @@ Project
         CHANGELOG.md
 ```
 
-CHANGELOG.md
--------------------------------------------
-Each project MAY have a markdown file noting the new features, bug fixes, breaking changes, and enhancements for a release version and/or date.  The purpose of this log is for future developers to gain quick understanding of major changes to the system, possibly to aid in troubleshooting - more recent changes are more likely to contain bugs than older more mature parts.  Reference: keep a changelog.
+## CHANGELOG.md
 
-A changelog is RECOMMENDED for projects which have long-lasting status at the Nerdery.
+Each project MAY have a markdown file noting the new features, bug fixes,
+breaking changes, and enhancements for a release version and/or date.  The
+purpose of this log is for future developers to gain quick understanding of
+major changes to the system, possibly to aid in troubleshooting - more recent
+changes are more likely to contain bugs than older more mature parts.
+Reference: keep a changelog.
+
+A changelog is RECOMMENDED for projects which have long-lasting status at the
+Nerdery.
 
 * It’s made for humans, not machines, so legibility is crucial.
 * Easy to link to any section (hence Markdown over plain text).
@@ -59,6 +83,7 @@ A changelog is RECOMMENDED for projects which have long-lasting status at the Ne
     * Security to invite users to upgrade in case of vulnerabilities.
 
 Example:
+
 ```
 # Change Log
 All notable changes to this project will be documented in this file.

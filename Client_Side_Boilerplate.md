@@ -1,28 +1,44 @@
-Client-Side Boilerplate integration for Back-End Developers
-===========================================
+# Client-Side Boilerplate integration for Back-End Developers
 
-Congratulations! You are the lead developer for a project with back-end technologies (PHP/.NET/etc). Very likely your front-end lead will be developing with the new [Nerdery Client-Side Boilerplate](http://boilerplate.nerderylabs.com/client-side/).
+Congratulations! You are the lead developer for a project with back-end
+technologies (PHP/.NET/etc). Very likely your front-end lead will be developing
+with the new [Nerdery Client-Side Boilerplate](http://boilerplate.nerderylabs.com/client-side/).
 
-The client-side boilerplate combines a set of tools to create a completely static, runnable, stand-alone web application. But what if you need to integrate it into your back-end framework?
+The client-side boilerplate combines a set of tools to create a completely
+static, runnable, stand-alone web application. But what if you need to integrate
+it into your back-end framework?
 
-First Steps
--------------------------------------------
+## First Steps
+
 ### Read the Documentation
-The first thing you SHOULD do is familiarize yourself with the client-side boilerplate [documentation](https://client-side.nerderylabs.com/boilerplate/). It provides a great overview of the functionality and usage of the framework.
+
+The first thing you SHOULD do is familiarize yourself with the client-side
+boilerplate [documentation](https://client-side.nerderylabs.com/boilerplate/).
+It provides a great overview of the functionality and usage of the framework.
 
 ### Install Node.Js
-Next, all the back-end developers on the project SHOULD install node.js locally, or you can consider bundling a stand-alone version in your repository.
 
-Why do you need Node.js? Node.js is a server-side JavaScript platform that ultimately runs Grunt, a command-line task runner that we are using to build front-end projects. These tasks include things like turning SASS into CSS, minifying and bundling JavaScript, etc.
+Next, all the back-end developers on the project SHOULD install node.js locally,
+or you can consider bundling a stand-alone version in your repository.
 
-> “But I can minify JavaScript and compile SASS using .NET frameworks and tools!” — Me, a month ago
+Why do you need Node.js? Node.js is a server-side JavaScript platform that
+ultimately runs Grunt, a command-line task runner that we are using to build
+front-end projects. These tasks include things like turning SASS into CSS,
+minifying and bundling JavaScript, etc.
 
-If you find yourself saying the above statement, please see the section below titled “Appendix A. Why not use back-end minification/bundling tools?”
+> “But I can minify JavaScript and compile SASS using .NET frameworks and
+> tools!” — Me, a month ago
+
+If you find yourself saying the above statement, please see the section below
+titled “Appendix A. Why not use back-end minification/bundling tools?”
 
 ### Determine Static Website Placement
-Third, determine where the client-side boilerplate should live in your codebase. The typical setup is as follows:
+
+Third, determine where the client-side boilerplate should live in your codebase.
+The typical setup is as follows:
 
 #### .NET MVC
+
 ```
 \MySolution
    \MyProject.Web
@@ -32,19 +48,30 @@ Third, determine where the client-side boilerplate should live in your codebase.
 This makes the static website available at:
 http://your.staging.domain/_static/web/index.html
 
-The Build Process
--------------------------------------------
+## The Build Process
 
 ### Configuring
-The high-level settings for the build process are configured in ```_static/build-env.js``` (You’ll need to create this from ```build-en.js-dist```).
 
-Very likely, especially when using a CMS, there is a specific place where assets need to live. The initial thought would be to change the path of ```DIR_DEST```, but we don’t want to do that for the following reasons:
+The high-level settings for the build process are configured in
+`_static/build-env.js` (You’ll need to create this from
+`build-en.js-dist`).
 
-1. We still want a separate static output of the website for quick front-end debugging, sharing with the client, etc.
-2. The build process would clear the files in the parent directory of ```assets```, which will likely remove CMS/Framework files we don’t want deleted.
-3. The build process copies over the static .html files, which typically don’t need to be copied over to the back-end framework, since HTML code typically has to be manually integrated with your back-end’s templating system.
+Very likely, especially when using a CMS, there is a specific place where assets
+need to live. The initial thought would be to change the path of `DIR_DEST`,
+but we don’t want to do that for the following reasons:
 
-So, we’ll start by adding a new build environment variable to ```build-env.js```. Change the relative path to where assets live in your particular framework.
+1. We still want a separate static output of the website for quick front-end
+   debugging, sharing with the client, etc.
+2. The build process would clear the files in the parent directory of
+   `assets`, which will likely remove CMS/Framework files we don’t want
+   deleted.
+3. The build process copies over the static .html files, which typically don’t
+   need to be copied over to the back-end framework, since HTML code typically
+   has to be manually integrated with your back-end’s templating system.
+
+So, we’ll start by adding a new build environment variable to `build-env.js`.
+Change the relative path to where assets live in your particular framework.
+
 ```
 /**
  * Path to the back-end public destination of the assets.  No trailing slash.
@@ -56,13 +83,15 @@ DIR_DEST_PUBLIC: '../assets',
 ```
 
 Additionally, since we’re referencing a path outside our static directory, we also have to set:
+
 ```
 UNSAFE_MODE: true
 ```
 
-Then we’re going to make a couple changes to the ```Gruntfile.js``` file.
+Then we’re going to make a couple changes to the `Gruntfile.js` file.
 
 First, we want to clear out the public assets directory on a build. Add the following line:
+
 ```
 grunt.initConfig({
      ...
@@ -76,11 +105,12 @@ grunt.initConfig({
 ```
 
 Next, we want to copy out the assets to the public assets directory:
+
 ```
 grunt.initConfig({
      ...
      copy: {
-         ... 
+         ...
          // This should go last
          public: {
              files: [{
@@ -96,18 +126,25 @@ grunt.initConfig({
 });
 ```
 
-Finally, we need to add these two new tasks to our build process. Modify the build registerTask on the bottom of the file:
+Finally, we need to add these two new tasks to our build process. Modify the
+build registerTask on the bottom of the file:
+
 ```
 grunt.registerTask('build', ['clean:dest', 'clean:public', 'media', 'server', 'markup', 'styles', 'scripts', 'copy:public', 'clean:tmp']);
 ```
 
 ### Building
-The front-end boilerplate is actually ‘built’ using ```build.sh``` (linux/mac) and ```build.cmd``` (windows) in the _static folder.
+
+The front-end boilerplate is actually ‘built’ using `build.sh` (linux/mac)
+and ``uild.cmd` (windows) in the _static folder.
 
 ### Integrating
-It would be beneficial to integrate the above build scripts with your current platform’s build process.
+
+It would be beneficial to integrate the above build scripts with your current
+platform’s build process.
 
 #### .NET MVC
+
 You can add the following to your MyProject.Web’s post-build event:
 
 cd $(ProjectDir)_static
@@ -120,21 +157,28 @@ if "$(ConfigurationName)" == "Debug" (
    build.cmd --prod
 )
 
-Passing Server-Side Values to JavaScript
--------------------------------------------
-Now that we have the front-end assets (CSS, JS, Images, etc) being built and properly sent to the correct directory in the back-end framework, one of the remaining integration pain-points is how to integrate JavaScript in with the back-end. This includes a couple things:
+## Passing Server-Side Values to JavaScript
 
-1. Passing database-driven strings, or server-side generated URLs like ```Url.Action('Action', 'Controller)```.
+Now that we have the front-end assets (CSS, JS, Images, etc) being built and
+properly sent to the correct directory in the back-end framework, one of the
+remaining integration pain-points is how to integrate JavaScript in with the
+back-end. This includes a couple things:
+
+1. Passing database-driven strings, or server-side generated URLs like `Url.Action('Action', 'Controller)`.
 2. Loading view-specific modules on specific views.
 
 The below examples use Require.JS.
 
 ### Technique A – Data Attributes
-One potential solution is to load a view-specific module and pass server-side data to it by adding HTML5 data attributes to the main div surrounding your view. For example:
+
+One potential solution is to load a view-specific module and pass server-side
+data to it by adding HTML5 data attributes to the main div surrounding your
+view. For example:
 
 *Views/ControllerName/MyView.cshtml*
 
 Add data attributes to each of your views that have dynamic JavaScript functionality:
+
 ```
 <div class="mainContent" data-controller="MyView" data-uploadurl="@Url.Action("Load")">
 ...
@@ -144,6 +188,7 @@ Add data attributes to each of your views that have dynamic JavaScript functiona
 *_static/src/assets/scripts/App.js*
 
 Add the following ‘auto-load’ functionality to the existing App.js file:
+
 ```
 /**
  * Initializes the application and kicks off loading of prerequisites.
@@ -212,7 +257,9 @@ define(['jquery'], function ($) {
 ```
 
 ### Technique B – Inline View JavaScript
-Depending on the level of control you have with the templates, it might be easier to do something like this:
+
+Depending on the level of control you have with the templates, it might be
+easier to do something like this:
 
 *src/MyCompany/MyBundle/Resources/Views/Default/MyView.twig*
 
@@ -235,7 +282,10 @@ Note: There is no ```<script>``` tag.
 
 Modify the boilerplate’s bootstrap code to include your view’s JavaScript:
 
-Note: The page-specific JavaScript MUST be executed after the main module loads, so when the JavaScript is bundled, RequireJS won’t attempt go to back out to the file system to find a file that doesn’t exist.
+Note: The page-specific JavaScript MUST be executed after the main module loads,
+so when the JavaScript is bundled, RequireJS won’t attempt go to back out to the
+file system to find a file that doesn’t exist.
+
 ```
 <!-- JAVASCRIPT -->
 <script src="assets/vendor/requirejs/require.js"></script>
@@ -253,7 +303,14 @@ Note: The page-specific JavaScript MUST be executed after the main module loads,
 ```
 
 ### Technique A and B – Note about Bundling
-When you run the build script with the ‘prod’ flag and the JavaScript is bundled, the process attempts to be smart about what files are bundled by starting with main.js and following the dependencies. It does not simply bundle all the JavaScript it finds in the file system. For both of the above techniques, we need to manually maintain the list of JavaScript view controllers that need to be bundled, in the ```Gruntfile.js``` file.
+
+When you run the build script with the ‘prod’ flag and the JavaScript is
+bundled, the process attempts to be smart about what files are bundled by
+starting with main.js and following the dependencies. It does not simply bundle
+all the JavaScript it finds in the file system. For both of the above
+techniques, we need to manually maintain the list of JavaScript view controllers
+that need to be bundled, in the `Gruntfile.js` file.
+
 ```
 grunt.initConfig({
     ...
@@ -276,9 +333,11 @@ grunt.initConfig({
 })
 ```
 
-Appendix A: Why not use back-end minification/bundling tools?
--------------------------------------------------------------
-Let’s consider for a moment how modules are defined in RequireJS, a common framework JavaScript developers use to keep code modular and manage dependencies:
+## Appendix A: Why not use back-end minification/bundling tools?
+
+Let’s consider for a moment how modules are defined in RequireJS, a common
+framework JavaScript developers use to keep code modular and manage
+dependencies:
 
 *module1.js*
 ```
@@ -294,9 +353,11 @@ define(['jquery'], function($) {
 });
 ```
 
-When I require a module, var myModule = require("module1");, RequireJS uses the file name to determine what module to load.
+When I require a module, var myModule = require("module1");, RequireJS uses the
+file name to determine what module to load.
 
 If I use a .NET bundler such as SquishIt or Combres, it will generate this:
+
 ```
 define(['jquery'], function($) {
   // Module 1 Code
@@ -310,6 +371,7 @@ define(['jquery'], function($) {
 Now RequireJS has no way to figure out which module is which.
 
 But the bundling process built into the client-side boilerplate will transform the modules to explicitly name them before combining them:
+
 ```
 define("module1", ['jquery'], function($) {
   // Module 1 Code
@@ -320,13 +382,14 @@ define("module2", ['jquery'], function($) {
 });
 ```
 
-Appendix B: Installing 3rd party JavaScript libraries
------------------------------------------------------
+## Appendix B: Installing 3rd party JavaScript libraries
+
 ```
 bower install PACKAGE_NAME --save # downloads package, updates bower.json
 grunt install # updates the requirejs config.js file
 ```
 
-You SHOULD NOT be manually downloading libraries and manually configuring require.js.
+You SHOULD NOT be manually downloading libraries and manually configuring
+require.js.
 
 You can search packages at: http://bower.io/search/

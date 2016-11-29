@@ -17,7 +17,7 @@ spread among small teams and individuals.
 As an engineer you will often be expected to jump between projects to help where needed.
 There will be periods of time where you work on a single project for a long duration,
 and other periods where you will help with maintenance on multiple projects concurrently.
-This is exciting for engineers: you get experience in different tech and business domains,
+This can be pretty exciting: you get experience in different tech and business domains,
 and rarely get bored of a particular project and its associated technologies.
 
 But it comes at a cost.
@@ -28,7 +28,7 @@ If projects are structured differently and use different tools,
 you often feel lost and confused for the first few days until you find your way.
 
 Similarly, starting new projects can lead to "analysis paralysis"
-in which leads spin their wheels trying to make sure they pick the best tools and practices.
+in which lead developers spin their wheels trying to make sure they pick the best tools and practices.
 
 Standards give us a place to make recommendations so that teams find consistency
 as they move around from project to project.
@@ -36,16 +36,19 @@ as they move around from project to project.
 ### Mechanism for Feedback
 
 Without documented standards, each team picks their own favorite tools
-and less incentive to share their findings with the rest of the discipline.
+and has less incentive to share their findings with the rest of the discipline.
 It becomes easy for information to become siloed.
 
 Standards provide a process for sharing feedback:
 if an approach recommended in the standards was detrimental to a project,
 we now have a place to bring that feedback to the attention of the entire discipline.
 
-Overtime, the standards and our discipline improve in parallel.
+Over time, the standards and our discipline improve in parallel.
 
 ## Consistency Principle
+
+Having documented recommendations is fairly new. This makes it likely that you'll encounter
+a project that does things a little differently.
 
 Whenever possible, follow the consistency principle. This means that if an
 existing project uses a method, framework, library, or any other development
@@ -64,9 +67,8 @@ but it will still be beneficial to check in frequently, or Watch the Github repo
 ### Contribution guidelines
 
 * Create feature branch or fork the repo
-* Submit pull request to master add jdexter and mglanzer to reviewers.
+* Submit pull request to master and cc Jonathan Dexter (@mandest), Marshall Glanzer (@NerderyMGlanzer), or Matt Burke (@akatakritos).
 
-You can also open an issue in Github.
 Feel free to use Issues to raise feedback on existing standards,
 suggestions for updates, or other constructive criticism.
 
@@ -141,7 +143,7 @@ we need to implement it.
 
 Exceptions will happen.
 
-Standards are standards, they aren't binding contracts.
+Standards are guidelines, they aren't binding contracts.
 
 If an exception occurs, please document the exception:
 
@@ -211,7 +213,7 @@ If you'd like to get involved in the standards further, please do!
 
 ## Glossary for External Readers
 
-If you are not a Nerdery employee, you will occassionally come across references to internal tools \
+If you are not a Nerdery employee, you will occassionally come across references to internal tools
 and abbreviations that you might not have heard of.
 Rather than cluttering up the standards with parantheticals to define terms,
 we have tried to helpfully collect definitions and explanations here.
