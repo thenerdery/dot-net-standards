@@ -14,6 +14,7 @@ The following are goals of proper configuration for an application:
 * Automation of configuration value replacement wherever possible.
 
 ### Mainframe
+
 You MUST store any/all sets of credentials, or other files that would be used
 for configuration for all dev/qa/production environments, in Mainframe. An
 example of this would be a connection string, a shared secret key for an API
@@ -71,7 +72,13 @@ not apply to those projects.
 
 If a previously protected project becomes open source, any secure values stored
 within source control MUST be invalidated. It is not sufficient to simply add
-another commit removing them: they are forever available in git history.
+another commit removing them: they are forever available in git history. There
+are bots that scrape Github looking for AWS keys and stealing data or running up
+thousands of dollars in usage fees. Don't think your project is safe by being
+obscure.
+
+If a project has a chance of being open sourced, its better to start good habits
+at the beginning and avoid storing secrets in git altogether.
 
 ### App Settings Wrapper
 
@@ -81,6 +88,17 @@ object wrapper for the settings file.  Property getters SHOULD be used for this.
 Getters SHOULD read from the System.Configuration namespace to get the
 appropriate data out of the configuration file, and the Configuration namespace
 SHOULD NOT be used anywhere else within the application.
+
+For example:
+
+```csharp Settings.cs
+public static class Settings
+{
+    public static string ApiKey => ConfigurationManager.AppSettings["ApiKey];
+
+    public static bool ShouldSendEmails => ConfigurationManager.AppSettings["SendEmails"] === "true";
+}
+```
 
 ### Custom Configuration Sections
 
@@ -94,11 +112,13 @@ as needed.
 
 Any classes that require configuration SHOULD declare this configuration need
 through constructor arguments and SHOULD NOT access the app settings wrapper
-directly. If a configuration parameter SHOULD require an optional, the value
-SHOULD be checked for null and defaulted to a configuration value. If there is
-not a default configuration value, an exception SHOULD be thrown.
+directly.
 
-This
+If a configuration parameter is optional, the value SHOULD be checked for null
+and defaulted to a configuration value. If there is no reasonable default
+configuration value, an exception SHOULD be thrown.
+
+Good:
 
 ```csharp
 public class MyCoolApiClient
@@ -110,7 +130,7 @@ public class MyCoolApiClient
 }
 ```
 
-NOT
+Bad:
 
 ```csharp
 public class MyCoolApiClient
@@ -121,6 +141,9 @@ public class MyCoolApiClient
     }
 }
 ```
+
+Reaching out to the `Settings` class makes the object hard to test and hard to
+use in different contexts.
 
 
 ### Recommended Toolsets

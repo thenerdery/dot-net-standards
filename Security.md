@@ -43,8 +43,10 @@ directory, as well as any files that do not have a MIME type mapping in
 web.config will not be served to users.
 
 Data files not necessary to be accessed by users SHOULD either be stored in
-App_Data, or in a directory outside of the
+App_Data, or in a directory outside of the webroot.
 
+See the standards on [Configuration](configuration.md) for more information on
+configuration files.
 
 
 ## MUST for application which store and transmit user information such as usernames, passwords and/or email addresses.
