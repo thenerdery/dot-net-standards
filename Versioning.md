@@ -55,7 +55,7 @@ Version information SHOULD be incremented in anticipation of a deployment. When
 the version information is incremented, the Changelog.md file SHOULD also be
 updated with change information (if a changelog is being published).
 
-If using [gitflow](git.md#Branching%20Strategy), version numbers and changelogs
+If using [gitflow](git.md#branching-strategy), version numbers and changelogs
 SHOULD only be updated on a release branch.
 
 ## Applying version and build metadata to binaries
