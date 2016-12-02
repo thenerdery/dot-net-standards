@@ -30,8 +30,8 @@ version information would be displayed)
 If you are publishing a desktop application, mobile application, or C# library,
 your project SHOULD abide by [Semantic Versioning](http://semver.org/).
 
-*When creating APIs, see API Communication section for properly versioning a
-REST API*
+*When creating APIs, see [API Communication](API_Communication.md) section for
+properly versioning a REST API*
 
 ## Versioning Documentation
 
@@ -44,34 +44,39 @@ markdown file that lists the following:
    release tag.
 2. Underneath each version, list the following:
     1. A bullet for each change that occurred.
-    2. If a change is associated with a JIRA or other issue tracker related issue, include the link to that issue.
+    2. If a change is associated with a JIRA or other issue tracker related
+       issue, include the link to that issue.
 
 This does not apply to Web Application versioning.
 
-## When to Increment the version number
+## When to increment the version number
 
 Version information SHOULD be incremented in anticipation of a deployment. When
 the version information is incremented, the Changelog.md file SHOULD also be
-updated with change information (if a changelog is being published). If using
-gitflow, version numbers incremented and changelogs updated SHOULD only be
-performed on release branches.
+updated with change information (if a changelog is being published).
 
-## Applying version and build metadata to the binaries
+If using [gitflow](git.md#Branching%20Strategy), version numbers and changelogs
+SHOULD only be updated on a release branch.
 
-All .Net project files (.csproj) SHOULD build with assembly attribute metadata
+## Applying version and build metadata to binaries
+
+All .NET project files (.csproj) SHOULD build with assembly attribute metadata
 that defines the assembly version. This SHOULD be stored in
-/Properties/AssemblyInfo.cs.
+`/Properties/AssemblyInfo.cs`.
 
 If multiple projects are used and if the projects have tight dependencies on
-each other, (e.g., <Proeject>.Web, <Project>.Core, <Project>.Data) a single
+each other, (e.g., <Project>.Web, <Project>.Core, <Project>.Data) a single
 version number SHOULD be used for all of them, such that management of the
-multiple version numbers across each project does not become a burden. In this
-case, the file SHOULD be placed in a directory that is hierarchically equivalent
-for each of the projects. This implies that if you increment the version for one
-project, you have to perform this in all of them. There are some tools we
-recommend for simplifying this process and keeping code DRY.
+multiple version numbers across each project does not become a burden.
+
+In this case, the version number SHOULD be specified in a single file that is
+included in each coupled project. This way you only have to bump the version
+number in one place.
 
 ### MSBuild Community Tasks
+
+Here are some tools we recommend for simplifying the process of keeping each
+project on the same version without repeating yourself.
 
 There are several MSBuild extension tasks that you can include in your .csproj
 files that will allow this information to be automatically applied. This can be
