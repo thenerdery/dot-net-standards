@@ -2,19 +2,25 @@
 
 ## NuGet Package
 
-RECOMMENDED package: [log4net](https://www.nuget.org/packages/log4net/)
+### log4net
 
-Other OPTIONAL package: [Serilog](https://www.nuget.org/packages/Serilog/),
-especially if logging to structured log storage such as logstash
+You SHOULD use [log4net](https://www.nuget.org/packages/log4net/) as your default
+choice for a logging framework. It's well understood within The Nerdery and industry
+and has many plugins for any target you could need.
 
-## Library Selection
+### Serilog
+
+If you are intending to write logs to a structured log storage like logstash,
+we recommend [Serilog](https://www.nuget.org/packages/Serilog/).
+
+### Library Selection
 
 When selecting a logging framework, if an existing platform is already in use
 that contains a platform for logging, the existing platform logging library
 SHOULD be used. As with everything else, it is best to not add redundant
 libraries when possible.
 
-For example, Umbraco CMS uses **log4net**. Prefer to use **log4net **over
+For example, Umbraco CMS uses **log4net**. Prefer to use **log4net** over
 **Serilog**, as they both perform the same function.
 
 ## Log Data:
