@@ -1,7 +1,7 @@
 # Contributing
 
 At this time, The Nerdery is not accepting pull requests from outside parties
-for new standards. Our standards are not meant to be proscriptive for the entire
+for new standards. Our standards are not meant to be prescriptive for the entire
 community.
 
 If you catch a typo or grammatical mistake, we would be delighted to accept a PR

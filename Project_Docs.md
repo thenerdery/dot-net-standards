@@ -4,7 +4,7 @@
 
 Each project MUST have a README markdown file explaining the purpose of the
 project and a quick overview of the architecture or notable patterns used.  The
-readme file SHOULD also include relevant external links and references to other
+README file SHOULD also include relevant external links and references to other
 documentation internal to the project.
 
 Common sections of a README file are.
@@ -33,7 +33,7 @@ indicating that fact.
 
 #### External Systems
 
-Any systems that the project requires externally (eg. SQL databases, API
+Any systems that the project requires externally (e.g.. SQL databases, API
 credentials).
 
 Passwords or authorization keys for external services MUST NOT be in the README.
@@ -50,9 +50,9 @@ are to be propagated with new code if they deviate from these standards.
 
 ### Branching Out
 
-A large project may outgrow a single readme file.  In this case the readme
+A large project may outgrow a single README file.  In this case the README
 SHOULD point to a docs folder in the project or other appropriate location
-(e.g., github wiki repo or Confluence) containing additional markdown files.  A
+(e.g., GitHub wiki repo or Confluence) containing additional markdown files.  A
 RECOMMENDED tool to assist in the display and navigation of large amounts of
 markdown files is mdwiki.
 
@@ -86,9 +86,9 @@ breaking changes, and enhancements for a release version and/or date.  The
 purpose of this log is for future developers to gain quick understanding of
 major changes to the system, possibly to aid in troubleshooting - more recent
 changes are more likely to contain bugs than older more mature parts.
-Reference: keep a changelog.
+Reference: keep a CHANGELOG.
 
-A changelog is RECOMMENDED for projects which have long-lasting status at the
+A CHANGELOG is RECOMMENDED for projects which have long-lasting status at the
 Nerdery.
 
 * It’s made for humans, not machines, so legibility is crucial.

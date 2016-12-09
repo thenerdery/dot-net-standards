@@ -15,7 +15,7 @@ proper configuration management techniques. See
 
 ## Framework
 
-For creating REST APIs, the ASP.Net Web API framework SHOULD be used.
+For creating REST APIs, the ASP.NET Web API framework SHOULD be used.
 
 ## Authorization
 
@@ -29,7 +29,7 @@ be used. See
 for an example.
 
 **Client-to-Server**: For use cases where a client user (such as a browser or
-app) needs to communicate with the API, OAUTH or other authentication methods
+app) needs to communicate with the API, OAuth or other authentication methods
 SHOULD be implemented for access.
 
 ## Definition and Discovery
@@ -39,7 +39,7 @@ methods such as SOAP, is discoverability. Documentation for REST APIs SHOULD
 take place in the form of a webpage.
 
 For this, we recommend the use of Swagger / OpenAPI initiative.
-([http://swagger.io/](http://swagger.io/)) For .Net REST Web API projects, we
+([http://swagger.io/](http://swagger.io/)) For .NET REST Web API projects, we
 recommend the use of Swashbuckle
 ([https://github.com/domaindrivendev/Swashbuckle](https://github.com/domaindrivendev/Swashbuckle))
 
@@ -49,7 +49,7 @@ documentation, including some simple examples, SHOULD be included for all
 endpoints that are created.
 
 For internal developers or client developers, basic documentation including
-endpoints are required. Full descriptions and writeups are not necessary unless
+endpoints are required. Full descriptions and write ups are not necessary unless
 not obvious based on usage.
 
 ## Versioning

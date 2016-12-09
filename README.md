@@ -62,7 +62,7 @@ as evidenced by their current home on [Github](https://github.com/thenerdery/dot
 There will be changes over time as we seek to improve our offering in service to our clients.
 
 Major changes will be communicated internally,
-but it will still be beneficial to check in frequently, or Watch the Github repo to stay informed.
+but it will still be beneficial to check in frequently, or Watch the GitHub repo to stay informed.
 
 ### Contribution guidelines
 
@@ -84,22 +84,22 @@ The standards have been edited to include specific language
 
 If a standard declares a MUST, all projects we work on will conform to that standard.
 This is the only area where we would expect to push back on a client
-if something does not conform (eg. no source control).
+if something does not conform (e.g.. no source control).
 
 For your convenience, the following areas contain MUST directives:
 
-  * [**API communication: Versioning**](API_Communication.md) — Any API communication that is planned to be updated and consumed externally MUST follow a versioning scheme (eg. `/v1/`) for backwards compatibility.
+  * [**API communication: Versioning**](API_Communication.md) — Any API communication that is planned to be updated and consumed externally MUST follow a versioning scheme (e.g.. `/v1/`) for backwards compatibility.
   * [**Configuration: Credentials**](configuration.md) — Production credentials MUST NOT be stored in source control.
   * [**Error Handling**](Error_Handling.md) — Exceptions MUST NOT be surfaced to a user in a production environment.
   * [**Source Control: Git**](git.md) — Every project MUST have source control. Git is preferred, but not required.
-  * [**Logging**](Logging.md) — Personal health information (PHI) and credentials (eg. passwords) MUST NOT be logged. Exceptions in the error and fatal category MUST be logged. Logging needs Date Time, Severity, Location, Message.
+  * [**Logging**](Logging.md) — Personal health information (PHI) and credentials (e.g.. passwords) MUST NOT be logged. Exceptions in the error and fatal category MUST be logged. Logging needs Date Time, Severity, Location, Message.
   * [**Project Docs**](Project_Docs.md) — Each project MUST have a README.md file.
   * [**Security**](Security.md) — Various MUSTs depending on the category.
   * [**Solution Structure**](Solution_Structure.md)
     * Independent "module" MUST be a project or a folder (don't mix concerns).
     * MUST NOT use wwwroot for your app.
     * Must have your file path mirror the namespaces.
-    * If a `Common` module exists, it MUST NOT depend on parent modules (eg. Web API).
+    * If a `Common` module exists, it MUST NOT depend on parent modules (e.g.. Web API).
     * Services MUST have an interface.
 
 ### SHOULD
@@ -151,7 +151,7 @@ If an exception occurs, please document the exception:
 * If it's a MUST: validate the exception with a PSE. If multiple parties feel there's a good reason for an exception, document it in the README.md.
 
 When documenting an exception to the standards keep in mind that the README.md of a project is a client deliverable
-and that the audience may not have knowlege of what our standards are.
+and that the audience may not have knowledge of what our standards are.
 Because of that it may be a good idea document the choices that were made
 without calling out what choices were decided against.
 
@@ -179,7 +179,7 @@ If you'd like to get involved in the standards further, please do!
 
 * Jonathan Dexter (.NET TM)
 * Marshall Glanzer (Standards Taskforce Champion)
-* .NET PSEs (Benevolent Olagarchy in charge of long-term maintenance)
+* .NET PSEs (Benevolent Oligarchy in charge of long-term maintenance)
 
 ## Full Table of Contents
 
@@ -213,9 +213,9 @@ If you'd like to get involved in the standards further, please do!
 
 ## Glossary for External Readers
 
-If you are not a Nerdery employee, you will occassionally come across references to internal tools
+If you are not a Nerdery employee, you will occasionally come across references to internal tools
 and abbreviations that you might not have heard of.
-Rather than cluttering up the standards with parantheticals to define terms,
+Rather than cluttering up the standards with parentheticals to define terms,
 we have tried to helpfully collect definitions and explanations here.
 
 **PSE**: Principle Software Engineer

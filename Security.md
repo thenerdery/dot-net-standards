@@ -61,7 +61,7 @@ complex set of requirements, implement a custom IIdentityValidator.
 The encryption that ships with ASP.Net Identity uses KDF which meets these
 requirements.
 
-#### Web apps: Session ID's are not read from or displayed in URL's
+#### Web apps: Session ID's are not read from or displayed in URLs
 
 ASP.Net enables this by default.
 
@@ -117,7 +117,7 @@ Use MVC validation mechanisms
 
 Use Html.AntiForgeryToken().
 
-When using the antiforgery token, it is important to set a machine key for the
+When using the anti forgery token, it is important to set a machine key for the
 application to prevent token decryption failures when the application recycles
 and to ensure that the token can be decrypted across all machines in a cluster.
 See https://support.microsoft.com/en-us/kb/312906 for an application that can be

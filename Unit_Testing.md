@@ -1,15 +1,15 @@
 # Unit Testing
 
-## Nuget Packages
+## NuGet Packages
 
-RECOMMENDED Library: xunit.net
+RECOMMENDED Library: xUnit.net
 
-We prefer xunit.net because it supports better test isolation, parallel
+We prefer xUnit.net because it supports better test isolation, parallel
 tests, improved assertions, and appears to be the standard for the new ASP.NET
 Core.  It has broad support in CI systems.
 
-Plugins are available for Visual Studio and Resharper to discover and run
-Xunit.net tests.
+Plugins are available for Visual Studio and ReSharper to discover and run
+xUnit.net tests.
 
 NUnit and MSTest are also acceptable.
 
@@ -33,7 +33,7 @@ folder structure, the tests are easy to find
 
 Individual tests SHOULD follow an Arrange -> Act -> Assert pattern. In the first
 block of the test you arrange the state you need, such as configuring mocks or
-data. In the middle block of code, you exercuse the subject under test. And in
+data. In the middle block of code, you exercise the subject under test. And in
 the last block you make an assertion about the result of the operation.
 
 Some developers prefer to use `Snake_Case` for test names. You MAY break from
@@ -46,13 +46,13 @@ Collaborating classes are generally mocked or faked. Using proper [inversion of 
 will help make sure you have a seam to isolate the subject under test. Unit tests
 SHOULD NOT connect to external or out of process services like databases or APIS.
 
-Integration tests, on the otherhand, exercise larger slices of the application.
+Integration tests, on the other hand, exercise larger slices of the application.
 They often do indeed connect to databases or third party services and do not use
 any significant mocking.
 
 Since integration tests tend to be slower to run and require more heavy-weight
 setup, you SHOULD prefer more unit tests than integration tests. Integration
-tests SHOULD be kept in a separate class library project (preferabe) or
+tests SHOULD be kept in a separate class library project (preferable) or
 namespace to make it easier to exclude them from manual test runs in Visual
 Studio.
 
@@ -79,7 +79,7 @@ running tests are isolated from each other.
 
 The scope of testing depends a lot on the project and its budget. On faster, low
 budget, quick turn around projects, it's often in you and your client's best
-interest to focus on happy path integration tests that excersize the entire
+interest to focus on happy path integration tests that exercise the entire
 system.
 
 On larger, longer-term projects that will have many developers over many months,

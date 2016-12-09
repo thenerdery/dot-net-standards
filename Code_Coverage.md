@@ -30,7 +30,7 @@ Code is considered exempt from code coverage analysis if:
 * Is is an MVC or API controller
 * Is by necessity tied to untestable framework
 
-## Toolsets
+## Tool Sets
 
 For code coverage, OpenCover and ReportGenerator SHOULD be used. When generating
 reports, consider publishing them to a location such that they can be accessible

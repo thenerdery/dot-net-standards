@@ -18,10 +18,10 @@ The goal is to keep build artifacts and developer-local settings from being kept
 under source control.
 
 This alleviates merge conflicts when pulling compiled code down, and keeps one
-developer’s personal preferences for settings from beoming the defaults for
+developer’s personal preferences for settings from becoming the defaults for
 everyone.
 
-In the general case, the nuget packages folder SHOULD NOT be kept in source
+In the general case, the NuGet packages folder SHOULD NOT be kept in source
 control. However, in some unique deployment scenarios or due to client
 infrastructure requirements, this recommendation can be ignored on a project by
 project basis. Be sure to mention it in the README so someone doesn't delete the
@@ -35,15 +35,15 @@ include the VisualStudio, Mac, Windows, and Node presets as a baseline.
 See [Configuration](configuration.md).
 
 ## Branching Strategy
-For vanilla git repositories (not utilizing Bitbucket, Github or Gitlab), the
+For vanilla git repositories (not utilizing Bitbucket, GitHub or GitLab), the
 git flow strategy SHOULD be used. (see
 http://nvie.com/posts/a-successful-git-branching-model/).
 
 Tools such as SourceTree and git flow command line are RECOMMENDED for ease of
 use.
 
-Git based repositories that support a pull request model (eg. Bitbucket, Github)
-MAY opt to not use the git flow model, and MAY instead use the Github flow model
+Git based repositories that support a pull request model (e.g.. Bitbucket, GitHub)
+MAY opt to not use the git flow model, and MAY instead use the GitHub flow model
 (see https://guides.github.com/introduction/flow/).
 
 ### Releases

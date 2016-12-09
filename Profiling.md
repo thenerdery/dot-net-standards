@@ -42,9 +42,9 @@ changes.
 
 ## Benchmarking
 
-Occassionally you may need to run benchmarks to ensure parts of the system, or
+Occasionally you may need to run benchmarks to ensure parts of the system, or
 proposed algorithms meet performance expectations. You SHOULD use
-[Benchmark.net](https://github.com/dotnet/BenchmarkDotNet) or another
+[BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet) or another
 benchmarking library rather than rolling your own. Frameworks take care of
 important considerations like just in time compilation and the precision of
 measurements.

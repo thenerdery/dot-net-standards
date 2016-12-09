@@ -132,7 +132,7 @@ potential data integrity issues.
 
 You SHOULD also use the smallest data type necessary. Think hard about
 appropriate decimal precision, string lengths, and integer sizes. You SHOULD
-then also enfoce those sizes (like string lengths) in the application logic.
+then also enforce those sizes (like string lengths) in the application logic.
 
 Try to avoid nullable columns: if a reasonably default can be provided uses that
 instead.

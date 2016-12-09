@@ -5,7 +5,7 @@ Configuration concerns addressed here are scoped to only managing and
 maintaining credential sets and other secret information, and usage of that
 secret information within source control and .Net projects. We do NOT address
 delivery of configuration settings to different environments in this
-documentation, although below some toolsets are recommend for handling that.
+documentation, although below some tool sets are recommend for handling that.
 
 The following are goals of proper configuration for an application:
 * Minimal developer ramp up
@@ -21,7 +21,7 @@ example of this would be a connection string, a shared secret key for an API
 HMAC, a simple remote desktop username/password, or the password to an encrypted
 zip file or exported SSL Certificate.
 
-Mainframe limits access to credentials to project memebers and keeps an audit history
+Mainframe limits access to credentials to project members and keeps an audit history
 of who accesses them.
 
 Credentials SHOULD be properly labeled as Dev/QA/Prod categories, and SHOULD
@@ -30,7 +30,7 @@ credential SHOULD all be labeled the same but be properly tagged under the
 appropriate Dev/QA Category.  Multiple credential sets to a single system SHOULD
 be grouped under a single system record.
 
-Credentials for accessing secure files, such as an exported SSH Keypair, SSL Certificate or encrypted Zip file.
+Credentials for accessing secure files, such as an exported SSH Key Pair, SSL Certificate or encrypted Zip file.
 
 Use the following fields as guidance:
 
@@ -73,7 +73,7 @@ not apply to those projects.
 If a previously protected project becomes open source, any secure values stored
 within source control MUST be invalidated. It is not sufficient to simply add
 another commit removing them: they are forever available in git history. There
-are bots that scrape Github looking for AWS keys and stealing data or running up
+are bots that scrape GitHub looking for AWS keys and stealing data or running up
 thousands of dollars in usage fees. Don't think your project is safe by being
 obscure.
 
@@ -146,7 +146,7 @@ Reaching out to the `Settings` class makes the object hard to test and hard to
 use in different contexts.
 
 
-### Recommended Toolsets
+### Recommended Tool Sets
 
 #### SlowCheetah
 

@@ -9,7 +9,7 @@
     * SHOULD use "Prepare for installation on a remote server"
     * MUST verify client’s intended .NET Framework version and select correlating version (.NET Framework 4.0 or .NET Framework 4.5 / 4.5.1)
     * MUST use Web application project
-    * MUST use "I have access to SQL server" using a database that matches client’s production SQL Server version, shared amongst team developers
+    * MUST use "I have access to SQL server" using a database that matches client’s production SQL Server version, shared among team developers
     * SHOULD install all modules
     * SHOULD use "Blank Site ASPX" Sample site
     * MUST rename solution to use appropriate Namespace convention

@@ -5,7 +5,7 @@ execute its functionality.  Dependency Injection (DI) is the IOC pattern that
 SHOULD be used on all projects. A framework SHOULD be used to provide DI
 capabilities.
 
-## Nuget Package
+## NuGet Package
 
 ### Autofac
 
@@ -17,14 +17,14 @@ Ninject), we prefer to stick with Autofac for consistency.
 
 * Homepage: https://autofac.org/
 * MVC Boilerplate: http://docs.autofac.org/en/latest/integration/mvc.html
-* WebAPI Boilerpalte: http://docs.autofac.org/en/latest/integration/webapi.html
+* WebAPI Boilerplate: http://docs.autofac.org/en/latest/integration/webapi.html
 
 ## Patterns to use
 
 ### Dependency Injection
 
 Dependency Injection is a design pattern in which a class is configured with its
-dependencies and collaborator objects from the outside. It does not instaniate
+dependencies and collaborator objects from the outside. It does not instantiate
 them itself.
 
 This aids in future maintenance and unit testing as the implementations of
@@ -42,7 +42,7 @@ For example: you might have a `CustomerService`, an `OrderService`, and a
 each of these would have to be injected into the class so it could use them to
 read and write data or performance other logic. When there are a large number of
 collaborators, it can be helpful to wrap them behind a facade: the
-`OrderProcessingService` that exposes only a couple of relevant methods ands
+`OrderProcessingService` that exposes only a couple of relevant methods and
 forwards them on to the correct backing service. Then you only needs to inject
 `OrderProcessingService`.
 
@@ -98,8 +98,8 @@ public class OptionalDependencyExample
 
 This is marginally better than the service locator because we can stub in
 dependencies during tests, but it is still hard to pick up the code and move it
-to a different project that doesn't have a `ConcrenteCollaborator` available.
-And if `ConcreteCollaborator` should change and require new constructor params, we
+to a different project that doesn't have a `ConcreteCollaborator` available.
+And if `ConcreteCollaborator` should change and require new constructor parameters, we
 have to update this class definition and possibly all the places that use it so
 that they can pass in the new parameter.
 
@@ -129,7 +129,7 @@ to be avoided in code you control*
   level class) this SHOULD be done in a single class.  Use of Autofac
   [modules](http://autofac.readthedocs.org/en/latest/configuration/modules.html)
   can be considered for organization.
-* Within an autofac configuration class areas or like objects SHOULD be grouped
+* Within an Autofac configuration class areas or like objects SHOULD be grouped
   together into functions.
 
 ```

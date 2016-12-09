@@ -1,6 +1,6 @@
 # Mocks & Fakes
 
-## Nuget Packages
+## NuGet Packages
 
 ### Moq
 
@@ -8,7 +8,7 @@ For standard .NET projects, you SHOULD use
 [Moq](https://www.nuget.org/packages/Moq/).
 
 [FakeItEasy](https://www.nuget.org/packages/FakeItEasy/) is also common in
-existing projects within the Nerdery, but for consistancy we are recommending
+existing projects within the Nerdery, but for consistency we are recommending
 Moq for new development.
 
 ### PCLMock
@@ -24,7 +24,7 @@ Whether you're following a TDD methodology or just adding some tests around
 existing code, Mocks SHOULD be used to test dependencies the the unit under
 test.
 
-### Handrolled Mocks
+### Hand-Rolled Mocks
 
 If a mocking library is not sufficient, or if the functionality provided would
 be too complicated to setup with a mocking framework, (this is rare, but

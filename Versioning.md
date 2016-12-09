@@ -36,7 +36,7 @@ properly versioning a REST API*
 ## Versioning Documentation
 
 When performing semantic versioning or API Endpoint versioning, your project
-SHOULD contain a Changelog. At a minimum, the changelog SHOULD be a simple
+SHOULD contain a CHANGELOG. At a minimum, the CHANGELOG SHOULD be a simple
 markdown file that lists the following:
 
 1. Each version released and, if possible, a link to either the CI build of that
@@ -52,10 +52,10 @@ This does not apply to Web Application versioning.
 ## When to increment the version number
 
 Version information SHOULD be incremented in anticipation of a deployment. When
-the version information is incremented, the Changelog.md file SHOULD also be
-updated with change information (if a changelog is being published).
+the version information is incremented, the CHANGELOG.md file SHOULD also be
+updated with change information (if a CHANGELOG is being published).
 
-If using [gitflow](git.md#branching-strategy), version numbers and changelogs
+If using [gitflow](git.md#branching-strategy), version numbers and change logs
 SHOULD only be updated on a release branch.
 
 ## Applying version and build metadata to binaries
@@ -82,7 +82,7 @@ There are several MSBuild extension tasks that you can include in your .csproj
 files that will allow this information to be automatically applied. This can be
 used in conjunction with continuous integration tools like Bamboo or TeamCity.
 
-See [https://github.com/loresoft/msbuildtasks/](https://github.com/loresoft/msbuildtasks/) for nuget download information and additional documentation.
+See [https://github.com/loresoft/msbuildtasks/](https://github.com/loresoft/msbuildtasks/) for NuGet download information and additional documentation.
 
 See [http://farm-fresh-code.blogspot.com/2015/03/convention-driven-automatic-release.html](http://farm-fresh-code.blogspot.com/2015/03/convention-driven-automatic-release.html) for an example of how to implement.
 

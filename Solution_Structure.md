@@ -31,7 +31,7 @@ The same name SHOULD be used for
 * MUST use virtual folders and MUST NOT use wwwroot
 * All code SHOULD be kept within a single project structure
 
-### Module Subfolders
+### Module Sub Folders
 
 * If a project contains both interfaces and implementation these SHOULD be
   separated by creating an “Implementation” folder
@@ -89,7 +89,7 @@ below.
 
 The `Core` namespace SHOULD contain all functionality that is not expansive
 enough to warrant a project of it’s own, but are required by multiple consumers
-(eg. WebUI and WebAPI).
+(e.g.. WebUI and WebAPI).
 
 * Logging
    * Generic helper classes for logging
@@ -123,7 +123,7 @@ See Also
 ### Client.Application.Services
 
 The `Services` module contains business logic for the application. This includes
-consumption of lower layers (eg. `Data` / `Domain`), as well as custom logic for
+consumption of lower layers (e.g.. `Data` / `Domain`), as well as custom logic for
 other portions of the application to use. Services SHOULD be the main area where
 business logic appears. Services SHOULD also be the lowest level in which
 outside integrations occur.
@@ -142,7 +142,7 @@ Each service class within the Services module MUST have an interface.
 
 The Web API module MAY or MAY NOT exist, depending on the application.
 
-If the applicaton needs to support external users of the data and services,
+If the application needs to support external users of the data and services,
 WebAPI SHOULD be used. See the standards on [API Communication](API_Communication.md)
 for more information.
 

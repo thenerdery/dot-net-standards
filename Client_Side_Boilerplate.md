@@ -41,7 +41,7 @@ titled “Appendix A. Why not use back-end minification/bundling tools?”
 
 ### Determine Static Website Placement
 
-Third, determine where the client-side boilerplate should live in your codebase.
+Third, determine where the client-side boilerplate should live in your code base.
 The typical setup is as follows:
 
 #### .NET MVC
@@ -142,7 +142,7 @@ grunt.registerTask('build', ['clean:dest', 'clean:public', 'media', 'server', 'm
 
 ### Building
 
-The front-end boilerplate is actually ‘built’ using `build.sh` (linux/mac)
+The front-end boilerplate is actually ‘built’ using `build.sh` (Linux/mac)
 and `build.cmd` (windows) in the _static folder.
 
 ### Integrating

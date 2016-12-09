@@ -10,7 +10,7 @@ and has many plugins for any target you could need.
 
 ### Serilog
 
-If you are intending to write logs to a structured log storage like logstash,
+If you are intending to write logs to a structured log storage like Logstash,
 we recommend [Serilog](https://www.nuget.org/packages/Serilog/).
 
 ### Library Selection
@@ -143,7 +143,7 @@ Exception thrown when attempting to perform profile edit action
 Received error code {0} from remote system
 ```
 
-*Note: log frameworks, including log4net and serilog, typically allow you to
+*Note: log frameworks, including log4net and Serilog, typically allow you to
 pass the exception directly into the framework. Wherever possible, use those
 mechanisms and do not print the exception type, message, or stack trace into
 your log message unless they add additional value. Use your log message to

@@ -35,7 +35,7 @@ Applies for all versions, but some content may differ when specified for:
 
     5. Set 404 node IDs `<add key="pageNotFoundNodeId" value="{{node id}}" />`
 
-    6. Add rewrite rule for IP whitelist to protect umbraco directory in web.config:
+    6. Add rewrite rule for IP white list to protect Umbraco directory in web.config:
     ```xml
     <rule name="Restrict Umbraco Access" stopProcessing="true">
         <match url="^umbraco(?!/(api|surface)/)" />
@@ -168,12 +168,12 @@ Applies for all versions, but some content may differ when specified for:
 
 9. 301 Redirect Helper SHOULD be installed ([Nerdery fork](https://github.com/banderso-n/UrlTracker/) that doesn't bring down production websites; this is important) [Umbraco <7.0.0] or [Simple 301](https://our.umbraco.org/projects/backoffice-extensions/simple-301/) [Umbraco >=7.0.0]
 
-10. MAY install [FALM Housekeeping Tools](https://our.umbraco.org/projects/backoffice-extensions/falm-housekeeping/) (to remove development history and logs before client handoff)
+10. MAY install [FALM Housekeeping Tools](https://our.umbraco.org/projects/backoffice-extensions/falm-housekeeping/) (to remove development history and logs before client hand off)
 
 ## Architecture Best Practices
 
 1. Base Controllers SHOULD be created
-    1. Create base Api Controller (from UmbracoApiController)
+    1. Create base API Controller (from UmbracoApiController)
     2. Create base Form Controller (from SurfaceController)
     3. Create base Template controller (from RenderMVCController)
 2. A Base Document Type with core Umbraco properties SHOULD be created:  umbracoNaviHide, umbracoUrlName, SEO fields (name, description, etc)

@@ -1,6 +1,6 @@
 # Packages+Integration: ORM
 
-## Nuget Packages
+## NuGet Packages
 
 ### Entity Framework
 
@@ -23,7 +23,7 @@ Avoid using straight ADO.NET libraries (`SqlAdapter`, `DataTable`, `SqlCommand`,
 …) as they can introduce significant maintenance in keeping the SQL queries up
 to date with changing models. New developers to the project will be slower at
 generating ad-hoc queries as they'll have to consult documentation for column
-names. The intellisense enabled by LINQ is a great efficiency boost.
+names. The IntelliSense enabled by LINQ is a great efficiency boost.
 
 ### Stored Procedures
 
