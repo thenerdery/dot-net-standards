@@ -145,7 +145,7 @@ Applies for all versions, but some content may differ when specified for:
         .EnableSwaggerUi("apidocs/{*assetPath}", c => ...)
         ```
 
-8. Semantic versioning SHOULD be utilized; CroMagVersion MAY be utilized to perform this *via Nerdery's Nuget*: [https://nuget.nerderylabs.com/nuget/](https://nuget.nerderylabs.com/nuget/)
+8. Semantic versioning SHOULD be utilized; CroMagVersion MAY be utilized to perform this *via Nerdery's NuGet*: [https://nuget.nerderylabs.com/nuget/](https://nuget.nerderylabs.com/nuget/)
     1. Add extension method to put version in footer:
         ```c#
         public static HtmlString GetVersionInfoHtml(this HtmlHelper<BaseViewModel> h)
