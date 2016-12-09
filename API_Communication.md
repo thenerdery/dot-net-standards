@@ -2,10 +2,12 @@
 
 ## API Consumption
 
-When creating code that will consume a REST API, The library RestSharp SHOULD be
+When creating code that will consume a REST API, The library RestSharp MAY be
 used.
 
 [http://restsharp.org/](http://restsharp.org/)
+
+Otherwise, roll your own client using `System.Net.Http.HttpClient`.
 
 Any sensitive API keys or necessary information to protect security SHOULD use
 proper configuration management techniques. See
