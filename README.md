@@ -84,22 +84,22 @@ The standards have been edited to include specific language
 
 If a standard declares a MUST, all projects we work on will conform to that standard.
 This is the only area where we would expect to push back on a client
-if something does not conform (e.g.. no source control).
+if something does not conform (e.g. no source control).
 
 For your convenience, the following areas contain MUST directives:
 
-  * [**API communication: Versioning**](API_Communication.md) — Any API communication that is planned to be updated and consumed externally MUST follow a versioning scheme (e.g.. `/v1/`) for backwards compatibility.
+  * [**API communication: Versioning**](API_Communication.md) — Any API communication that is planned to be updated and consumed externally MUST follow a versioning scheme (e.g. `/v1/`) for backwards compatibility.
   * [**Configuration: Credentials**](configuration.md) — Production credentials MUST NOT be stored in source control.
   * [**Error Handling**](Error_Handling.md) — Exceptions MUST NOT be surfaced to a user in a production environment.
   * [**Source Control: Git**](git.md) — Every project MUST have source control. Git is preferred, but not required.
-  * [**Logging**](Logging.md) — Personal health information (PHI) and credentials (e.g.. passwords) MUST NOT be logged. Exceptions in the error and fatal category MUST be logged. Logging needs Date Time, Severity, Location, Message.
+  * [**Logging**](Logging.md) — Personal health information (PHI) and credentials (e.g. passwords) MUST NOT be logged. Exceptions in the error and fatal category MUST be logged. Logging needs Date Time, Severity, Location, Message.
   * [**Project Docs**](Project_Docs.md) — Each project MUST have a README.md file.
   * [**Security**](Security.md) — Various MUSTs depending on the category.
   * [**Solution Structure**](Solution_Structure.md)
     * Independent "module" MUST be a project or a folder (don't mix concerns).
     * MUST NOT use wwwroot for your app.
     * Must have your file path mirror the namespaces.
-    * If a `Common` module exists, it MUST NOT depend on parent modules (e.g.. Web API).
+    * If a `Common` module exists, it MUST NOT depend on parent modules (e.g. Web API).
     * Services MUST have an interface.
 
 ### SHOULD

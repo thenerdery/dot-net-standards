@@ -3,7 +3,7 @@
 At the highest level, exceptions in .NET MUST NOT be shown directly to a user.
 All exceptions that are raised SHOULD either be handled (via a `catch`
 statement) or allowed to bubble up to a higher level. All exceptions SHOULD be
-logged in production if they make it up to the highest module (e.g.. WebUI,
+logged in production if they make it up to the highest module (e.g. WebUI,
 WebAPI).
 
 See [Solution Structure](Solution_Structure.md) for more details on module

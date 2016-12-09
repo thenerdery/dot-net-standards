@@ -89,7 +89,7 @@ below.
 
 The `Core` namespace SHOULD contain all functionality that is not expansive
 enough to warrant a project of it’s own, but are required by multiple consumers
-(e.g.. WebUI and WebAPI).
+(e.g. WebUI and WebAPI).
 
 * Logging
    * Generic helper classes for logging
@@ -123,7 +123,7 @@ See Also
 ### Client.Application.Services
 
 The `Services` module contains business logic for the application. This includes
-consumption of lower layers (e.g.. `Data` / `Domain`), as well as custom logic for
+consumption of lower layers (e.g. `Data` / `Domain`), as well as custom logic for
 other portions of the application to use. Services SHOULD be the main area where
 business logic appears. Services SHOULD also be the lowest level in which
 outside integrations occur.

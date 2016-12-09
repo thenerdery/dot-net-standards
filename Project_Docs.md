@@ -33,7 +33,7 @@ indicating that fact.
 
 #### External Systems
 
-Any systems that the project requires externally (e.g.. SQL databases, API
+Any systems that the project requires externally (e.g. SQL databases, API
 credentials).
 
 Passwords or authorization keys for external services MUST NOT be in the README.
@@ -52,7 +52,7 @@ are to be propagated with new code if they deviate from these standards.
 
 A large project may outgrow a single README file.  In this case the README
 SHOULD point to a docs folder in the project or other appropriate location
-(e.g., GitHub wiki repo or Confluence) containing additional markdown files.  A
+(e.g. GitHub wiki repo or Confluence) containing additional markdown files.  A
 RECOMMENDED tool to assist in the display and navigation of large amounts of
 markdown files is mdwiki.
 

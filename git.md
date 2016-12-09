@@ -42,7 +42,7 @@ http://nvie.com/posts/a-successful-git-branching-model/).
 Tools such as SourceTree and git flow command line are RECOMMENDED for ease of
 use.
 
-Git based repositories that support a pull request model (e.g.. Bitbucket, GitHub)
+Git based repositories that support a pull request model (e.g. Bitbucket, GitHub)
 MAY opt to not use the git flow model, and MAY instead use the GitHub flow model
 (see https://guides.github.com/introduction/flow/).
 
