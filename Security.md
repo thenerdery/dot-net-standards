@@ -144,8 +144,6 @@ Use the web.config to set the maximum upload size:
 
 #### Uploaded files are always restricted to the appropriate file types
 
-Attempt to use the file?
-
 #### Web apps: Upload directory SHOULD NOT use open permissions
 
 Write to a directory in App_Data, cloud storage, or other directory on the file
