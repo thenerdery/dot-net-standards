@@ -222,3 +222,6 @@ we have tried to helpfully collect definitions and explanations here.
 
 **Mainframe**: Our internal intranet tool. Includes internal documentation,
 custom tools, time tracking and project management.
+
+**Nerdery Client-Side Boilerplate**: A tool for generating a lot of the common
+build tools and project structure used for front-end (HTML/CSS/JS) development

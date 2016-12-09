@@ -1,3 +1,10 @@
+*Editors Note: This is adapted from some internal documentation our client side
+teams put together with the release of their boilerplate generator a few years ago.
+Examples have been adapted to be .NET specific. Some technology choices by the
+Front End team have changed in recent years. While some of the patterns described
+here may still apply, you will want to work with your Front End lead developer on
+building a smooth integration with the new tooling choices.*
+
 # Client-Side Boilerplate integration for Back-End Developers
 
 Congratulations! You are the lead developer for a project with back-end
@@ -72,7 +79,7 @@ but we don’t want to do that for the following reasons:
 So, we’ll start by adding a new build environment variable to `build-env.js`.
 Change the relative path to where assets live in your particular framework.
 
-```
+```js
 /**
  * Path to the back-end public destination of the assets.  No trailing slash.
  *
@@ -84,7 +91,7 @@ DIR_DEST_PUBLIC: '../assets',
 
 Additionally, since we’re referencing a path outside our static directory, we also have to set:
 
-```
+```js
 UNSAFE_MODE: true
 ```
 
@@ -92,7 +99,7 @@ Then we’re going to make a couple changes to the `Gruntfile.js` file.
 
 First, we want to clear out the public assets directory on a build. Add the following line:
 
-```
+```js
 grunt.initConfig({
      ...
      clean: {
@@ -106,7 +113,7 @@ grunt.initConfig({
 
 Next, we want to copy out the assets to the public assets directory:
 
-```
+```js
 grunt.initConfig({
      ...
      copy: {
@@ -129,14 +136,14 @@ grunt.initConfig({
 Finally, we need to add these two new tasks to our build process. Modify the
 build registerTask on the bottom of the file:
 
-```
+```js
 grunt.registerTask('build', ['clean:dest', 'clean:public', 'media', 'server', 'markup', 'styles', 'scripts', 'copy:public', 'clean:tmp']);
 ```
 
 ### Building
 
 The front-end boilerplate is actually ‘built’ using `build.sh` (linux/mac)
-and ``uild.cmd` (windows) in the _static folder.
+and `build.cmd` (windows) in the _static folder.
 
 ### Integrating
 
@@ -147,6 +154,7 @@ platform’s build process.
 
 You can add the following to your MyProject.Web’s post-build event:
 
+```
 cd $(ProjectDir)_static
 
 if "$(ConfigurationName)" == "Debug" (
@@ -156,6 +164,7 @@ if "$(ConfigurationName)" == "Debug" (
    echo "Running front-end release build"
    build.cmd --prod
 )
+```
 
 ## Passing Server-Side Values to JavaScript
 
@@ -164,7 +173,8 @@ properly sent to the correct directory in the back-end framework, one of the
 remaining integration pain-points is how to integrate JavaScript in with the
 back-end. This includes a couple things:
 
-1. Passing database-driven strings, or server-side generated URLs like `Url.Action('Action', 'Controller)`.
+1. Passing database-driven strings, or server-side generated URLs like
+   `Url.Action('Action', 'Controller)`.
 2. Loading view-specific modules on specific views.
 
 The below examples use Require.JS.
@@ -179,7 +189,7 @@ view. For example:
 
 Add data attributes to each of your views that have dynamic JavaScript functionality:
 
-```
+```html MyView.cshtml
 <div class="mainContent" data-controller="MyView" data-uploadurl="@Url.Action("Load")">
 ...
 </div>
@@ -189,7 +199,7 @@ Add data attributes to each of your views that have dynamic JavaScript functiona
 
 Add the following ‘auto-load’ functionality to the existing App.js file:
 
-```
+```js App.js
 /**
  * Initializes the application and kicks off loading of prerequisites.
  *
@@ -235,7 +245,7 @@ proto.initController = function(index, element) {
 
 Your JavaScript module for your view might look something like this:
 
-```
+```js MyViewController.js
 define(['jquery'], function ($) {
     "use strict";
 
@@ -261,33 +271,28 @@ define(['jquery'], function ($) {
 Depending on the level of control you have with the templates, it might be
 easier to do something like this:
 
-*src/MyCompany/MyBundle/Resources/Views/Default/MyView.twig*
-
 Initialize your view’s module inside a section of each view’s template:
 
 Note: There is no ```<script>``` tag.
-```
-{% block javascripts %}
-    {{  parent() }}
+
+```html
+@section ExtraScripts {
         require(['jquery', 'views/myView'], function($, myView) {
         $(document).ready(function() {
             var viewController = new myView();
-            viewController.init(@my-server-side-variable-is-generated-here);
+            viewController.init(@Model.SomeVariable);
         });
     });
-{% endblock %}
+}
 ```
 
-*app/Resources/views/base.html.twig*
-
-Modify the boilerplate’s bootstrap code to include your view’s JavaScript:
+Include the extra scripts in the main layout.
 
 Note: The page-specific JavaScript MUST be executed after the main module loads,
 so when the JavaScript is bundled, RequireJS won’t attempt go to back out to the
 file system to find a file that doesn’t exist.
 
-```
-<!-- JAVASCRIPT -->
+```html
 <script src="assets/vendor/requirejs/require.js"></script>
 <script src="assets/scripts/config.js"></script>
 <script>
@@ -297,7 +302,7 @@ file system to find a file that doesn’t exist.
 
     require(['main'], function() {
         /** Include the page-specific JavaScript **/
-        {% block javascripts %}{% endblock %}
+        @RenderSection("ExtraScripts", required: false)
     });
 </script>
 ```
@@ -311,7 +316,7 @@ all the JavaScript it finds in the file system. For both of the above
 techniques, we need to manually maintain the list of JavaScript view controllers
 that need to be bundled, in the `Gruntfile.js` file.
 
-```
+```js
 grunt.initConfig({
     ...
     requirejs: {
@@ -340,25 +345,25 @@ framework JavaScript developers use to keep code modular and manage
 dependencies:
 
 *module1.js*
-```
+```js
 define(['jquery'], function($) {
   // Module 1 Code
 });
 ```
 
 *module2.js*
-```
+```js
 define(['jquery'], function($) {
   // Module 2 Code
 });
 ```
 
-When I require a module, var myModule = require("module1");, RequireJS uses the
-file name to determine what module to load.
+When I require a module, `var myModule = require("module1");`, RequireJS uses
+the file name to determine what module to load.
 
 If I use a .NET bundler such as SquishIt or Combres, it will generate this:
 
-```
+```js
 define(['jquery'], function($) {
   // Module 1 Code
 });
@@ -370,9 +375,10 @@ define(['jquery'], function($) {
 
 Now RequireJS has no way to figure out which module is which.
 
-But the bundling process built into the client-side boilerplate will transform the modules to explicitly name them before combining them:
+But the bundling process built into the client-side boilerplate will transform
+the modules to explicitly name them before combining them:
 
-```
+```js
 define("module1", ['jquery'], function($) {
   // Module 1 Code
 });
@@ -384,7 +390,7 @@ define("module2", ['jquery'], function($) {
 
 ## Appendix B: Installing 3rd party JavaScript libraries
 
-```
+```sh
 bower install PACKAGE_NAME --save # downloads package, updates bower.json
 grunt install # updates the requirejs config.js file
 ```
