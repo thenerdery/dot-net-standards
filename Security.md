@@ -53,21 +53,21 @@ configuration files.
 
 #### A password requires at least six characters
 
-In ASP.Net Identity, this is already set to 6 by default. To create a more
+In ASP.NET Identity, this is already set to 6 by default. To create a more
 complex set of requirements, implement a custom IIdentityValidator.
 
 #### Passwords are hashed using a modern algorithm with a random unique salt
 
-The encryption that ships with ASP.Net Identity uses KDF which meets these
+The encryption that ships with ASP.NET Identity uses KDF which meets these
 requirements.
 
 #### Web apps: Session ID's are not read from or displayed in URLs
 
-ASP.Net enables this by default.
+ASP.NET enables this by default.
 
 #### Web apps: Session ID is rotated or regenerated after authentication or change in access level
 
-Not supported out-of-box by ASP.Net.
+Not supported out-of-box by ASP.NET
 
 #### Application provides a logout feature to destroy session information
 
@@ -75,13 +75,13 @@ Use Session.Abandon()
 
 #### User sessions should automatically expire after a set period of time
 
-Default time for ASP.Net is 20 minutes, which should be sufficient for most
+Default time for ASP.NET is 20 minutes, which should be sufficient for most
 purposes. This can be changed via session timeout:
 [https://msdn.microsoft.com/en-us/library/h6bb9cz9(v=vs.85).aspx](https://msdn.microsoft.com/en-us/library/h6bb9cz9(v=vs.85).aspx)
 
 #### Web apps: Set the HttpOnly cookie flag for session or sensitive cookies
 
-This is enabled by default in ASP.Net and cannot be changed
+This is enabled by default in ASP.NET and cannot be changed
 
 #### Web apps: If HTTPS is used application-wide, session cookies MUST use the "secure" flag
 
@@ -98,7 +98,7 @@ HSTS via HTTP Headers. See this post for more info:
 
 #### 'Forgot Password' generates a unique token which is sent to confirmed email
 
-This is enabled by default in ASP.Net Identity
+This is enabled by default in ASP.NET Identity
 
 #### All input data is validated and sanitized
 
@@ -159,11 +159,11 @@ raw queries. Avoid string concatenation with user input.
 
 #### Passwords require at least eight characters and contain at least one digit, uppercase letter and lowercase letter
 
-For ASP.Net Identity create a custom IIdentityValidator
+For ASP.NET Identity create a custom IIdentityValidator
 
 #### Account is locked out after a determined number of invalid login attempts
 
-For ASP.Net Identity, See [http://www.jlum.ws/post/2014/5/27/user-lockouts-in-aspnet-identity-2-with-aspnet-mvc-5](http://www.jlum.ws/post/2014/5/27/user-lockouts-in-aspnet-identity-2-with-aspnet-mvc-5)
+For ASP.NET Identity, See [http://www.jlum.ws/post/2014/5/27/user-lockouts-in-aspnet-identity-2-with-aspnet-mvc-5](http://www.jlum.ws/post/2014/5/27/user-lockouts-in-aspnet-identity-2-with-aspnet-mvc-5)
 
 #### Any sensitive data (e.g., SSN) being stored SHOULD be encrypted
 

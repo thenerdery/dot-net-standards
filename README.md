@@ -188,7 +188,7 @@ If you'd like to get involved in the standards further, please do!
 |[API Communication](API_Communication.md)|Standards for creating and versioning web-based APIs|
 |[Client Side Boilerplate](Client_Side_Boilerplate.md)|Steps for getting familiar with Nerdery Client-side boilerplate and processes as a back-end developer|
 |[Code Coverage](Code_Coverage.md)|Guidance around unit test code coverage|
-|[Configuration Management](configuration.md)|Addresses managing, maintaining and using credential sets and other secret information within the context of a Nerdery-managed .Net Project|
+|[Configuration Management](configuration.md)|Addresses managing, maintaining and using credential sets and other secret information within the context of a Nerdery-managed .NET Project|
 |[Data Access Patterns](Data_Access_Patterns.md)|Standards and guidance around patterns for data access|
 |[Error Handling](Error_Handling.md)|Standards and guidance around error handling|
 |[Source Control (Git)](git.md)|Standards for source control configuration and usage with Git|
@@ -198,7 +198,7 @@ If you'd like to get involved in the standards further, please do!
 |[Object Relational Mappers (ORMs)](ORM.md)|Standards and recommendations for database ORM frameworks|
 |[Profiling](Profiling.md)|General tool recommendations for database and application performance profiling|
 |[Project Docs](Project_Docs.md)|Standards and guidance for project documentation, including README and CHANGELOG documents|
-|[Security](Security.md)|Security standards for the .Net developer|
+|[Security](Security.md)|Security standards for the .NET developer|
 |[Solution Structure](Solution_Structure.md)|Recommended solution structure for a new application|
 |[Unit Testings](Unit_Testing.md)|Recommended unit testing framework|
 |[Versioning](Versioning.md)|Recommendations around versions and managing version information|

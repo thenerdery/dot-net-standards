@@ -3,7 +3,7 @@ Configuration Management
 
 Configuration concerns addressed here are scoped to only managing and
 maintaining credential sets and other secret information, and usage of that
-secret information within source control and .Net projects. We do NOT address
+secret information within source control and .NET projects. We do NOT address
 delivery of configuration settings to different environments in this
 documentation, although below some tool sets are recommend for handling that.
 
