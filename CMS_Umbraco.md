@@ -192,11 +192,11 @@ public class HomePageController : BaseController //inherits from RenderMVCContro
 {
     public override ActionResult Index(RenderModel model)
     {
-		var vm = Vault.Context.GetCurrent<HomePageViewModel>();
-		vm.DerivedProperty = _service.GetThing();
+        var vm = Vault.Context.GetCurrent<HomePageViewModel>();
+        vm.DerivedProperty = _service.GetThing();
 
-		return CurrentTemplate(vm);
-	}
+        return CurrentTemplate(vm);
+    }
 }
 ```
 
@@ -267,8 +267,8 @@ All custom data types SHOULD be stored in the database as JSON. Each data type s
 ```c#
 public class CustomDataModel
 {
-	public string Property1 { get; set; }
-	public string Property2 { get; set; }
+    public string Property1 { get; set; }
+    public string Property2 { get; set; }
 }
 ```
 
@@ -277,19 +277,19 @@ public class CustomDataModel
 ```c#
 public partial class CustomDataEditor : UserControl, IUsercontrolDataEditor
 {
-	//This is custom data type prevalue setting, such as a database table to use 
-	[DataEditorSetting("Custom Setting", isRequired = true, description = "Desc.")]
+    //This is custom data type prevalue setting, such as a database table to use 
+    [DataEditorSetting("Custom Setting", isRequired = true, description = "Desc.")]
 
-	public string CustomSetting { get; set; }
+    public string CustomSetting { get; set; }
 
-	private CustomDataModel _value;
+    private CustomDataModel _value;
 
-	//Gets/sets value stored in Umbraco
-	public object value
-	{
-		get { return JsonConvert.SerializeObject(_value); }
-		set { _value = JsonConvert.DeserializeObject<CustomDataModel>(value); }
-	}
+    //Gets/sets value stored in Umbraco
+    public object value
+    {
+        get { return JsonConvert.SerializeObject(_value); }
+        set { _value = JsonConvert.DeserializeObject<CustomDataModel>(value); }
+    }
 }
 ```
 
@@ -299,8 +299,8 @@ public partial class CustomDataEditor : UserControl, IUsercontrolDataEditor
 [UmbracoEntity(AutoMap = true)]
 public class DocTypeViewModel
 {
-	[UmbracoJsonProperty(typeof(CustomDataModel))]
-	public CustomDataModel SpecialProperty { get; set; }
+    [UmbracoJsonProperty(typeof(CustomDataModel))]
+    public CustomDataModel SpecialProperty { get; set; }
 }
 ```
 
@@ -422,29 +422,29 @@ Umbraco allows virtual routes to be handled for items that are not defined in th
 ```c#
 public class ProductVirtualContentFinder : IContentFinder
 {
-	public bool TryFindContent(PublishedContentRequest contentRequest)
-	{	
-		if (ValidateUrl(contentRequest.Uri))
-		{
-			var publishedContent = FindContent(contentRequest.Uri);
-			contentRequest.PublishedContent = publishedContent;
+    public bool TryFindContent(PublishedContentRequest contentRequest)
+    {	
+        if (ValidateUrl(contentRequest.Uri))
+        {
+            var publishedContent = FindContent(contentRequest.Uri);
+            contentRequest.PublishedContent = publishedContent;
 			
-			//OPTIONAL: set content request template
-			contentRequest.TrySetTemplate("ProductDetail");
-		}
+            //OPTIONAL: set content request template
+            contentRequest.TrySetTemplate("ProductDetail");
+        }
 
-		return publishedContent != null;
-	}
+        return publishedContent != null;
+    }
 
-	private bool ValidateUrl(Uri uri)
-	{
-		//check database to see if url is valid product url
-	}
+    private bool ValidateUrl(Uri uri)
+    {
+        //check database to see if url is valid product url
+    }
 
-	private IPublishedContent FindContent(Uri uri)
-	{
-		//find "Product Detail Template" content from Umbraco
-	}
+    private IPublishedContent FindContent(Uri uri)
+    {
+        //find "Product Detail Template" content from Umbraco
+    }
 }
 ```
 
@@ -453,10 +453,10 @@ public class ProductVirtualContentFinder : IContentFinder
 ```c#
 public class StartupEventHandler : ApplicationEventHandler
 {
-	protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
-	{
-		ContentFinderResolver.Current.InsertTypeBefore<ContentFinderByNotFoundHandlers, ProductVirtualContentFinder>();
-	}
+    protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+    {
+        ContentFinderResolver.Current.InsertTypeBefore<ContentFinderByNotFoundHandlers, ProductVirtualContentFinder>();
+    }
 }
 ```
 
@@ -465,12 +465,12 @@ public class StartupEventHandler : ApplicationEventHandler
 ```c#
 public class ProductDetailController : BaseController (inherits from RenderMVCController)
 {
-	public override ActionResult Index(RenderModel model)
-	{
-		var vm = Vault.Context.GetCurrent<ProductDetailViewModel>();
-    	vm.Product = _service.GetProduct(Request.Uri);
-    	return CurrentTemplate(vm);
-	}
+    public override ActionResult Index(RenderModel model)
+    {
+        var vm = Vault.Context.GetCurrent<ProductDetailViewModel>();
+        vm.Product = _service.GetProduct(Request.Uri);
+        return CurrentTemplate(vm);
+    }
 }
 ```
 
@@ -515,30 +515,30 @@ All controllers used for Umbraco back office sections must inherit from UmbracoA
 [Tree("Custom Section", "customApp", "Custom Section")]
 public class ImportersTree : BaseTree
 {
-	public ImportersTree(string application) : base(application)
-	{ }
+    public ImportersTree(string application) : base(application)
+    { }
 
-	public override void RenderJS(ref StringBuilder javascript)
-	{
-		javascript.Append(@"function openPage(url) {UmbClientMgr.contentFrame(url); }");
-	}
+    public override void RenderJS(ref StringBuilder javascript)
+    {
+        javascript.Append(@"function openPage(url) {UmbClientMgr.contentFrame(url); }");
+    }
 
-   public override void Render(ref XmlTree tree)
-   {
-		var nodeTreeList = new List<XmlTreeNode>();
-		var firstNode = CreateNode("1", "Node 1", "Node 1", "/umbraco/CustomBackOffice/controller/index", ".sprTreeDoc", ".sprTreeFolder_o");
+    public override void Render(ref XmlTree tree)
+    {
+        var nodeTreeList = new List<XmlTreeNode>();
+        var firstNode = CreateNode("1", "Node 1", "Node 1", "/umbraco/CustomBackOffice/controller/index", ".sprTreeDoc", ".sprTreeFolder_o");
 
-    	nodeTreeList.Add(firstNode);
-    	foreach (var node in nodeTreeList)
-    	{
-			var currentNode = node;
-        	OnBeforeNodeRender(ref tree, ref currentNode, EventArgs.Empty);
-        	if (node != null)
-        	{
-        		tree.Add(node);
-        		OnAfterNodeRender(ref tree, ref currentNode, EventArgs.Empty);
-        	}
-		}
+        nodeTreeList.Add(firstNode);
+        foreach (var node in nodeTreeList)
+        {
+            var currentNode = node;
+            OnBeforeNodeRender(ref tree, ref currentNode, EventArgs.Empty);
+            if (node != null)
+            {
+                tree.Add(node);
+                OnAfterNodeRender(ref tree, ref currentNode, EventArgs.Empty);
+            }
+        }
     }
 
     protected override void CreateRootNode(ref XmlTreeNode rootNode)
@@ -571,17 +571,18 @@ public class ImportersTree : BaseTree
 ```c#
 public class UmbracoAreaRegistration : AreaRegistration
 {
-	public override string AreaName
-   	{
-		get { return "UmbracoBackOffice"; }
-	}
+    public override string AreaName
+    {
+        get { return "UmbracoBackOffice"; }
+    }
 
    public override void RegisterArea(AreaRegistrationContext context)
    {
-		context.MapRoute(
-			"Umbraco_custom_backoffice",
-			"Umbraco/CustomBackOffice/{controller}/{action}/{id}",
-			new { area = "UmbracoBackOffice", action = "Index", id = UrlParameter.Optional });
-   }	
+        context.MapRoute(
+            "Umbraco_custom_backoffice",
+            "Umbraco/CustomBackOffice/{controller}/{action}/{id}",
+            new { area = "UmbracoBackOffice", action = "Index", id = UrlParameter.Optional }
+	);
+    }	
 }
 ```
