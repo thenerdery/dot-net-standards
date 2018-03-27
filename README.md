@@ -101,6 +101,7 @@ For your convenience, the following areas contain MUST directives:
     * Must have your file path mirror the namespaces.
     * If a `Common` module exists, it MUST NOT depend on parent modules (e.g. Web API).
     * Services MUST have an interface.
+  * [**Errors and Warnings**](Errors_and_Warnings.md) - All projects in a solution MUST build without errors.
 
 ### SHOULD
 If a standard declares a SHOULD, if at any point we are **making a design decision** (see below),
@@ -178,7 +179,7 @@ If you'd like to get involved in the standards further, please do!
 ### Who else can I talk to?
 
 * Jonathan Dexter (.NET TM)
-* Marshall Glanzer (Standards Taskforce Champion)
+* Matt Burke (Standards Taskforce Champion)
 * .NET PSEs (Benevolent Oligarchy in charge of long-term maintenance)
 
 ## Full Table of Contents
@@ -190,6 +191,7 @@ If you'd like to get involved in the standards further, please do!
 |[Code Coverage](Code_Coverage.md)|Guidance around unit test code coverage|
 |[Configuration Management](configuration.md)|Addresses managing, maintaining and using credential sets and other secret information within the context of a Nerdery-managed .NET Project|
 |[Data Access Patterns](Data_Access_Patterns.md)|Standards and guidance around patterns for data access|
+|[Errors and Warnings](Errors_and_Warnings.md)|Standards for compilation and Resharper errors and warnings|
 |[Error Handling](Error_Handling.md)|Standards and guidance around error handling|
 |[Source Control (Git)](git.md)|Standards for source control configuration and usage with Git|
 |[Inversion Of Control (IOC)](IOC.md)|Standards and guidance around IOC pattern implementation|
