@@ -5,7 +5,6 @@
 Applies for all versions, but some content may differ when specified for:
 
 * **>= 6.0.0 < 7.0.0**
-
 * **>= 7.0.0**
 
 ## Installation and Setup
@@ -32,11 +31,11 @@ Applies for all versions, but some content may differ when specified for:
 
     3. Update `system.web` `customErrors` mode to `off`, so IIS 7.5 error messages will be disabled and custom 404 and 500 pages may be used.
 
-    4. [Umbraco >7.2.8] Add `<add key="Umbraco.ModelsBuilder.Enable" value="false" />`, as we're using Vault to hydrate strongly-typed models, rather than Umbraco's currently half-baked model builder. 
+    4. [Umbraco >7.2.8] Add `<add key="Umbraco.ModelsBuilder.Enable" value="false" />`, as we're using Vault to hydrate strongly-typed models, rather than Umbraco's currently half-baked model builder.
 
     5. Set 404 node IDs `<add key="pageNotFoundNodeId" value="{{node id}}" />`
 
-    6. Add rewrite rule for IP whitelist to protect umbraco directory in web.config:
+    6. Add rewrite rule for IP white list to protect Umbraco directory in web.config:
     ```xml
     <rule name="Restrict Umbraco Access" stopProcessing="true">
         <match url="^umbraco(?!/(api|surface)/)" />
@@ -70,7 +69,7 @@ Applies for all versions, but some content may differ when specified for:
 4. SHOULD add front-end boilerplate to pre-build events:
     ```
     cd $(ProjectDir)..\_static
-    
+
     if "$(ConfigurationName)" == "Debug" (
     	echo "Running front-end debug build"
     	build.cmd
@@ -82,7 +81,7 @@ Applies for all versions, but some content may differ when specified for:
 
 ### Base Package Installation
 
-1. For more robust data types, the following components are RECOMMENDED for use: [uComponents](https://www.nuget.org/packages/uComponents/) [Umbraco <7.0.0] or [Archetype](https://www.nuget.org/packages/Archetype/), [MultiUrlPicker](https://www.nuget.org/packages/RJP.UmbracoMultiUrlPicker/), and [nuPickers](https://www.nuget.org/packages/nuPickers) [Umbraco >=7.0.0] 
+1. For more robust data types, the following components are RECOMMENDED for use: [uComponents](https://www.nuget.org/packages/uComponents/) [Umbraco <7.0.0] or [Archetype](https://www.nuget.org/packages/Archetype/), [MultiUrlPicker](https://www.nuget.org/packages/RJP.UmbracoMultiUrlPicker/), and [nuPickers](https://www.nuget.org/packages/nuPickers) [Umbraco >=7.0.0]
 
 2. If using Azure as an external media provider, it is RECOMMENDED to utilize:
 
@@ -118,18 +117,18 @@ Applies for all versions, but some content may differ when specified for:
     **/App_Data/Logs/
     **/App_Data/[Pp]review/
     **/App_Data/TEMP/
-    
+
     # Ignore Umbraco content cache file
     **/App_Data/umbraco.config
     **/App_Data/cache
     **/media/cache
-    
+
     # Don't ignore Umbraco packages (VisualStudio.gitignore mistakes this for a NuGet packages folder)
-    
+
     # Make sure to include details from VisualStudio.gitignore BEFORE this
     !**/{{ProjectNamespace}}.Web/App\_Data/packages/*
     !**/{{ProjectNamespace}}.Web/[Uu]mbraco/developer/[Pp]ackages/*
-    
+
     # Umbraco Ignore Custom
     umbraco.licensing.log.txt #Licensing Logs
     umbraco.licensing.log.txt.orig #Licensing Logs
@@ -146,7 +145,7 @@ Applies for all versions, but some content may differ when specified for:
         .EnableSwaggerUi("apidocs/{*assetPath}", c => ...)
         ```
 
-8. Semantic versioning SHOULD be utilized; CroMagVersion MAY be utilized to perform this *via Nerdery's Nuget*: [https://nuget.nerderylabs.com/nuget/](https://nuget.nerderylabs.com/nuget/)
+8. Semantic versioning SHOULD be utilized; CroMagVersion MAY be utilized to perform this *via Nerdery's NuGet*: [https://nuget.nerderylabs.com/nuget/](https://nuget.nerderylabs.com/nuget/)
     1. Add extension method to put version in footer:
         ```c#
         public static HtmlString GetVersionInfoHtml(this HtmlHelper<BaseViewModel> h)
@@ -158,23 +157,23 @@ Applies for all versions, but some content may differ when specified for:
     	    #endif
 
     	    sb.Append(new HtmlString($"- {v.FileVersion}-{GetAssemblyConfiguration()}"));
-            
+
     	    \#if !(DEBUG)
     		    sb.Append("-->");
     	    \#endif
-            
+
     	    return new HtmlString(sb.ToString());
         }
 	    ````
 
-9. 301 Redirect Helper SHOULD be installed ([Nerdery fork](https://github.com/banderso-n/UrlTracker/) that doesn't bring down production websites; this is important) [Umbraco <7.0.0] or [Simple 301](https://our.umbraco.org/projects/backoffice-extensions/simple-301/) [Umbraco >=7.0.0] 
+9. 301 Redirect Helper SHOULD be installed ([Nerdery fork](https://github.com/banderso-n/UrlTracker/) that doesn't bring down production websites; this is important) [Umbraco <7.0.0] or [Simple 301](https://our.umbraco.org/projects/backoffice-extensions/simple-301/) [Umbraco >=7.0.0]
 
-10. MAY install [FALM Housekeeping Tools](https://our.umbraco.org/projects/backoffice-extensions/falm-housekeeping/) (to remove development history and logs before client handoff) 
+10. MAY install [FALM Housekeeping Tools](https://our.umbraco.org/projects/backoffice-extensions/falm-housekeeping/) (to remove development history and logs before client hand off)
 
 ## Architecture Best Practices
 
 1. Base Controllers SHOULD be created
-    1. Create base Api Controller (from UmbracoApiController)
+    1. Create base API Controller (from UmbracoApiController)
     2. Create base Form Controller (from SurfaceController)
     3. Create base Template controller (from RenderMVCController)
 2. A Base Document Type with core Umbraco properties SHOULD be created:  umbracoNaviHide, umbracoUrlName, SEO fields (name, description, etc)
@@ -185,18 +184,18 @@ Relevant External Documentation:
 
 * [URL Hijacking with Custom Controller](https://our.umbraco.org/documentation/reference/routing/custom-controllers)
 
-All templates SHOULD reside in the **~/Views **folder. Each template SHOULD use a strongly typed view model rather than using the Umbraco HTML helper methods. If the template cannot be rendered using only CMS content (i.e. server needs to look something up from database to render as well), this information SHOULD be a property of the view model and hydrated using URL Hijacking with a Custom Controller. HTML Actions SHOULD only be used for the master layout where a specific controller cannot be identified. 
+All templates SHOULD reside in the **~/Views **folder. Each template SHOULD use a strongly typed view model rather than using the Umbraco HTML helper methods. If the template cannot be rendered using only CMS content (i.e. server needs to look something up from database to render as well), this information SHOULD be a property of the view model and hydrated using URL Hijacking with a Custom Controller. HTML Actions SHOULD only be used for the master layout where a specific controller cannot be identified.
 
 ```c#
 public class HomePageController : BaseController //inherits from RenderMVCController
 {
     public override ActionResult Index(RenderModel model)
     {
-		var vm = Vault.Context.GetCurrent<HomePageViewModel>();
-		vm.DerivedProperty = _service.GetThing();
+        var vm = Vault.Context.GetCurrent<HomePageViewModel>();
+        vm.DerivedProperty = _service.GetThing();
 
-		return CurrentTemplate(vm);
-	}
+        return CurrentTemplate(vm);
+    }
 }
 ```
 
@@ -267,8 +266,8 @@ All custom data types SHOULD be stored in the database as JSON. Each data type s
 ```c#
 public class CustomDataModel
 {
-	public string Property1 { get; set; }
-	public string Property2 { get; set; }
+    public string Property1 { get; set; }
+    public string Property2 { get; set; }
 }
 ```
 
@@ -277,19 +276,19 @@ public class CustomDataModel
 ```c#
 public partial class CustomDataEditor : UserControl, IUsercontrolDataEditor
 {
-	//This is custom data type prevalue setting, such as a database table to use 
-	[DataEditorSetting("Custom Setting", isRequired = true, description = "Desc.")]
+    //This is custom data type prevalue setting, such as a database table to use 
+    [DataEditorSetting("Custom Setting", isRequired = true, description = "Desc.")]
 
-	public string CustomSetting { get; set; }
+    public string CustomSetting { get; set; }
 
-	private CustomDataModel _value;
+    private CustomDataModel _value;
 
-	//Gets/sets value stored in Umbraco
-	public object value
-	{
-		get { return JsonConvert.SerializeObject(_value); }
-		set { _value = JsonConvert.DeserializeObject<CustomDataModel>(value); }
-	}
+    //Gets/sets value stored in Umbraco
+    public object value
+    {
+        get { return JsonConvert.SerializeObject(_value); }
+        set { _value = JsonConvert.DeserializeObject<CustomDataModel>(value); }
+    }
 }
 ```
 
@@ -299,8 +298,8 @@ public partial class CustomDataEditor : UserControl, IUsercontrolDataEditor
 [UmbracoEntity(AutoMap = true)]
 public class DocTypeViewModel
 {
-	[UmbracoJsonProperty(typeof(CustomDataModel))]
-	public CustomDataModel SpecialProperty { get; set; }
+    [UmbracoJsonProperty(typeof(CustomDataModel))]
+    public CustomDataModel SpecialProperty { get; set; }
 }
 ```
 
@@ -385,17 +384,17 @@ You SHOULD set up MVCBuildViews for compiling of razor views on release build, s
 
 ## Internationalization
 
-Umbraco sites that support internationalization SHOULD use a "multiple sites" model where each supported language has it's own website. Each website SHOULD be a root level item in the Umbraco content tree. All copy SHOULD be moved into the specific CMS document types and templates it relates to. If there is common copy that is used on a collection of pages (i.e. text for close modal button), it SHOULD be stored on the root node and accessed recursively. 
+Umbraco sites that support internationalization SHOULD use a "multiple sites" model where each supported language has it's own website. Each website SHOULD be a root level item in the Umbraco content tree. All copy SHOULD be moved into the specific CMS document types and templates it relates to. If there is common copy that is used on a collection of pages (i.e. text for close modal button), it SHOULD be stored on the root node and accessed recursively.
 
 ### Front-End Internationalized Integration
 
-Any templating performed by front-end (such as Handlebars or Mustache templates) SHOULD be provided as an HTML script element in the server side view as opposed to compiled handlebars templates so internationalized content can be provided via the CMS. 
+Any templating performed by front-end (such as Handlebars or Mustache templates) SHOULD be provided as an HTML script element in the server side view as opposed to compiled handlebars templates so internationalized content can be provided via the CMS.
 
 Client side validation messages output by plugins such as the unobtrusive jQuery validation plugin SHOULD be localized to the site's language through the use of special model attributes which get the validation message from appropriate page in the CMS.
 
 ## Performance
 
-* SHOULD Enable gzip compression 
+* SHOULD Enable gzip compression
 
 # Additional Libraries and Tools
 
@@ -407,7 +406,7 @@ Relevant External Documentation:
 
 * [Using Umbraco Peta Poco API's](http://www.wiliam.com.au/wiliam-blog/using-petapoco-with-umbraco-is-pretty-sweet)
 
-The RECOMMENDED ORM for Document, Media, and Data Types is Umbraco Vault. Umbraco Vault is open source, but developed and actively maintained by the Nerdery. It is easily extensible and provides strongly typed viewmodel mapping, automatic model injection into views, and easy querying of Umbraco. 
+The RECOMMENDED ORM for Document, Media, and Data Types is Umbraco Vault. Umbraco Vault is open source, but developed and actively maintained by the Nerdery. It is easily extensible and provides strongly typed viewmodel mapping, automatic model injection into views, and easy querying of Umbraco.
 
 For custom tables in the Umbraco database, the Umbraco Peta Poco API's SHOULD be used. Peta Poco is a lightweight, dependency-free ORM built in to Umbraco. Umbraco supplies a database wrapper which can be obtained through the ApplicationContext.Current object. This [tutorial](http://www.wiliam.com.au/wiliam-blog/using-petapoco-with-umbraco-is-pretty-sweet) is a good set of instructions to get going with Umbraco and Peta Poco.
 
@@ -415,36 +414,36 @@ For custom tables in the Umbraco database, the Umbraco Peta Poco API's SHOULD be
 
 Virtual routes MAY be utilized as a way to surface content that is not defined in the CMS. Virtual routes are the RECOMMENDED method to surface outside information.
 
-Umbraco allows virtual routes to be handled for items that are not defined in the CMS, for example, products that are supplied via a database table. To do this, create a document type and template for the type of page that is virtual, in this case a "Product Detail" document type/template. Then create a single item in the content tree of that type named something like “Product Detail Template”. This page will serve as a template for any content that should be defined for all pages through the CMS and a published content item for Umbraco to render. You will need to create an Umbraco Content Finder. This content finder will be used by Umbraco if no content is found using the default Umbraco routing and right before the 404 handlers. The content finder should validate that the URL is valid, and if so, find your content template and assign it to the request. The handler must then be registered at app start. After the virtual content finder assigns the virtual content, the page is rendered like a usual Umbraco page, so the render controller can assign the product specific properties based off the URL such as SKU, price, etc… All virtual routes should be handled this way as it makes use of Umbraco's content pipeline. 
+Umbraco allows virtual routes to be handled for items that are not defined in the CMS, for example, products that are supplied via a database table. To do this, create a document type and template for the type of page that is virtual, in this case a "Product Detail" document type/template. Then create a single item in the content tree of that type named something like “Product Detail Template”. This page will serve as a template for any content that should be defined for all pages through the CMS and a published content item for Umbraco to render. You will need to create an Umbraco Content Finder. This content finder will be used by Umbraco if no content is found using the default Umbraco routing and right before the 404 handlers. The content finder should validate that the URL is valid, and if so, find your content template and assign it to the request. The handler must then be registered at app start. After the virtual content finder assigns the virtual content, the page is rendered like a usual Umbraco page, so the render controller can assign the product specific properties based off the URL such as SKU, price, etc… All virtual routes should be handled this way as it makes use of Umbraco's content pipeline.
 
 **Example Virtual Content Finder**
 
 ```c#
 public class ProductVirtualContentFinder : IContentFinder
 {
-	public bool TryFindContent(PublishedContentRequest contentRequest)
-	{	
-		if (ValidateUrl(contentRequest.Uri))
-		{
-			var publishedContent = FindContent(contentRequest.Uri);
-			contentRequest.PublishedContent = publishedContent;
+    public bool TryFindContent(PublishedContentRequest contentRequest)
+    {	
+        if (ValidateUrl(contentRequest.Uri))
+        {
+            var publishedContent = FindContent(contentRequest.Uri);
+            contentRequest.PublishedContent = publishedContent;
 			
-			//OPTIONAL: set content request template
-			contentRequest.TrySetTemplate("ProductDetail");
-		}
+            //OPTIONAL: set content request template
+            contentRequest.TrySetTemplate("ProductDetail");
+        }
 
-		return publishedContent != null;
-	}
+        return publishedContent != null;
+    }
 
-	private bool ValidateUrl(Uri uri)
-	{
-		//check database to see if url is valid product url
-	}
+    private bool ValidateUrl(Uri uri)
+    {
+        //check database to see if url is valid product url
+    }
 
-	private IPublishedContent FindContent(Uri uri)
-	{
-		//find "Product Detail Template" content from Umbraco
-	}
+    private IPublishedContent FindContent(Uri uri)
+    {
+        //find "Product Detail Template" content from Umbraco
+    }
 }
 ```
 
@@ -453,10 +452,10 @@ public class ProductVirtualContentFinder : IContentFinder
 ```c#
 public class StartupEventHandler : ApplicationEventHandler
 {
-	protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
-	{
-		ContentFinderResolver.Current.InsertTypeBefore<ContentFinderByNotFoundHandlers, ProductVirtualContentFinder>();
-	}
+    protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+    {
+        ContentFinderResolver.Current.InsertTypeBefore<ContentFinderByNotFoundHandlers, ProductVirtualContentFinder>();
+    }
 }
 ```
 
@@ -465,12 +464,12 @@ public class StartupEventHandler : ApplicationEventHandler
 ```c#
 public class ProductDetailController : BaseController (inherits from RenderMVCController)
 {
-	public override ActionResult Index(RenderModel model)
-	{
-		var vm = Vault.Context.GetCurrent<ProductDetailViewModel>();
-    	vm.Product = _service.GetProduct(Request.Uri);
-    	return CurrentTemplate(vm);
-	}
+    public override ActionResult Index(RenderModel model)
+    {
+        var vm = Vault.Context.GetCurrent<ProductDetailViewModel>();
+        vm.Product = _service.GetProduct(Request.Uri);
+        return CurrentTemplate(vm);
+    }
 }
 ```
 
@@ -486,7 +485,7 @@ Relevant External Documents:
 
 * [Azure Media Storage Plugin (< v6.2.5)](https://github.com/idseefeld/UmbracoAzureBlobStorage)
 
-* [Azure Media Storage Plugin (>= v6.2.5)](https://our.umbraco.org/projects/collaboration/umbracofilesystemprovidersazure/) 
+* [Azure Media Storage Plugin (>= v6.2.5)](https://our.umbraco.org/projects/collaboration/umbracofilesystemprovidersazure/)
 
 * [Amazon AWS E3 Media Storage Plugin](https://bitbucket.org/gibedigital/umbraco-amazons3provider)
 
@@ -496,11 +495,11 @@ If application is being hosted on a cloud environment, media SHOULD be stored in
 
 ### Creation
 
-The user setup during the initial Umbraco installation is considered by Umbraco to be a super user. Any custom sections added to the Umbraco dashboard will be inaccessible to all users except for the super user. The superuser can grant access to any user, and after that point, those users can grant access to the custom section as well. In the event the super user is deleted, permissions will need to be granted to custom section via direct SQL queries. 
+The user setup during the initial Umbraco installation is considered by Umbraco to be a super user. Any custom sections added to the Umbraco dashboard will be inaccessible to all users except for the super user. The superuser can grant access to any user, and after that point, those users can grant access to the custom section as well. In the event the super user is deleted, permissions will need to be granted to custom section via direct SQL queries.
 
 # Custom Backoffice Sections
 
-Custom Umbraco backoffice sections SHOULD be defined in an MVC Area. The area SHOULD be routed under */umbraco/*. Each custom section SHOULD have it's own Umbraco application and tree, but multiple sections can reside in the same area. 
+Custom Umbraco backoffice sections SHOULD be defined in an MVC Area. The area SHOULD be routed under */umbraco/*. Each custom section SHOULD have it's own Umbraco application and tree, but multiple sections can reside in the same area.
 
 In order to add the section to the Umbraco back office dashboard, the following config files must be updated:
 
@@ -515,30 +514,30 @@ All controllers used for Umbraco back office sections must inherit from UmbracoA
 [Tree("Custom Section", "customApp", "Custom Section")]
 public class ImportersTree : BaseTree
 {
-	public ImportersTree(string application) : base(application)
-	{ }
+    public ImportersTree(string application) : base(application)
+    { }
 
-	public override void RenderJS(ref StringBuilder javascript)
-	{
-		javascript.Append(@"function openPage(url) {UmbClientMgr.contentFrame(url); }");
-	}
+    public override void RenderJS(ref StringBuilder javascript)
+    {
+        javascript.Append(@"function openPage(url) {UmbClientMgr.contentFrame(url); }");
+    }
 
-   public override void Render(ref XmlTree tree)
-   {
-		var nodeTreeList = new List<XmlTreeNode>();
-		var firstNode = CreateNode("1", "Node 1", "Node 1", "/umbraco/CustomBackOffice/controller/index", ".sprTreeDoc", ".sprTreeFolder_o");
+    public override void Render(ref XmlTree tree)
+    {
+        var nodeTreeList = new List<XmlTreeNode>();
+        var firstNode = CreateNode("1", "Node 1", "Node 1", "/umbraco/CustomBackOffice/controller/index", ".sprTreeDoc", ".sprTreeFolder_o");
 
-    	nodeTreeList.Add(firstNode);
-    	foreach (var node in nodeTreeList)
-    	{
-			var currentNode = node;
-        	OnBeforeNodeRender(ref tree, ref currentNode, EventArgs.Empty);
-        	if (node != null)
-        	{
-        		tree.Add(node);
-        		OnAfterNodeRender(ref tree, ref currentNode, EventArgs.Empty);
-        	}
-		}
+        nodeTreeList.Add(firstNode);
+        foreach (var node in nodeTreeList)
+        {
+            var currentNode = node;
+            OnBeforeNodeRender(ref tree, ref currentNode, EventArgs.Empty);
+            if (node != null)
+            {
+                tree.Add(node);
+                OnAfterNodeRender(ref tree, ref currentNode, EventArgs.Empty);
+            }
+        }
     }
 
     protected override void CreateRootNode(ref XmlTreeNode rootNode)
@@ -571,17 +570,18 @@ public class ImportersTree : BaseTree
 ```c#
 public class UmbracoAreaRegistration : AreaRegistration
 {
-	public override string AreaName
-   	{
-		get { return "UmbracoBackOffice"; }
-	}
+    public override string AreaName
+    {
+        get { return "UmbracoBackOffice"; }
+    }
 
    public override void RegisterArea(AreaRegistrationContext context)
    {
-		context.MapRoute(
-			"Umbraco_custom_backoffice",
-			"Umbraco/CustomBackOffice/{controller}/{action}/{id}",
-			new { area = "UmbracoBackOffice", action = "Index", id = UrlParameter.Optional });
-   }	
+        context.MapRoute(
+            "Umbraco_custom_backoffice",
+            "Umbraco/CustomBackOffice/{controller}/{action}/{id}",
+            new { area = "UmbracoBackOffice", action = "Index", id = UrlParameter.Optional }
+	);
+    }	
 }
 ```
