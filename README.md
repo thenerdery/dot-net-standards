@@ -194,7 +194,7 @@ If you'd like to get involved in the standards further, please do!
 |--------:|--------|
 |[Umbraco](CMS_Umbraco.md)|Standards, guidance, and examples for use of CMS Umbraco 6 and 7|
 |[Kentico](CMS_Kentico.md)|Standards and guidance for use of CMS Kentico 11|
-
+|[Episerver](CMS_Episerver.md)|Standards and guidance for use of CMS Episerver 11.1|
 
 ## Glossary for External Readers
 
