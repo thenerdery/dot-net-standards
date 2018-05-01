@@ -114,6 +114,7 @@ CMSResources/
 * MUST install Kentico on target server (see also, Installation and Setup)
 * SHOULD Export Site using Kentico "Sites" Application
 * SHOULD ensure all objects are stored on the file system rather than database using the Kentico "System" Application prior to deployment
+* SHOULD run [KInspector](https://github.com/Kentico/KInspector) and review recommendations
 
 ## Follow-up Deployments
 * SHOULD deselect "Export pages" as it will overwrite client pages or add in test pages to their environment
