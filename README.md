@@ -193,7 +193,7 @@ If you'd like to get involved in the standards further, please do!
 | Section | Summary |
 |--------:|--------|
 |[Umbraco](CMS_Umbraco.md)|Standards, guidance, and examples for use of CMS Umbraco 6 and 7|
-|[Kentico 8.2](CMS_Kentico_8_2.md)|Standards and guidance for use of CMS Kentico 8.2|
+|[Kentico](CMS_Kentico.md)|Standards and guidance for use of CMS Kentico 11|
 
 
 ## Glossary for External Readers
