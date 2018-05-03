@@ -44,16 +44,10 @@ The following applies to Umbraco v7.0.0 and above. They likely apply to <v7.0.0 
     </rule>
     ```
 
-### Front-End Boilerplate Integration
+### Front-End Asset Integration
 
-1. SHOULD follow [.NET standards for client side integration.](https://git.nerdery.com/projects/BRAVO/repos/dot-net-standards/browse/Client_Side_Boilerplate.md)
-2. MIME type for .svg and .hbs in web.config SHOULD be added, to add support for SVG images and Handlebars templates, typically used by our front-end development teams.
-    ```xml
-    <remove fileExtension=".hbs" />
-    <mimeMap fileExtension=".hbs" mimeType="text/plain" />
-    <remove fileExtension=".svg" />
-    <mimeMap fileExtension=".svg" mimeType="image/svg+xml" />
-    ```
+1. SHOULD follow [FE Boilerplate documentation](https://knowledge.nerdery.com/display/FED/Boilerplate) and work with FE lead to determine best process for integrating the FE build into your project. There is no special setup for Umbraco in regard to the FE Integration, and it can be treated as a normal .NET Project.
+
 3. Script and Styles modification via the Umbraco Back-Office SHOULD NOT be supported. You SHOULD NOT map your Styles and CSS output via Umbraco into your FE Build output folder. In all cases we should avoid allowing the client to write their own custom styles and scripts outside of version control and the FE Build process. If we allowed this, it is likely that the client could write styles or scripts via the Umbraco Back-Office that break the functionality of the website, and it would be difficult to troubleshoot this issue outside of version control. 
 
 ### Base Package Installation
