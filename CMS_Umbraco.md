@@ -24,7 +24,7 @@ The following applies to Umbraco v7.0.0 and above. They likely apply to <v7.0.0 
 
     2. Update `system.web` `customErrors` mode to `off`, so IIS 7.5 error messages will be disabled and custom 404 and 500 pages may be used.
 
-    3. [Umbraco >7.2.8] Add `<add key="Umbraco.ModelsBuilder.Enable" value="false" />`, as we're using Vault to hydrate strongly-typed models, rather than Umbraco's currently half-baked model builder.
+    3. [Umbraco >7.2.8] Add `<add key="Umbraco.ModelsBuilder.Enable" value="false" />`, as we're using Vault to hydrate strongly-typed models, rather than Umbraco's model builder.
 
     4. Set 404 node IDs `<add key="pageNotFoundNodeId" value="{{node id}}" />`
 
