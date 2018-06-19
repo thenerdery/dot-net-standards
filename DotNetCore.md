@@ -136,15 +136,13 @@ number of ways:
 
 If you’re going to use ASP.NET Core Identity for authentication, its best to set
 it up at the beginning of the project by selecting the authentication type
-during the new project wizard.
-
-We jave found it incredibly difficult to get the ASP.NET Core Identity
-migrations to run against a database that was already created and had
+during the new project wizard. It can be difficult to get the ASP.NET Core
+Identity migrations to run against a database that was already created and has
 application data in it.
 
-You can use this script to create the tables. It worked in March of 2018, but
-given the pace of change in ASP.NET core its continued operation is not
-guaranteed.
+If you need to add Identity to an existing project, you might have luck using
+this script to create the tables. It worked in March of 2018, but given the pace
+of change in ASP.NET core its continued operation is not guaranteed.
 
 https://gist.github.com/akatakritos/96b0c3136f8498246fa810d393927f04
 
