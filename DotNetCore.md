@@ -1,19 +1,27 @@
 ## Project Structure
 
 ### Core / Utility / Services Projects
-Instead of where you would normally use a Class Library, you should make sure to
-elect a class library targeting a version of .NET Standard. Net Standards define
-the set of APIs that should be available within the base class library. Pick the
-lowest standard that meets all your needs, since they are forward compatible
-(i.e. Standard 2.0 includes everything from Standard 1.1 and more). This will
-let the shared library be consumed by both .NET Core and .NET Framework
-projects. For example, .NET Core is not fully baked for Azure Functions, and so
-you might need a full framework Function that includes code from the shared
-projet.
+
+Instead of where you would normally use the Visual Stuiod Class Library
+template, you should instead create a .NET Standard Class Library. .NET
+Standards define the set of APIs that will be available within the base class
+library. For project specific libraries, go ahead and pick the latest version of
+.NET Standard.
+
+.NET Standard is needed for sharing library code with both .NET Core
+applications and Full Framework applications. For example, .NET Core is not
+fully baked for Azure Functions, and so you might need a full framework Function
+that includes code from the shared domain project.
 
 In fact, going forward, it's probably wise if this layer of the application
 targets .NET standard even within full framework projects, to ease the burden of
 a future migration.
+
+*If you are creating a truly generic library, one which might be used across
+multiple clients, projects and runtimes (Xamarin, etc), you should instead
+target the lowest .NET Standard version that defines the base class library
+features you will need. This ensures maximum compatibility with the many
+consumers your library might have.*
 
 ## MVC Structure
 
