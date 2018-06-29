@@ -111,7 +111,7 @@ CMSResources/
 * [https://docs.kentico.com/k11/custom-development/creating-custom-modules/adding-custom-website-settings](https://docs.kentico.com/k11/custom-development/creating-custom-modules/adding-custom-website-settings)
 
 ## Macros
-* SHOULD disable the securitry signature for macros by manually adding the @ character before the closing %} sequence of a macro.
+* SHOULD disable the securitry signature for macros by manually adding the @ character before the closing %} sequence of a macro.  When the security signature isn't disabled, the macro is evaluated using the creating user's permissions.  If a user is deleted or if the hash salt is changed (i.e. the production environment), macros will fail until resigned.  Without a signature, the Public User's permissions are used to process the macro.
 
 ```{% CurrentPageInfo.DocumentName @%}```
 
