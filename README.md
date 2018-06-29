@@ -55,6 +55,24 @@ existing project uses a method, framework, library, or any other development
 tool or technique that does not conform to these standards, use the existing
 method instead.
 
+## Changes
+
+These standards are a *living document*,
+as evidenced by their current home on [Github](https://github.com/thenerdery/dot-net-standards).
+There will be changes over time as we seek to improve our offering in service to our clients.
+
+Major changes will be communicated internally,
+but it will still be beneficial to check in frequently, or Watch the GitHub repo to stay informed.
+
+### Contribution guidelines
+
+* Create feature branch or fork the repo
+* Submit pull request to master and cc Tim VanFosson (@tvanfosson),  or Matt Burke (@akatakritos).
+* Nerdery employees should review the contribution guidelines in the Nerdery .NET Knowledgebase first.
+
+Feel free to use Issues to raise feedback on existing standards,
+suggestions for updates, or other constructive criticism.
+
 ## Standards Categories
 
 The standards have been edited to include specific language
@@ -161,7 +179,7 @@ If you'd like to get involved in the standards further, please do!
 
 ### Who else can I talk to?
 
-* Jonathan Dexter (.NET TM)
+* Tim VanFosson (.NET Domain Lead)
 * Matt Burke (Standards Taskforce Champion)
 * .NET PSEs (Benevolent Oligarchy in charge of long-term maintenance)
 
