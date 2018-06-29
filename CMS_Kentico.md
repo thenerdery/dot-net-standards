@@ -110,6 +110,14 @@ CMSResources/
 ### References
 * [https://docs.kentico.com/k11/custom-development/creating-custom-modules/adding-custom-website-settings](https://docs.kentico.com/k11/custom-development/creating-custom-modules/adding-custom-website-settings)
 
+## Macros
+* SHOULD disable the securitry signature for macros by manually adding the @ character before the closing %} sequence of a macro.
+
+```{% CurrentPageInfo.DocumentName @%}```
+
+### References
+* https://docs.kentico.com/k11/macro-expressions/troubleshooting-macros/working-with-macro-signatures#Workingwithmacrosignatures-Disablingthesecuritysignatureforspecificmacros
+
 ## Deployment
 * MUST install Kentico on target server (see also, Installation and Setup)
 * SHOULD Export Site using Kentico "Sites" Application
