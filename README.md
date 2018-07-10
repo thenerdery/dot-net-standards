@@ -102,6 +102,7 @@ For your convenience, the following areas contain MUST directives:
     * Must have your file path mirror the namespaces.
     * If a `Common` module exists, it MUST NOT depend on parent modules (e.g. Web API).
     * Services MUST have an interface.
+  * [**.NET Core**](DotNetCore.md) - Standards specific to .NET Core projects
   * [**Errors and Warnings**](Errors_and_Warnings.md) - All projects in a solution MUST build without errors.
 
 ### SHOULD
