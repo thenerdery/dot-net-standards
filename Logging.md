@@ -61,6 +61,8 @@ You MUST NOT log any data that would be considered personal health information
 yours or another system (such as passwords or password hashes, salts, credit
 card details, etc.)
 
+See [this article](https://rimdev.io/redact-elasticsearch-passwords-from-microsoft-azure-application-insights-using-csharp/) for ideas on how to scrub sensitive information from telemetry.
+
 ## Log Severity / Levels
 
 ### Verbose
@@ -151,7 +153,7 @@ Examples
 Network call failed.
 Exception thrown when attempting to perform profile edit action
 Received error code {0} from remote system
-```
+```git status
 
 *Note: log frameworks, including log4net and Serilog, typically allow you to
 pass the exception directly into the framework. Wherever possible, use those
