@@ -81,7 +81,7 @@ The same name SHOULD be used for
 
 ## Solution Structure
 
-The general code structure SHOULD consist of the following modules.  For larger
+The general code structure MAY consist of the following modules.  For larger
 solutions containing multiple deployable components, each of these modules SHOULD 
 be a separate project, for smaller solutions these sections MAY be areas/folders 
 inside of a single project.
