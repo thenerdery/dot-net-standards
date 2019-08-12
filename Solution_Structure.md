@@ -81,14 +81,15 @@ The same name SHOULD be used for
 
 ## Solution Structure
 
-The general code structure MAY consist of the following modules.  For larger
-solutions containing multiple deployable components, each of these modules SHOULD 
-be a separate project, for smaller solutions these sections MAY be areas/folders 
-inside of a single project.
+The general code structure MAY consist of the following modules. These
+SHOULD be handled as areas/folders in your solution until they need
+to be shared with additional components of your solution. For larger
+solutions containing multiple deployable components, you MAY start by
+creating them as separate projects.
 
-This is not an exhaustive list. This is a minimal amount of items that are
+This is not an exhaustive list. This is a list of items that are
 present in common applications. If additional project types arise that do not
-fit in one of these categories, folders and/or projects MAY be created.
+fit in one of these categories, additional folders and/or projects MAY be created.
 
 ### Common Modules
 
@@ -104,6 +105,11 @@ below.
 * Services
 * *Api* - a suitably named API, ex. OrdersApi, ProductsApi
 * Web
+
+**Project leads SHOULD enforce dependency constraints with a tool
+such as [NetArchTest](https://github.com/BenMorris/NetArchTest)
+[(pkg)](https://www.nuget.org/packages/NetArchTest.Rules/) 
+in a unit test project.**
 
 #### Example Structure: Small Solution with multi-module project
 
