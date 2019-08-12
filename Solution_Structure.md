@@ -1,52 +1,72 @@
 # Solution Structure Standards
 
-This document details the Nerdery standard for folder/project structure when
-creating a new MVC application.
+This document details the Nerdery standard for solution structure when
+creating a new application.
 
 ### Term Definitions
 
 **Module** - the organizational unit for a functionally distinct area of a
 solution.  MUST be organized in a folder or a project of it’s own.
 
-### Project Naming
+### Solution Scope
 
-Projects SHOULD follow the naming convention: Client.Application.Project
+A separate solution SHOULD be created for each deployable part of the application, for example,
+if a project has multiple APIs, each API should have it's own solution. If there
+is a need to share code between solutions (note: this induces an external coupling
+that you should not introduce lightly), this should be done using versioned NuGet packages.
 
-> e.g. Acme.Explosives.WebAPI
+A solution MAY contain multiple, deployable components IF the number of those
+components are small and complete. For example, you MAY create a solution that contains
+a Web Application and an Authorization Application if those applications can
+be deployed together.
 
-If a project combines several modules a more generic name MAY be used.
+### Naming
 
-> e.g. Acme.Application project that contains Core, Domain, and Data modules.
+## Solutions
+
+Solutions SHOULD follow the naming convention: Client.Application.Component
+
+> e.g. Acme.Explosives.OrderApi
+
+If a Solution combines several components a more generic name MAY be used.
+
+> e.g. Acme.Application solution that contains Web, Core, and ScheduledTasks projects.
 
 The same name SHOULD be used for
 
-   1. Project Name
-   2. Project Folder Name
-   3. Assembly Name
-   4. Assembly File Name
-   5. Root Namespace
+   1. Solution Name
+   2. Solution Folder Name
+   3. Project Name (if a single component)
+   4. Project Namespace (if a single component)
+   5. Assembly Name (if a single component)
+   6. Assembly File Name (if a single component)
+   7. Root Namespace
 
 ### Web Application projects
 
-* MUST use virtual folders and MUST NOT use wwwroot
+* SHOULD be created using .NET Core
+* SHOULD use [feature folders](DotNetCore.md#feature-folders)
 * All code SHOULD be kept within a single project structure
 
 ### Module Sub Folders
 
-* If a project contains both interfaces and implementation these SHOULD be
-  separated by creating an “Implementation” folder
+* If a project contains both interfaces and implementation these SHOULD kept together. If there is
+  a single implementation for an interface they SHOULD be kept in the same file with the interface
+  at the top and the implementation following it.  If there are multiple implementations, consider
+  creating a folder for the module and putting the interface and implementation in it.
 * .NET namespaces MUST mirror the folder structure in which classes in that
-  namespace are located.  For example: `Client.Project.Data.Helpers.SqlParser`
-  resides on the path `Data\Helpers\SqlParser.cs` within the `Client.Project`
+  namespace are located.  For example: `Client.Project.Data.Sql.SqlParser`
+  resides on the path `Data\Sql\SqlParser.cs` within the `Client.Project`
   root.
 * Migrations (see: [Data Access Patterns](Data_Access_Patterns.md))
 * Docs (see: [Project Documentation](Project_Docs.md))
 
 ## Solution Structure
 
-The general code structure SHOULD consist of the following sections.  For larger
-projects each of these sections SHOULD be a separate project, for smaller
-projects these sections MAY be areas/subfolders inside of a single project.
+The general code structure SHOULD consist of the following modules.  For larger
+solutions containing multiple deployable components, each of these modules SHOULD 
+be a separate project, for smaller solutions these sections MAY be areas/folders 
+inside of a single project.
 
 This is not an exhaustive list. This is a minimal amount of items that are
 present in common applications. If additional project types arise that do not
@@ -63,33 +83,33 @@ below.
 * Core
 * Domain
 * Data
-* DomainServices
-* WebAPI
-* WebUI
+* Services
+* *Api* - a suitably named API, ex. OrdersApi, ProductsApi
+* Web
 
 #### Example Structure: Small Solution with multi-module project
 
-* Project: Client.Application
+* Project: Client.*Application*
    * Folder: Core
    * Folder: Domain
    * Folder: Data
-* Project: Client.Application.Test
+* Project: Client.*Application*.Test
    * Folder: Core
    * Folder: Domain
    * Folder: Data
 
 #### Example Structure: Large Solution with single-module projects
 
-* Project: Client.Application.Domain
-* Project: Client.Application.Domain.Test
-* Project: Client.Application.Core
-* Project: Client.Application.Core.Test
+* Project: Client.*Application*.Domain
+* Project: Client.*Application*.Domain.Test
+* Project: Client.*Application*.Core
+* Project: Client.*Application*.Core.Test
 
-### Client.Application.Core
+### Client.*Application*.Core
 
 The `Core` namespace SHOULD contain all functionality that is not expansive
 enough to warrant a project of it’s own, but are required by multiple consumers
-(e.g. WebUI and WebAPI).
+(e.g. *Application* and *API*).       
 
 * Logging
    * Generic helper classes for logging
@@ -99,7 +119,7 @@ enough to warrant a project of it’s own, but are required by multiple consumer
    * Items expanding core functionality of the .NET framework.
    * Extension methods
 
-### Client.Application.Domain
+### Client.*Application*.Domain
 
 * Domain Objects (POCO) implementing the terms of art for the solution
 * Business logic scoped only to the above objects
@@ -109,7 +129,7 @@ enough to warrant a project of it’s own, but are required by multiple consumer
    * Regular Expressions
 * Shared data transfer objects
 
-### Client.Application.Data
+### Client.*Application*.Data
 
 * Reference to persistence libraries
 * Entity Framework Fluent API mapping of Domain objects
@@ -120,7 +140,7 @@ See Also
 * [Data Access Patterns](Data_Access_Patterns.md)
 * [ORM](ORM.md)
 
-### Client.Application.Services
+### Client.*Application*.Services
 
 The `Services` module contains business logic for the application. This includes
 consumption of lower layers (e.g. `Data` / `Domain`), as well as custom logic for
@@ -138,56 +158,59 @@ Each service class within the Services module MUST have an interface.
 * Connection of lower components
    * Examples may be: thin layer for retrieving and storing Data objects (Query object)
 
-### Client.Application.WebAPI
+### Client.*Application*.*Api*
 
-The Web API module MAY or MAY NOT exist, depending on the application.
+The *API* module MAY or MAY NOT exist, depending on the application.
 
 If the application needs to support external users of the data and services,
-WebAPI SHOULD be used. See the standards on [API Communication](API_Communication.md)
+an *API* SHOULD be used. If you have multiple APIs you *SHOULD* implement each in a separate
+solution so that it is independently deployable. See the standards on [API Communication](API_Communication.md)
 for more information.
 
-WebAPI MAY be used for AJAX.
+*API* MAY be used for AJAX.
 
 * API for external consumers
    * It is RECOMMENDED that the API be RESTful
 * (optional) AJAX calls
 
-### Client.Application.WebUI
+### Client.*Application*.Web
 
 * UI (Razor)
 * Authentication
 * Configuration
 
-#### WebUI Project Structure
+#### Web Project Structure
 
-* Assets
+* Assets - for .NET Core this should be in *wwwroot*
 * Attributes
-* Controllers
+* Features (you MAY omit the subfolders)
+  * Controllers
+  * Models
+  * Views
 * Docs
 * Logging
-* Models
+* Models (shared models)
 * Resources
 * Util
-* Views
-   * SectionName (e.g. Account)
+* Views (shared views)
    * Shared
 
-WebUi and WebAPI MAY be combined into a single project for smaller applications
+*Web* and *API* MAY be combined into a single project for smaller applications
 or for applications where the hosting environment is limited (e.g. A single
-azure machine is needed to host both UI and API sites).
+azure machine is needed to host both Web and *API* sites).
 
 ### Module Testing
 
 * Module tests MUST reside in an organizational unit (folder or project)
-  mirroring the module to be tested.  The project containing tests MUST use a
-  namespace ending in "Test".
-* If a test project contains both unit and integration tests these SHOULD be
-  placed in separate folders "unit" and "integration".
+  mirroring the module to be tested.  The project containing unit tests MUST use a
+  namespace ending in "Tests".  The project containing integration tests MUST use
+  a namespace ending in "IntegrationTests".
+* Test projects MUST NOT contain a mixture of unit and integration tests. Mixing test
+  types makes it difficult to use these tests at different stages of the CI/CD pipeline.
 
 See the standards on [unit testing](Unit_Testing.md) for more information.
 
 
 References
-* http://london.sierrabravo.net/~mglanzer/dotnetboilerplatesetup/mdwiki.html#!organization.md
 * http://mikehadlow.blogspot.com/2007/07/how-to-structure-visual-studio.html
 * https://msdn.microsoft.com/en-us/library/ee817674(pandp.10).aspx
