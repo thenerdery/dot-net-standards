@@ -2,16 +2,26 @@
 
 ## NuGet Package
 
+### Application Insights
+
+If you are deploying your application to Azure, you SHOULD use Application Insights
+for application performance monitoring (APM) and log aggregation. If the client prefers
+another APM solution, you MAY use that instead.
+
+### .NET Core
+
+If you are using .NET Core you SHOULD use the logging infrastructure built into the framework
+and inject an `ILogger<T>` where `T` is the class where the logging takes place into each
+component. This SHOULD be connected to to your APM solution as well as to other logging sinks
+as appropriate. For robust logging, including writing to structured log storage such as
+LogStash, we recommend [Serilog](https://www.nuget.org/packages/Serilog/).
+
 ### log4net
 
-You SHOULD use [log4net](https://www.nuget.org/packages/log4net/) as your default
+If you are not using .NET Core, you SHOULD use [log4net](https://www.nuget.org/packages/log4net/) as your default
 choice for a logging framework. It's well understood within The Nerdery and industry
-and has many plugins for any target you could need.
-
-### Serilog
-
-If you are intending to write logs to a structured log storage like Logstash,
-we recommend [Serilog](https://www.nuget.org/packages/Serilog/).
+and has many plugins for any target you could need.  You MAY also use [Serilog](https://www.nuget.org/packages/Serilog/)
+as an alternative.
 
 ### Library Selection
 
