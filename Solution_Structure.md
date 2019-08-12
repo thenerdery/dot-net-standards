@@ -22,7 +22,7 @@ be deployed together.
 
 ### Naming
 
-## Solutions
+#### Solutions
 
 Solutions SHOULD follow the naming convention: Client.Application.Component
 
@@ -41,6 +41,24 @@ The same name SHOULD be used for
    5. Assembly Name (if a single component)
    6. Assembly File Name (if a single component)
    7. Root Namespace
+
+#### Projects
+
+Projects SHOULD follow the naming convention: Client.Application.Component.Module
+
+> e.g. Acme.Explosives.OrderApi.Core
+
+If a solution combines several components a more generic name MAY be used.
+
+> e.g. Acme.Explosives.Core project that contains core behavior for several components.
+
+The same name SHOULD be used for 
+
+   1. Project Name
+   2. Project Folder Name
+   3. Project Namespace
+   4. Assembly Name
+   5. Assembly File Name
 
 ### Web Application projects
 
