@@ -13,25 +13,19 @@ another APM solution, you MAY use that instead.
 If you are using .NET Core you SHOULD use the logging infrastructure built into the framework
 and inject an `ILogger<T>` where `T` is the class where the logging takes place into each
 component. This SHOULD be connected to to your APM solution as well as to other logging sinks
-as appropriate. For robust logging, including writing to structured log storage such as
-LogStash, we recommend [Serilog](https://www.nuget.org/packages/Serilog/).
+as appropriate. 
 
-### log4net
-
-If you are not using .NET Core, you SHOULD use [log4net](https://www.nuget.org/packages/log4net/) as your default
-choice for a logging framework. It's well understood within The Nerdery and industry
-and has many plugins for any target you could need.  You MAY also use [Serilog](https://www.nuget.org/packages/Serilog/)
-as an alternative.
+### Serilog
+Based on it's support for robust logging, integration with .NET Core, and support for writing to structured log storage such as LogStash, you SHOULD use [Serilog](https://www.nuget.org/packages/Serilog/).  This represents a change from our previous direction to use [log4net](https://www.nuget.org/packages/log4net/). Log4net MAY continue to be used where the solution already
+incorporates it or where you are building within an existing platform, such as Umbraco CMS.
 
 ### Library Selection
 
 When selecting a logging framework, if an existing platform is already in use
 that contains a platform for logging, the existing platform logging library
 SHOULD be used. As with everything else, it is best to not add redundant
-libraries when possible.
-
-For example, Umbraco CMS uses **log4net**. Prefer to use **log4net** over
-**Serilog**, as they both perform the same function.
+libraries when possible, such as the case above where **log4net** should continue
+to be used in Umbraco CMS solutions.
 
 ## Log Data:
 
@@ -41,7 +35,7 @@ Logs on a per message basis SHOULD contain the following information:
 * DateTime in UTC in 24 hour format, leading 0’s. (yyyy-MM-dd HH:mm:ss,fff)
 * Severity / Level
 * Path (Class/Method)
-* Message
+* Message (or JSON if using structured logging)
 
 *RECOMMENDED*
 * Thread ID
