@@ -2,26 +2,30 @@
 
 ## NuGet Package
 
-### log4net
+### Application Insights
 
-You SHOULD use [log4net](https://www.nuget.org/packages/log4net/) as your default
-choice for a logging framework. It's well understood within The Nerdery and industry
-and has many plugins for any target you could need.
+If you are deploying your application to Azure, you SHOULD use Application Insights
+for application performance monitoring (APM) and log aggregation. If the client prefers
+another APM solution, you MAY use that instead.
+
+### .NET Core
+
+If you are using .NET Core you SHOULD use the logging infrastructure built into the framework
+and inject an `ILogger<T>` where `T` is the class where the logging takes place into each
+component. This SHOULD be connected to to your APM solution as well as to other logging sinks
+as appropriate. 
 
 ### Serilog
-
-If you are intending to write logs to a structured log storage like Logstash,
-we recommend [Serilog](https://www.nuget.org/packages/Serilog/).
+Based on it's support for robust logging, integration with .NET Core, and support for writing to structured log storage such as LogStash, you SHOULD use [Serilog](https://www.nuget.org/packages/Serilog/).  This represents a change from our previous direction to use [log4net](https://www.nuget.org/packages/log4net/). Log4net MAY continue to be used where the solution already
+incorporates it or where you are building within an existing platform, such as Umbraco CMS.
 
 ### Library Selection
 
 When selecting a logging framework, if an existing platform is already in use
 that contains a platform for logging, the existing platform logging library
 SHOULD be used. As with everything else, it is best to not add redundant
-libraries when possible.
-
-For example, Umbraco CMS uses **log4net**. Prefer to use **log4net** over
-**Serilog**, as they both perform the same function.
+libraries when possible, such as the case above where **log4net** should continue
+to be used in Umbraco CMS solutions.
 
 ## Log Data:
 
@@ -31,7 +35,7 @@ Logs on a per message basis SHOULD contain the following information:
 * DateTime in UTC in 24 hour format, leading 0’s. (yyyy-MM-dd HH:mm:ss,fff)
 * Severity / Level
 * Path (Class/Method)
-* Message
+* Message (or JSON if using structured logging)
 
 *RECOMMENDED*
 * Thread ID
@@ -50,6 +54,8 @@ You MUST NOT log any data that would be considered personal health information
 (PHI) or if discovered by an outsider, would allow a user to gain access to
 yours or another system (such as passwords or password hashes, salts, credit
 card details, etc.)
+
+See [this article](https://rimdev.io/redact-elasticsearch-passwords-from-microsoft-azure-application-insights-using-csharp/) for ideas on how to scrub sensitive information from telemetry.
 
 ## Log Severity / Levels
 
