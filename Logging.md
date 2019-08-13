@@ -147,7 +147,7 @@ Examples
 Network call failed.
 Exception thrown when attempting to perform profile edit action
 Received error code {0} from remote system
-```git status
+```
 
 *Note: log frameworks, including log4net and Serilog, typically allow you to
 pass the exception directly into the framework. Wherever possible, use those
