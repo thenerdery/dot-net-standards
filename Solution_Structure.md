@@ -106,7 +106,7 @@ below.
 * *Api* - a suitably named API, ex. OrdersApi, ProductsApi
 * Web
 
-**Project leads SHOULD enforce dependency constraints with a tool
+**We RECOMMEND enforcing dependency constraints with a tool
 such as [NetArchTest](https://github.com/BenMorris/NetArchTest)
 [(pkg)](https://www.nuget.org/packages/NetArchTest.Rules/) 
 in a unit test project.**
