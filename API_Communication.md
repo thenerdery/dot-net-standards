@@ -7,15 +7,19 @@ used.
 
 [http://restsharp.org/](http://restsharp.org/)
 
-Otherwise, roll your own client using `System.Net.Http.HttpClient`.
+Otherwise, roll your own client using `System.Net.Http.HttpClient`.  When
+using .NET Core you should make use of `IHttpClientFactory` and typed
+clients. See the 
+[Microsoft Documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/http-requests)
+for implementation patterns.
 
-Any sensitive API keys or necessary information to protect security SHOULD use
+Any sensitive API keys or necessary information to protect security MUST use
 proper configuration management techniques. See
 [Configuration](configuration.md) for more information.
 
 ## Framework
 
-For creating REST APIs, the ASP.NET Web API framework SHOULD be used.
+For creating REST APIs, the ASP.NET Core framework SHOULD be used.
 
 ## Authorization
 
@@ -76,5 +80,7 @@ have consumers of a production endpoint, you MUST add a new version.
 
 JSON SHOULD be the content type published by your API.
 
-The Newtonsoft.JSON serializer that ships with Web API SHOULD be used.
-
+Beginning in .NET Core 3.0, you SHOULD use `System.Text.Json` and the
+new built-in support. For earlier versions of .NET Core and .NET
+framework projects, the Newtonsoft.JSON serializer that ships with 
+Web API SHOULD be used.
