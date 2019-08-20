@@ -93,18 +93,18 @@ fit in one of these categories, additional folders and/or projects MAY be create
 
 ### Common Modules
 
-The modules below are listed in order of dependency, modules MUST NOT depend on
-a module listed below it.  In the case where modules may reside in the same
+The modules below are listed in reverse order of dependency, modules MUST NOT depend on
+a module listed above it.  In the case where modules may reside in the same
 project care MUST be taken to maintain this rule.  For separate projects a
 reference MUST NOT be made that violates this rule. Each module is detailed
 below.
 
-* Core
-* Domain
-* Data
-* Services
-* *Api* - a suitably named API, ex. OrdersApi, ProductsApi
 * Web
+* *Api* - a suitably named API, ex. OrdersApi, ProductsApi
+* Services
+* Data
+* Domain
+* Core
 
 **We RECOMMEND enforcing dependency constraints with a tool
 such as [NetArchTest](https://github.com/BenMorris/NetArchTest)
