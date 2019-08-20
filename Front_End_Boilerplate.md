@@ -5,13 +5,13 @@ Front End team have changed in recent years. While some of the patterns describe
 here may still apply, you will want to work with your Front End lead developer on
 building a smooth integration with the new tooling choices.*
 
-# Client-Side Boilerplate integration for Back-End Developers
+# Front-End Boilerplate integration for Back-End Developers
 
 Congratulations! You are the lead developer for a project with back-end
-technologies (PHP/.NET/etc). Very likely your front-end lead will be developing
-with the new [Nerdery Client-Side Boilerplate](http://boilerplate.nerderylabs.com/client-side/).
+technologies (PHP/.NET/etc). Very likely your Front-End lead will be developing
+with the [Nerdery Front-End Boilerplate](https://knowledge.nerdery.com/display/FED/Boilerplate).
 
-The client-side boilerplate combines a set of tools to create a completely
+The Front-End boilerplate combines a set of tools to create a completely
 static, runnable, stand-alone web application. But what if you need to integrate
 it into your back-end framework?
 
@@ -19,8 +19,8 @@ it into your back-end framework?
 
 ### Read the Documentation
 
-The first thing you SHOULD do is familiarize yourself with the client-side
-boilerplate [documentation](https://client-side.nerderylabs.com/boilerplate/).
+The first thing you SHOULD do is familiarize yourself with the Front-End
+boilerplate [documentation](https://knowledge.nerdery.com/display/FED/Boilerplate).
 It provides a great overview of the functionality and usage of the framework.
 
 ### Install Node.Js
@@ -30,7 +30,7 @@ or you can consider bundling a stand-alone version in your repository.
 
 Why do you need Node.js? Node.js is a server-side JavaScript platform that
 ultimately runs Grunt, a command-line task runner that we are using to build
-front-end projects. These tasks include things like turning SASS into CSS,
+Front-End projects. These tasks include things like turning SASS into CSS,
 minifying and bundling JavaScript, etc.
 
 > “But I can minify JavaScript and compile SASS using .NET frameworks and
@@ -41,7 +41,7 @@ titled “Appendix A. Why not use back-end minification/bundling tools?”
 
 ### Determine Static Website Placement
 
-Third, determine where the client-side boilerplate should live in your code base.
+Third, determine where the Front-End boilerplate should live in your code base.
 The typical setup is as follows:
 
 #### .NET MVC
@@ -67,7 +67,7 @@ Very likely, especially when using a CMS, there is a specific place where assets
 need to live. The initial thought would be to change the path of `DIR_DEST`,
 but we don’t want to do that for the following reasons:
 
-1. We still want a separate static output of the website for quick front-end
+1. We still want a separate static output of the website for quick Front-End
    debugging, sharing with the client, etc.
 2. The build process would clear the files in the parent directory of
    `assets`, which will likely remove CMS/Framework files we don’t want
@@ -142,7 +142,7 @@ grunt.registerTask('build', ['clean:dest', 'clean:public', 'media', 'server', 'm
 
 ### Building
 
-The front-end boilerplate is actually ‘built’ using `build.sh` (Linux/mac)
+The Front-End boilerplate is actually ‘built’ using `build.sh` (Linux/mac)
 and `build.cmd` (windows) in the _static folder.
 
 ### Integrating
@@ -158,17 +158,17 @@ You can add the following to your MyProject.Web’s post-build event:
 cd $(ProjectDir)_static
 
 if "$(ConfigurationName)" == "Debug" (
-   echo "Running front-end debug build"
+   echo "Running Front-End debug build"
    build.cmd
 ) else (
-   echo "Running front-end release build"
+   echo "Running Front-End release build"
    build.cmd --prod
 )
 ```
 
 ## Passing Server-Side Values to JavaScript
 
-Now that we have the front-end assets (CSS, JS, Images, etc) being built and
+Now that we have the Front-End assets (CSS, JS, Images, etc) being built and
 properly sent to the correct directory in the back-end framework, one of the
 remaining integration pain-points is how to integrate JavaScript in with the
 back-end. This includes a couple things:
@@ -375,7 +375,7 @@ define(['jquery'], function($) {
 
 Now RequireJS has no way to figure out which module is which.
 
-But the bundling process built into the client-side boilerplate will transform
+But the bundling process built into the Front-End boilerplate will transform
 the modules to explicitly name them before combining them:
 
 ```js

@@ -180,16 +180,15 @@ If you'd like to get involved in the standards further, please do!
 
 ### Who else can I talk to?
 
-* Tim VanFosson (.NET Domain Lead)
-* Matt Burke (Standards Taskforce Champion)
-* .NET PSEs (Benevolent Oligarchy in charge of long-term maintenance)
+* .NET Domain Lead
+* .NET PSEs
 
 ## Full Table of Contents
 
 | Section | Summary |
 |--------:|--------|
 |[API Communication](API_Communication.md)|Standards for creating and versioning web-based APIs|
-|[Client Side Boilerplate](Client_Side_Boilerplate.md)|Steps for getting familiar with Nerdery Client-side boilerplate and processes as a back-end developer|
+|[Front-End Boilerplate](Front-End_Boilerplate.md)|Steps for getting familiar with Nerdery Front-End boilerplate and processes as a back-end developer|
 |[Code Coverage](Code_Coverage.md)|Guidance around unit test code coverage|
 |[Configuration Management](configuration.md)|Addresses managing, maintaining and using credential sets and other secret information within the context of a Nerdery-managed .NET Project|
 |[Data Access Patterns](Data_Access_Patterns.md)|Standards and guidance around patterns for data access|
@@ -227,5 +226,5 @@ we have tried to helpfully collect definitions and explanations here.
 **Mainframe**: Our internal intranet tool. Includes internal documentation,
 custom tools, time tracking and project management.
 
-**Nerdery Client-Side Boilerplate**: A tool for generating a lot of the common
+**Nerdery Front-End Boilerplate**: A tool for generating a lot of the common
 build tools and project structure used for front-end (HTML/CSS/JS) development
