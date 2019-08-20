@@ -2,7 +2,7 @@
 
 Code coverage itself is not a goal. The goal is to have well-tested code.
 Code coverage is one tool that can be used to ensure you have well-tested
-code. You SHOULD use unit testss and you SHOULD rely on continuous integration to
+code. You SHOULD use unit tests and you SHOULD rely on continuous integration to
 produce code coverage reports for  to validate both that your unit tests
 pass and that you have adequate testing to demonstrate well-tested code.
 We recommend at least 80% code coverage on your testable code. See below 
