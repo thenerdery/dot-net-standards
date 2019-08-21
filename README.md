@@ -67,7 +67,7 @@ but it will still be beneficial to check in frequently, or Watch the GitHub repo
 ### Contribution guidelines
 
 * Create feature branch or fork the repo
-* Submit pull request to master and cc Tim VanFosson (@tvanfosson),  or Matt Burke (@akatakritos).
+* Submit pull request to master
 * Nerdery employees should review the contribution guidelines in the Nerdery .NET Knowledgebase first.
 
 Feel free to use Issues to raise feedback on existing standards,
