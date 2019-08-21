@@ -27,9 +27,9 @@
 	modulesbin
 ```
 
-## Client-Side Boilerplate Integration
+## Front-End Boilerplate Integration
 
-* SHOULD follow [.NET standards for client side integration.](https://git.nerdery.com/projects/BRAVO/repos/dot-net-standards/browse/Client_Side_Boilerplate.md)
+* SHOULD follow [.NET standards for Front-End integration.](Front_End_Boilerplate.md)
 SHOULD add front-end boilerplate to pre-build events:
     ```
     cd $(ProjectDir)..\_static

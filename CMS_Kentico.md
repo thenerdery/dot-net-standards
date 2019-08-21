@@ -54,12 +54,12 @@ CMSResources/
 ### References
 * [https://docs.kentico.com/k11/deploying-websites/deployment-mode-for-virtual-objects](https://docs.kentico.com/k11/deploying-websites/deployment-mode-for-virtual-objects)
 
-## Client-Side Boilerplate Integration
+## Front-End Boilerplate Integration
 * MUST create a Site using the Kentico Sites application using a meaningful Site Code Name
 * SHOULD use a Site Code Name consistent with namespacing strategy
-* MUST create a directory in ~/App_Themes directory using Site Code Name and request client-side developers to add client-side asset dispersal to this directory in the Grunt Build
-* MUST create a directory in ~/CMSTemplates directory using Site Code Name and create a Master Page Template using ASPX integrating client-side scripts and styles
-* SHOULD stub out Page Templates and Web Parts BEFORE client-side efforts begin to understand constraints around HTML generation of stock Kentico Web Parts
+* MUST create a directory in ~/App_Themes directory using Site Code Name and request Front-End developers to add Front-End asset dispersal to this directory in the Grunt Build
+* MUST create a directory in ~/CMSTemplates directory using Site Code Name and create a Master Page Template using ASPX integrating Front-End scripts and styles
+* SHOULD stub out Page Templates and Web Parts BEFORE Front-End efforts begin to understand constraints around HTML generation of stock Kentico Web Parts
 
 ### References
 * [https://docs.kentico.com/k11/configuring-kentico/managing-sites/installing-new-sites/creating-new-sites-using-the-wizard](https://docs.kentico.com/k11/configuring-kentico/managing-sites/installing-new-sites/creating-new-sites-using-the-wizard)
@@ -85,7 +85,7 @@ CMSResources/
 * SHOULD use stock Kentico Web Parts where the meet the requirements
 * MUST create a directory in ~/CMSWebParts directory using Site Code Name.
     * SHOULD preface name with "Custom" for custom web parts and modules (i.e. if site code name is MySite, directory name is CustomMySite) if creating custom web parts
-* SHOULD identify Web Part Containers for client-side tiers and cards to allow clients to add stock web parts with design constraints
+* SHOULD identify Web Part Containers for Front-End tiers and cards to allow clients to add stock web parts with design constraints
 * MAY consider editable web part
 
 ## Page Templates
@@ -99,7 +99,7 @@ CMSResources/
 * [https://docs.kentico.com/k11/developing-websites/developing-websites-using-the-portal-engine/inheriting-portal-engine-page-content](https://docs.kentico.com/k11/developing-websites/developing-websites-using-the-portal-engine/inheriting-portal-engine-page-content)
 
 ## Pages & Navigation
-* SHOULD use CSS List Menu Web Part for menus, but MUST stub out menu BEFORE client-side efforts begin due to significant requirements
+* SHOULD use CSS List Menu Web Part for menus, but MUST stub out menu BEFORE Front-End efforts begin due to significant requirements
 
 ### References
 * [https://docs.kentico.com/k11/references/kentico-controls/cms-controls/cms-controls-navigation/cmslistmenu](https://docs.kentico.com/k11/references/kentico-controls/cms-controls/cms-controls-navigation/cmslistmenu)
